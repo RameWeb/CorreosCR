@@ -1,0 +1,52 @@
+<section class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Correos de Costa Rica</h1>
+    </div>
+    <div class="col-md-6">
+      <h3>Registrar Repartidores</h3>
+      <div>
+        <form ng-submit="vm.registrarRepartidor(vm.nuevoRepartidor)">
+          <div class="form-group">
+            <label for="inputAddress">Sucursal asignada:</label>
+            <input type="text" class="form-control" id="inputAddress" ng-model="vm.nuevoRepartidor.sucursal" list="listaSucursales">
+            <datalist id="listaSucursales">
+              <option data-ng-repeat="sucursal in vm.sucursales" value="{{sucursal}}"> 
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPassword4">Tipo de Licencia</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" ng-model="vm.nuevoRepartidor.licencia" ng-value="'motocicleta'">
+              <label class="form-check-label" for="exampleRadios2">
+                Motocicleta(A1, A2, A3, A4)
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" ng-model="vm.nuevoRepartidor.licencia" ng-value="'vehiculo'">
+              <label class="form-check-label" for="exampleRadios3">
+                Vehículo (B2, B3)
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile" ng-model="vm.nuevoRepartidor.fotoLicencia">
+              <label class="custom-file-label" for="customFile">Seleccionar imagen de licencia</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputAddress">Fecha de vencimiento de la licencia</label>
+            <input type="date" class="form-control" id="inputAddress" ng-model="vm.nuevoRepartidor.vencimientoLicencia">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Registrar repartidor</button>
+        </form>
+      </div>
+       
+    </div>
+  </div>
+</section>
