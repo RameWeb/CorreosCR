@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+          <h2>Registro de Convenios</h2>
+        </div>
+
+        <div class="col-md-6">
+            <form ng-submit="vm.registrarConvenios(vm.nuevoConvenios)">
+
+              <div class="form-group">
+                <label for="">Nombre de la institución</label>
+                <input type="text" class="form-control" ng-model="vm.nuevoConvenios.nombreInstitucion" required>
+              </div>
+              
+              <div class="form-group">
+                  <label for="">Tipo de convenio</label>
+                  <input type="text" class="form-control" ng-model="vm.nuevoConvenios.tipo" required>
+              </div>
+
+              <div class="form-group">
+                  <label for="">Tiempo de convenio</label>
+                  <input type="text" class="form-control" ng-model="vm.nuevoConvenios.tiempo" required>
+              </div>
+
+              <div class="form-group">
+                  <label for="">Costo de trasporte</label>
+                  <input type="number" class="form-control" ng-model="vm.nuevoConvenios.costo" required>
+              </div>
+
+              <button type="submit" class="btn btn-success">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
