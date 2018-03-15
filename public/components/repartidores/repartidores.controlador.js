@@ -16,8 +16,7 @@
 
     
 
-    // Se limpia el formulario
-    vm.nuevoRepartidor = null;
+    
     
     // vm.listarPrioridades = function (p1,p2,p3,p4){
     //   let listaPrioridades = [];
@@ -37,8 +36,17 @@
     // }
     vm.registrarRepartidor = (pNuevoRepartidor) => {
       console.log(pNuevoRepartidor);
-      let nuevoRepartidor = new Repartidor(vm.nuevoRepartidor.sucursal,vm.nuevoRepartidor.licencia,vm.nuevoRepartidor.fotoLicencia,vm.nuevoRepartidor.vencimientoLicencia);
+
+      let nuevoRepartidor = new Repartidor(vm.nuevoRepartidor.identificacion,vm.nuevoRepartidor.nombre,vm.nuevoRepartidor.apellido1,vm.nuevoRepartidor.fechaNacimiento,vm.nuevoRepartidor.telefono,vm.nuevoRepartidor.provincia,vm.nuevoRepartidor.canton,vm.nuevoRepartidor.distrito,vm.nuevoRepartidor.direccion,vm.nuevoRepartidor.puesto,vm.nuevoRepartidor.sucursal,vm.nuevoRepartidor.email,vm.nuevoRepartidor.contrasenna,vm.nuevoRepartidor.licencia,vm.nuevoRepartidor.fotoLicencia,vm.nuevoRepartidor.vencimientoLicencia);
       console.log(nuevoRepartidor);
+
+      //   // Retroalimentacion Visual para los usuarios: SweetAlert
+      swal("Registro exitoso", "El entierro se ha sido registrado correctamente", "success", {
+        button: "Aceptar",
+      });
+
+      // Se limpia el formulario
+      vm.nuevoRepartidor = null;
     }
     
     // Funcion que es llamda desde el html para regustra un nuevo usuario
@@ -54,10 +62,7 @@
     //   // localStorage.setItem('nuevoEntierro', JSON.stringify(objNuevoEntierro));
     //   // console.log(objNuevoEntierro.obtenerHora()); //metodo de horas y minutos
 
-    //   // Retroalimentacion Visual para los usuarios: SweetAlert
-    //   swal("Registro exitoso", "El entierro se ha sido registrado correctamente", "success", {
-    //     button: "Aceptar",
-    //   });
+    
 
     //   // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
     //   servicioUsuarios.addEntierros(objDifunto, objNuevoEntierro);
