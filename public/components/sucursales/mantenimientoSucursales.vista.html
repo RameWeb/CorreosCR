@@ -5,29 +5,43 @@
         <h2>Correos de Costa Rica</h2>
       </div>
       <div class="col-md-8">
-        <div>
-          <table class="table">
-            <thead>
-                <tr>
-                  <th>Provincia</th>
-                  <th>Cantón</th>
-                  <th>Distrito</th>
-                  <th>Dirección exacta</th>
-                  <th>Teléfono</th>
-                  <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="sucursal in vm.listaSucursales">
-                <td>{{sucursal.provincia}}</td>
-                <td>{{sucursal.canton}}</td>
-                <td>{{sucursal.distrito}}</td>
-                <td>{{sucursal.direccion}}</td>
-                <td>{{sucursal.telefono}}</td>
-              </tr>
-            </tbody>
-          </table>
+        <h2>Lista Sucursales</h2>
+
+        <div class="form-group">
+          <label for="txtBuscar">Buscar</label>
+          <input type="text" id="txtBuscar" class="form-control" ng-model="buscarSucursal.provincia">
         </div>
+
+        <table class="table">
+          <thead>
+              <tr>
+                <th>Provincia</th>
+                <th>Cantón</th>
+                <th>Distrito</th>
+                <th>Dirección exacta</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="sucursal in vm.listaSucursales | filter:buscarSucursal">
+              <td>{{sucursal.provincia}}</td>
+              <td>{{sucursal.canton}}</td>
+              <td>{{sucursal.distrito}}</td>
+              <td>{{sucursal.direccion}}</td>
+              <td>{{sucursal.telefono}}</td>
+              <td>
+                <li class="nav-item dropdown" style="list-style:none">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="">Modificar sucursal</a>
+                    <a class="dropdown-item" href="">Desactivar sucursal</a>
+                  </div>
+                </li>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
