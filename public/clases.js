@@ -15,7 +15,7 @@ class Repartidor{
     this.contrasenna = pContrasenna;
     this.licencia = pLicencia;
     this.fotoLicencia = pFotoLicencia;
-    this.licenciaVencimiento = pLicenciaVencimiento;
+    this.vencimientoLicencia = pLicenciaVencimiento;
     this.paquetes = [];
   }
 }

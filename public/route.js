@@ -17,11 +17,29 @@
       }
     })
 
-    .state('registrarRepartidores', {
-      url: '/registrarRepartidores',
-      templateUrl: './components/repartidores/registrarRepartidores.vista.html',
+    .state('regRepartidores', {
+      url: '/regRepartidores',
+      templateUrl: './components/repartidores/regRepartidores.vista.html',
       data:{
         pageTitle: 'Registrar Repartidores'
+      },
+      params: {
+        objUsuarioTemp: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/repartidores/repartidores.controlador.js')
+        }]
+      },
+      controller: 'controladorRepartidores',
+      controllerAs: 'vm'
+    })
+
+    .state('mantRepartidores', {
+      url: '/mantRepartidores',
+      templateUrl: './components/repartidores/mantRepartidores.vista.html',
+      data:{
+        pageTitle: 'Mantenimiento de Repartidores'
       },
       params: {
         objUsuarioTemp: ''

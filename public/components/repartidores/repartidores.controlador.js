@@ -11,28 +11,14 @@
 
     vm.sucursales = ["San Jose", "Alajuela", "Heredia", "Cartago", "Guanacaste","Puntarenas", "Limon"];
 
+    // Objeto sin formato
     vm.nuevoRepartidor = {};
 
-    
+    vm.listaRepartidores = listarRepartidores();
 
-    
-    
-    // vm.listarPrioridades = function (p1,p2,p3,p4){
-    //   let listaPrioridades = [];
-    //   if(p1 == true){
-    //     listaPrioridades.push('Baja');
-    //   }
-    //   if(p2 == true){
-    //     listaPrioridades.push('Normal');
-    //   }
-    //   if(p3 == true){
-    //     listaPrioridades.push('Urgente');
-    //   }
-    //   if(p4 == true){
-    //     listaPrioridades.push('Inmediata');
-    //   }
-    //   return listaPrioridades;
-    // }
+    listarRepartidores();
+
+    // Guardar un nuevo repartidor
     vm.registrarRepartidor = (pNuevoRepartidor) => {
       console.log(pNuevoRepartidor);
 
@@ -49,8 +35,38 @@
 
       // Se limpia el formulario
       vm.nuevoRepartidor = null;
+
+      listarRepartidores();
     }
-    
+
+    // Imprimir lista de repartidores en el sistema
+    function listarRepartidores(){
+      vm.listaRepartidores = servicioRepartidores.obtenerRepartidores();
+    }
+
+
+
+   
+
+
+    // Validación de Checkbox
+    // vm.listarPrioridades = function (p1,p2,p3,p4){
+    //   let listaPrioridades = [];
+    //   if(p1 == true){
+    //     listaPrioridades.push('Baja');
+    //   }
+    //   if(p2 == true){
+    //     listaPrioridades.push('Normal');
+    //   }
+    //   if(p3 == true){
+    //     listaPrioridades.push('Urgente');
+    //   }
+    //   if(p4 == true){
+    //     listaPrioridades.push('Inmediata');
+    //   }
+    //   return listaPrioridades;
+    // }
+
     // Funcion que es llamda desde el html para regustra un nuevo usuario
     // vm.registrarEntierro = (pnuevoEntierro) => {
     //   vm.nuevoEntierro.prioridad = vm.listarPrioridades(vm.nuevoEntierro.p1,vm.nuevoEntierro.p2,vm.nuevoEntierro.p3,vm.nuevoEntierro.p4);
@@ -63,15 +79,5 @@
 
     //   // localStorage.setItem('nuevoEntierro', JSON.stringify(objNuevoEntierro));
     //   // console.log(objNuevoEntierro.obtenerHora()); //metodo de horas y minutos
-
-    
-
-    //   // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-    //   servicioUsuarios.addEntierros(objDifunto, objNuevoEntierro);
-
-      // Se limpia el formulario
-    //   vm.nuevoEntierro = null;
-    // }
-
   }
 })();

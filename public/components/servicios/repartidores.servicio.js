@@ -31,9 +31,9 @@
       }else{
         listaRepartidoresLocal.forEach(obj => {
           
-          let objUsuarios = new Cliente(obj.foto,obj.cedula,obj.nombre,obj.apellido,obj.fechanacimiento,obj.sexo,obj.ubicacion,obj.provincia,obj.canton,obj.distrito,obj.usuario,obj.contrasenna);
+          let objRepartidores = new Repartidor(obj.identificacion,obj.nombre,obj.apellido1,obj.fechaNacimiento,obj.telefono,obj.provincia,obj.canton,obj.distrito,obj.direccion,obj.puesto,obj.sucursal,obj.email,obj.contrasenna,obj.licencia,obj.fotoLicencia,obj.licenciaVencimiento);
 
-          listaUsuarios.push(objUsuarios);
+          listaRepartidores.push(objRepartidores);
         })
       }
       return listaRepartidores;
