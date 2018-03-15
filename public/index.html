@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="correos-cr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Correos de Costa Rica</title>
   <link rel="stylesheet" href="./sources/styles.min.css">
 </head>
 <body>
-  
+  <div ui-view></div>
 </body>
+
+<!-- Dependencias -->
+<script src="./lib/bootstrap/jquery.min.js"></script>
+<script src="./lib/bootstrap/popper.min.js"></script>
+<script src="./lib/bootstrap/bootstrap.min.js"></script>
+<script src="./lib/sweetalert/sweetalert.min.js"></script>
+<script src="./lib/bootstrap/feather.min.js"></script>
+
+<!-- Script de Angular -->
+<script src="./lib/angular/angular.min.js"></script>
+<script src="./lib/bootstrap/checklist-model.js"></script>
+
+<!-- Dependencias de Angular -->
+<script src="./lib/angular/routing/angular-ui-router.min.js"></script>
+<script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
+<script src="./lib/angular/routing/page-title.min.js"></script>
+
+<!-- Script de la aplicación -->
+<script src="./clases.js"></script>
+<script src="./app.js"></script>
+<script src="./route.js"></script>
+
+<!-- servicios -->
+<script src="./components/servicios/sucursales.servicio.js"></script>
 </html>

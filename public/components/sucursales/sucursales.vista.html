@@ -1,0 +1,53 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Correos de Costa Rica</h2>
+      </div>
+
+      <div class="col-md-6">
+        <div class="col-6">
+          <h2 class="titulares"> Sucursales</h2>
+
+          <form name="formRegistrarSucursales" autocomplete="off" ng-submit="vm.registrarSucursal(vm.nuevaSucursal)" novalidate>
+            <div class="form-group">
+              <label for="formGroupExampleInput">Provincia:</label>
+              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.provincia">
+            </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput">Cantón:</label>
+              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.canton">
+            </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput">Distrito:</label>
+              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.distrito">
+            </div>
+
+            <div class="form-group">
+              <label for=formGroupExampleInput"">Dirección exacta:</label>
+              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.direccion">
+            </div>
+
+            <div class="form-group">
+              <label for=formGroupExampleInput"">Teléfono</label>
+              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono">
+            </div>
+
+            <button type="submit" class="btn btn-info" ng-disabled="" ng-click="vm.registrarSucursal()">Registrar</button>
+            <a href="/#!/mantenimientoSucursales">
+            
+            <button type="button" class="btn btn-light">Listar</button></a>
+
+          </form>
+        </div>
+
+        <div class="col-6">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>
