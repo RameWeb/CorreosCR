@@ -16,6 +16,7 @@ class Repartidor{
     this.licencia = pLicencia;
     this.fotoLicencia = pFotoLicencia;
     this.licenciaVencimiento = pLicenciaVencimiento;
+    this.paquetes = [];
   }
 }
 

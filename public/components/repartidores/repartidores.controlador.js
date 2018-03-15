@@ -4,10 +4,9 @@
   .module('correos-cr')
   .controller('controladorRepartidores', controladorRepartidores);
 
-  // controladorRepartidores.$inject = ['$stateParams', '$state','servicioUsuarios'];
-  controladorRepartidores.$inject = ['$stateParams', '$state'];
+  controladorRepartidores.$inject = ['$stateParams', '$state','servicioRepartidores'];
 
-  function controladorRepartidores($stateParams, $state){
+  function controladorRepartidores($stateParams, $state, servicioRepartidores){
     let vm = this;
 
     vm.sucursales = ["San Jose", "Alajuela", "Heredia", "Cartago", "Guanacaste","Puntarenas", "Limon"];
@@ -39,6 +38,9 @@
 
       let nuevoRepartidor = new Repartidor(vm.nuevoRepartidor.identificacion,vm.nuevoRepartidor.nombre,vm.nuevoRepartidor.apellido1,vm.nuevoRepartidor.fechaNacimiento,vm.nuevoRepartidor.telefono,vm.nuevoRepartidor.provincia,vm.nuevoRepartidor.canton,vm.nuevoRepartidor.distrito,vm.nuevoRepartidor.direccion,vm.nuevoRepartidor.puesto,vm.nuevoRepartidor.sucursal,vm.nuevoRepartidor.email,vm.nuevoRepartidor.contrasenna,vm.nuevoRepartidor.licencia,vm.nuevoRepartidor.fotoLicencia,vm.nuevoRepartidor.vencimientoLicencia);
       console.log(nuevoRepartidor);
+
+      // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
+      servicioRepartidores.agregarRepartidores(nuevoRepartidor);
 
       //   // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El entierro se ha sido registrado correctamente", "success", {
