@@ -40,6 +40,30 @@
       controller: 'controladorSucursales',
       controllerAs: 'vm'
     })
+    
+    .state('prealerta',{
+      url: '/prealerta',
+      templateUrl: './components/prealertas/prealerta.vista.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/prealertas/prealerta.controlador.js')
+        }]
+      },
+      controller: 'controladorPrealertas',
+      controllerAs: 'vm'
+    })
+
+    .state('mantenimientoPrealertas',{
+      url: '/mantenimientoPrealertas',
+      templateUrl: './components/prealertas/mantenimientoPrealerta.vista.html',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/prealertas/prealerta.controlador.js')
+        }]
+      },
+      controller: 'controladorPrealertas',
+      controllerAs: 'vm'
+    })
 
     .state('conveniosCliente',{
       url: '/conveniosCliente',

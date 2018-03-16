@@ -12,33 +12,37 @@
           <form name="formRegistrarSucursales" autocomplete="off" ng-submit="vm.registrarSucursal(vm.nuevaSucursal)" novalidate>
             <div class="form-group">
               <label for="formGroupExampleInput">Provincia:</label>
-              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.provincia">
+              <input type="text" name="provincia" class="form-control myInput" list="listaProvincias" ng-model="vm.nuevaSucursal.provincia" required>
+              <datalist id="listaProvincias">
+                <option data-ng-repeat="provincia in vm.costaRica"> 
+              </datalist>
             </div>
 
             <div class="form-group">
               <label for="formGroupExampleInput">Cantón:</label>
-              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.canton">
+              <input type="text" name="canton" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.canton" required>
+
             </div>
 
             <div class="form-group">
               <label for="formGroupExampleInput">Distrito:</label>
-              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.distrito">
+              <input type="text" name="distrito" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.distrito">
             </div>
 
             <div class="form-group">
               <label for=formGroupExampleInput"">Dirección exacta:</label>
-              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.direccion">
+              <input type="text" name="direccion" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.direccion" required>
             </div>
 
             <div class="form-group">
               <label for=formGroupExampleInput"">Teléfono</label>
-              <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono">
+              <input type="text" name="telefono" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono" required>
+
             </div>
 
-            <button type="submit" class="btn btn-info" ng-disabled="" ng-click="vm.registrarSucursal()">Registrar</button>
-            <a href="/#!/mantenimientoSucursales">
-            
-            <button type="button" class="btn btn-light">Listar</button></a>
+            <button type="submit" class="btn btn-info" ng-click="vm.registrarSucursal()">Registrar</button>
+
+            <a href="/#!/mantenimientoSucursales" class="btn btn-light">Listar</a>
 
           </form>
         </div>

@@ -10,7 +10,8 @@
 
     let publicAPI = {
       addSucursal : _addSucursal,
-      getSucursal : _getSucursal
+      getSucursal : _getSucursal,
+      mapInfo : _mapInfo
     }
     return publicAPI;
 
@@ -39,5 +40,13 @@
 
       return listaSucursales;
     }
+
+    function _mapInfo(){
+      let crLocations = $.getJSON('https://gist.githubusercontent.com/richin13/7fc95f2e433c2f46335ef02d959b0561/raw/ed547938d347437b5f6b9abc84dfee8f5e94ece1/administrative-divisions-cr-2018.json', function(data){
+        console.log(data); 
+        return data;
+      });
+    }
+
   }
 })();

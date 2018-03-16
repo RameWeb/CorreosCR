@@ -9,6 +9,8 @@
   function controladorSucursales($stateParams, $state, servicioSucursales){
     let vm = this;
 
+    vm.costaRica = servicioSucursales.mapInfo();
+
     vm.nuevaSucursal = {};
     vm.listaSucursales = listarSucursales();
 
@@ -21,6 +23,8 @@
 
       // Tomamos el objeto sin formato y lo comvertimos en un objeto de tipo cliente
       let objNuevaSucursal = new Sucursales(pnuevaSucursal.provincia, pnuevaSucursal.canton, pnuevaSucursal.distrito,  pnuevaSucursal.direccion, pnuevaSucursal.telefono);
+
+      servicioSucursales.mapInfo();
         
       console.log(objNuevaSucursal);
 
@@ -31,6 +35,8 @@
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
       servicioSucursales.addSucursal(objNuevaSucursal);
+
+      
 
       // Se limpia el formulario
       vm.nuevaSucursal = null;
