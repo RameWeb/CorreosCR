@@ -5,3 +5,10 @@ class tipoProducto{
      
   }
 }
+class courier{
+  constructor(pnombreCourier){
+      this.nombreCourier = pnombreCourier;
+     
+     
+  }
+}

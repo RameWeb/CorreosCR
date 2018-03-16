@@ -15,6 +15,17 @@
         pageTitle: 'Inicio | Correos de Costa Rica'
       }
     })
+    .state('rankingTipoDeProductosProductos', {
+      url: '/pineapple',
+      templateUrl: './components/rankingProductos/ranking.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/rankingProductos/ranking.controlador.js')
+        }]
+      },
+      controller:'controladorRanking',
+      controllerAs:'vm'
+    })
     
     .state('registroTipoProducto', {
       url: '/registrarTipoProducto',
@@ -27,6 +38,21 @@
       controller:'controladorProductos',
       controllerAs:'vm'
     })
-    $urlRouterProvider.otherwise('/');
-  }
+    
+
+
+  .state('registroCourier', {
+    url: '/registrarCourier',
+    templateUrl: './components/courier/courier.vista.html',
+    resolve:{
+      load: ['$ocLazyLoad', ($ocLazyLoad) => {
+        return $ocLazyLoad.load('./components/courier/courier.controlador.js')
+      }]
+    },
+    controller:'controladorCourier',
+    controllerAs:'vm'
+  })
+  $urlRouterProvider.otherwise('/');
+}
+
 })();

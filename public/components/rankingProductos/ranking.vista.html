@@ -1,0 +1,14 @@
+
+	
+	
+		<label>Buscar:</label>
+		<br>
+		<input type="text" ng-model="search">
+ 
+		<ul>
+		    <li ng-repeat="contact in contacts | filter:search">
+		        {{tiposProductos.tipoDeProducto}} - {{tiposProductos.impuesto}} - {{tiposProductos.cantidad}}- {{tiposProductos.fecha}}
+		    </li>
+		</ul>
+ 
+

@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-5">
+      <div>
+        <h2 class="headlines title">Agregar un nuevo Courier</h2>
+      </div>
+      <div class="my-4 margin">
+          
+       <form ng-submit="vm.registrarCourier(vm.nuevoCourier)" > 
+          <div class="">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="">Nombre del courier</label>
+                    <input type="text"id="txtCourierNombre"class="form-control myInput"  ng-model="vm.nuevoCourier.nombreCourier"  required>
+                  </div>
+                 </div>
+                 
+            </div>
+           <button type="submit" class="btnGuardar" id="btnGuardar">Guardar</button>
+           
+          </div>
+       </form>      
+       </div>
+  
+  
+  </div>
+  
+  
+  
+  </div>
+  </div>
+  
+  
+  <div class="col-9">
+  <table class="table">
+  <thead>
+      <tr>
+        <th>Nombre del Courier</th>
+        
+     
+        
+      </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="courier in  vm.listaCouriers">
+      <td>{{courier.nombreCourier}}</td>
+   
+      
+      
+    </tr>
+  </tbody>
+  </table>
+  </div>
