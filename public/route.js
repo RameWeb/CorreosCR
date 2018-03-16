@@ -53,6 +53,25 @@
       controllerAs: 'vm'
     })
 
+    .state('regClientes', {
+      url: '/regClientes',
+      templateUrl: './components/clientes/regClientes.vista.html',
+      data:{
+        pageTitle: 'Registrar Clientes'
+      },
+      params: {
+        objUsuarioTemp: ''
+      },
+      css: './sources/styles/components/clientes.style.scss',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/clientes/clientes.controlador.js')
+        }]
+      },
+      controller: 'controladorClientes',
+      controllerAs: 'vm'
+    }),
+
     $urlRouterProvider.otherwise('/');
   }
 })();
