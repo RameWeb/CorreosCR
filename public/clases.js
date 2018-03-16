@@ -12,3 +12,18 @@ class courier{
      
   }
 }
+class provincia{
+  constructor(pnombreProvincia){
+      this.nombreProvincia = pnombreProvincia;
+     
+     
+  }
+}
+
+class canton{
+  constructor(pnombreCanton){
+      this.nombreCanton = pnombreCanton;
+     
+     
+  }
+}

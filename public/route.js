@@ -50,6 +50,54 @@
       controllerAs:'vm'
     })
     
+    .state('listaProvincia', {
+      url: '/listaProvincia',
+      templateUrl: './components/provincia/listaProvincia.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/provincia/provincia.controlador.js')
+        }]
+      },
+      controller:'controladorProvincia',
+      controllerAs:'vm'
+    })
+
+    .state('registroProvincia', {
+      url: '/registrarProvincia',
+      templateUrl: './components/provincia/provincia.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/provincia/provincia.controlador.js')
+        }]
+      },
+      controller:'controladorProvincia',
+      controllerAs:'vm'
+    })
+    .state('registroCanton', {
+      url: '/registrarCanton',
+      templateUrl: './components/canton/canton.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/canton/canton.controlador.js')
+        }]
+      },
+      controller:'controladorCanton',
+      controllerAs:'vm'
+    })
+
+    .state('listaCantones', {
+      url: '/listaCantones',
+      templateUrl: './components/canton/listaCanton.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/canton/listaCanton.vista.html')
+        }]
+      },
+      controller:'controladorCanton',
+      controllerAs:'vm'
+    })
+
+
 
     .state('listaCourier', {
       url: '/listaCourier',
@@ -62,6 +110,7 @@
       controller:'controladorCourier',
       controllerAs:'vm'
     })
+
   .state('registroCourier', {
     url: '/registrarCourier',
     templateUrl: './components/courier/courier.vista.html',

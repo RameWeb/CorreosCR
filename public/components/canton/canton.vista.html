@@ -2,21 +2,21 @@
     <div class="row">
         <div class="col-md-4">
           <h1>Correos de Costa Rica</h1>
-          <a href="#!/listaProvincia" class="btn btn-primary">Lista de Provincias</a>
+          <a href="#!/listaCantones" class="btn btn-primary">Lista de Cantones</a>
         </div>
         <div class="col-md-8">
-            <h2>Registrar una nueva provincia</h2>
+            <h2>Registrar un nuevo canton</h2>
             <div>
-              <form ng-submit="vm.registrarProvincia(vm.nuevaProvincia)" > 
-                <!-- Información de la nueva Provincia  -->
+              <form ng-submit="vm.registrarCanton(vm.nuevoCanton)" > 
+                <!-- Información del nuevo canton  -->
                 <div class="my-3">
                     <div class="form-group">
         <div class="">
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                    <label for="">Nombre de la provincia</label>
-                  <input type="text"id="txtProvinciaNombre"class="form-control myInput"  ng-model="vm.nuevaProvincia.nombreProvincia"  required>
+                    <label for="">Nombre del canton</label>
+                  <input type="text"id="txtCantonNombre"class="form-control myInput"  ng-model="vm.nuevoCanton.nombreCanton"  required>
                 </div>
                </div>
           </div>
