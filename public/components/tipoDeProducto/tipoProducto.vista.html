@@ -1,11 +1,19 @@
-<div class="row">
-  <div class="col-md-5">
-    <div>
-      <h2 class="headlines title">Agregar un nuevo tipo de producto</h2>
-    </div>
-    <div class="my-4 margin">
-        
-     <form ng-submit="vm.registrarTipoProducto(vm.nuevoTipoProducto)" > 
+
+
+<section class="container-fluid my-5">
+    <div class="row">
+        <div class="col-md-4">
+          <h1>Correos de Costa Rica</h1>
+          <a href="#!/ListaTipoProducto" class="btn btn-primary">Lista de tipos de productos</a>
+        </div>
+        <div class="col-md-8">
+            <h2>Registrar un nuevo tipo de producto </h2>
+            <div>
+              <form ng-submit=" vm.registrarTipoProducto(vm.nuevoTipoProducto)">
+                <!-- Información del nuevo tipo de producto  -->
+                <div class="my-3">
+                    <h3>Información del nuevo tipo de producto</h3>
+                    <div class="form-group">
         <div class="">
             <div class="row">
               <div class="col">
@@ -13,6 +21,7 @@
                   <label for="">Nombre del tipo de producto</label>
                   <input type="text"id="txtTipoProductoNombre"class="form-control myInput"  ng-model="vm.nuevoTipoProducto.nombreTipoProducto"  required>
                 </div>
+
                </div>
                <div class="col">
                   <div class="form-group">
@@ -26,33 +35,8 @@
         </div>
      </form>      
      </div>
+    </div>
+  </div>
+</section>
 
 
-</div>
-
-
-
-</div>
-</div>
-
-
-<div class="col-9">
-<table class="table">
-<thead>
-    <tr>
-      <th>Tipo de producto</th>
-      <th>Impuesto asignado</th>
-   
-      
-    </tr>
-</thead>
-<tbody>
-  <tr ng-repeat="tipoProducto in  vm.listaTipoProductos">
-    <td>{{tipoProducto.nombreTipoProducto}}</td>
-    <td>{{tipoProducto.impuesto}}</td>
-    
-    
-  </tr>
-</tbody>
-</table>
-</div>

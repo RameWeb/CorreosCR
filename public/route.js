@@ -38,9 +38,30 @@
       controller:'controladorProductos',
       controllerAs:'vm'
     })
+    .state('ListaTipoProducto', {
+      url: '/ListaTipoProducto',
+      templateUrl: './components/tipoDeProducto/listaTipoProductos.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/tipoDeProducto/tipoProducto.controlador.js')
+        }]
+      },
+      controller:'controladorProductos',
+      controllerAs:'vm'
+    })
     
 
-
+    .state('listaCourier', {
+      url: '/listaCourier',
+      templateUrl: './components/courier/listaCourier.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/courier/courier.controlador.js')
+        }]
+      },
+      controller:'controladorCourier',
+      controllerAs:'vm'
+    })
   .state('registroCourier', {
     url: '/registrarCourier',
     templateUrl: './components/courier/courier.vista.html',
