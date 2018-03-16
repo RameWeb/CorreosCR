@@ -2,3 +2,4 @@ node_modules
 public/lib
 public/sources/style.min.css
 .DS_Store
+public/sources/.DS_Store
