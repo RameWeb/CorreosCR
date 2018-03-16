@@ -34,6 +34,10 @@
 
   <div class="row">
       <div class="col-md-6">
+          <div class="col-md-6">
+                <input ng-model="searchText" class="form-control" placeholder="Buscar" >
+               
+          </div>
         <table class="table">
                 <thead>
                         <tr>
@@ -41,14 +45,21 @@
                             <th>Dueño paquete</th>
                             <th>Peso</th>
                             <th>Valor</th>
+                            <th>Acciones</th>
                         </tr>
+                        
                     </thead>
+                    
                     <tbody>
-                      <tr ng-repeat="paquetes in vm.listaPaquetes">
+                      <tr ng-repeat="paquetes in vm.listaPaquetes | filter:searchText">
                         <td>{{paquetes.tracking}}</td>
                         <td>{{paquetes.nombre}}</td>
                         <td>{{paquetes.peso}}</td>
                         <td>{{paquetes.valor}}</td>
+                        <td>
+                                 <!--aqui van acciones -->
+
+                        </td>
                         
                         <td>
                             <!--aqui va boton de asignar repartidor -->
