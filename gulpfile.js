@@ -9,17 +9,17 @@ const gulp = require('gulp'),
       todo = require('gulp-todo'),
       browserSync = require('browser-sync'),
       paths = {
-        views : './public/components/**/**/*.html',
-        styles: './public/sources/styles/**/*.scss',
+        views : './public/components/*//.html',
+        styles: './public/sources/styles/*/.scss',
         impSass : './public/sources/styles/style.scss',
-        js: './public/components/**/**/*.js',
+        js: './public/components/*//.js',
         excss: './public/*.css'
       };
 
 gulp.task('connect', () => {
   connect.server({
     root: 'public',
-    port: 8000,
+    port: 3000,
     livereload: true
   });
   browserSync.init({
@@ -52,7 +52,8 @@ gulp.task('dependencies', () => {
   gulp.src([
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/jquery/dist/jquery.min.js',
-    './node_modules/popper.js/dist/umd/popper.min.js'
+    './node_modules/popper.js/dist/umd/popper.min.js',
+    './node_modules/checklist-model/checklist-model.js'
   ])
     .pipe(gulp.dest('./public/lib/bootstrap'));
 
@@ -61,6 +62,10 @@ gulp.task('dependencies', () => {
   ])
     .pipe(gulp.dest('./public/lib/sweetalert'));
 
+  gulp.src([
+    './node_modules/feather-icons/dist/feather.min.js',
+  ])
+    .pipe(gulp.dest('./public/lib/feathericons'));
 });
 
 gulp.task('reload', () => {

@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-5">
+    <div>
+      <h2 class="headlines title">Agregar un nuevo tipo de producto</h2>
+    </div>
+    <div class="my-4 margin">
+        
+     <form ng-submit="vm.registrarTipoProducto(vm.nuevoTipoProducto)" > 
+        <div class="">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Nombre del tipo de producto</label>
+                  <input type="text"id="txtTipoProductoNombre"class="form-control myInput"  ng-model="vm.nuevoTipoProducto.nombreTipoProducto"  required>
+                </div>
+               </div>
+               <div class="col">
+                  <div class="form-group">
+                   <label for="">Impuesto del tipo de producto</label>
+                   <input type="number" min="0" id="txtImpuesto" class="form-control myInput" ng-model="vm.nuevoTipoProducto.impuesto" required>
+                  </div>
+                </div>
+          </div>
+         <button type="submit" class="btnGuardar" id="btnGuardar">Guardar</button>
+         
+        </div>
+     </form>      
+     </div>
+
+
+</div>
+
+
+
+</div>
+</div>
+
+
+<div class="col-9">
+<table class="table">
+<thead>
+    <tr>
+      <th>Tipo de producto</th>
+      <th>Impuesto asignado</th>
+   
+      
+    </tr>
+</thead>
+<tbody>
+  <tr ng-repeat="tipoProducto in  vm.listaTipoProductos">
+    <td>{{tipoProducto.nombreTipoProducto}}</td>
+    <td>{{tipoProducto.impuesto}}</td>
+    
+    
+  </tr>
+</tbody>
+</table>
+</div>
