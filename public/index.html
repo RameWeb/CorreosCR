@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="correos-cr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="./sources/styles.min.css">
+  <title page-title></title>
+  <!-- Fuentes del sitio -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./lib/bootstrap/bootstrap.min.css">
+
 </head>
-<body>
-  
+
+<body class="gray">
+
+  <div ui-view></div>
+
+  <!-- Dependencias -->
+  <script src="./lib/bootstrap/jquery.min.js"></script>
+  <script src="./lib/bootstrap/popper.min.js"></script>
+  <script src="./lib/bootstrap/bootstrap.min.js"></script>
+  <script src="./lib/sweetalert/sweetalert.min.js"></script>
+  <!-- Script de Angular -->
+  <script src="./lib/angular/angular.min.js"></script>
+    <!-- Dependencias de Agular -->
+    <script src="./lib/angular/routing/angular-ui-router.min.js"></script>
+    <script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
+    <script src="./lib/angular/routing/page-title.min.js"></script>
+  <!-- Script de la aplicaciÃ³n -->
+  <script src="./clases.js"></script>
+  <script src="./app.js"></script>
+  <script src="./route.js"></script>
+  <!-- servicios -->
+  <script src="./components/servicios/direcciones.servicio.js"></script>
 </body>
+
 </html>
