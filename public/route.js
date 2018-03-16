@@ -34,6 +34,21 @@
       controllerAs: 'vm'
     })
 
+    .state('paquetes', {
+      url: '/paquetes',
+      templateUrl: './components/paquetes/paquetes.vista.html',
+      data:{
+        pageTitle: 'Registro llegada de paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/paquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorPaquetes',
+      controllerAs: 'vm'
+    })
+
   
 
     $urlRouterProvider.otherwise('/');

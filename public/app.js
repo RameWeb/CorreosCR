@@ -1,5 +1,5 @@
 (() => {
   'use strict';
   angular
-  .module('correosCr', ['appRoutes'])
+  .module('correos-cr', ['appRoutes'])
 })();
