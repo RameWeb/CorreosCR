@@ -1,8 +1,9 @@
+<main id="registrarClientes">
 <section class="container-fluid">
     <div class="row">
-      <div class="col-md-4 py-5 px-5 panelIzq">
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
         <h1>Correos de Costa Rica</h1>
-        <a href="#!/regClientes" class="btn actionBtn">Registrar Clientes</a>
+        <a href="#!/regClientes" class="btn btnAccion">Registrar Clientes</a>
       </div>
       <div class="col-md-8 py-5 px-5 contenido">
         <h2>Lista de Clientes</h2>
@@ -28,7 +29,7 @@
               <td>{{cliente.email}}</td>
               <td>{{cliente.telefono}}</td>
               <td>
-                <li class="nav-item dropdown" style="list-style:none">
+                <li class="nav-item dropdown btnAccion" style="list-style:none">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="">Modificar Repartidor</a>
@@ -42,3 +43,4 @@
       </div>
     </div>
   </section>
+</main>

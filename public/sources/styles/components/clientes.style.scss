@@ -1,15 +1,26 @@
-$deepPurple: linear-gradient(to right, #2F3640 100%, #353B48 100%);
-$slateblue: #8C7AE6;
-$white: #FFF;
+@import "../setting";
 
-.content{
-  background-color: $white;
-}
-.panelIzq{
-  background-image: $deepPurple;
-  height: 100vh;
-}
-.actionBtn{
-  background-color: $slateblue;
-  color: $white;
+#registrarClientes{
+  .contenido{
+    background-color: $white;
+    max-height: 100vh;
+    overflow: scroll;
+  }
+  .panelIzquierdo{
+    background-image: $deepPurple;
+    color: $white;
+    min-height: 100vh;
+    overflow: scroll;
+  }
+  .btnAccion{
+    background-color: $slateblue;
+    color: $white;
+    font-family: $fuenteContenido;
+  }
+  h1,h2{
+    font-family: $fuenteTitulos;
+  }
+  h3,p,label{
+    font-family: $fuenteContenido;
+  }
 }

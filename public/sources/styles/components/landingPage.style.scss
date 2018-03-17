@@ -6,11 +6,18 @@ $white: #FFF;
 #landing{
   background-image: $deepPurple;
   height: 100vh;
+  .btnAccion{
+    background-color: $slateblue;
+    color: $white;
+  }
+  .contenido{
+    background-color: $white;
+  }
+  .panelIzquierdo{
+    background-image: $deepPurple;
+    color: $white;
+    min-height: 100vh;
+    overflow: scroll;
+  }
 }
-.actionBtn{
-  background-color: $slateblue;
-  color: $white;
-}
-.content{
-  background-color: $white;
-}
+

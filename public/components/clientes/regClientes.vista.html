@@ -1,102 +1,103 @@
+<main id="registrarClientes">
 <section class="container-fluid">
-    <div class="row">
-      <div class="col-md-4 py-5 px-5 panelIzq">
-        <h1>Correos de Costa Rica</h1>
-        <a href="#!/mantClientes" class="btn actionBtn">Lista de Clientes</a>
-      </div>
-      <div class="col-md-8 py-5 px-5 contenido">
-        <h2>Registrar Clientes</h2>
-          <form ng-submit="vm.registrarCliente(vm.nuevoCliente)">
-            <!-- Información Personal -->
-            <div class="my-3">
-              <h3>Información Personal</h3>
-              <div class="form-group">
-                <label for="inputIdentificacion">Nº de Identificación:</label>
-                <input type="number" class="form-control" id="inputIdentificacion" ng-model="vm.nuevoCliente.identificacion">
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputNombre">Nombre</label>
-                  <input type="text" class="form-control" id="inputNombre" ng-model="vm.nuevoCliente.nombre">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputApellido1">Primer Apellido</label>
-                  <input type="text" class="form-control" id="inputApellido1" ng-model="vm.nuevoCliente.apellido1">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputEmail">Correo Electrónico:</label>
-                  <input type="email" class="form-control" id="inputEmail" ng-model="vm.nuevoCliente.email">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputContrasenna">Contraseña:</label>
-                  <input type="password" class="form-control" id="inputContrasenna" ng-model="vm.nuevoCliente.contrasenna">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputFechaNacimiento">Fecha de Nacimiento</label>
-                  <input type="date" class="form-control" id="inputFechaNacimiento" ng-model="vm.nuevoCliente.fechaNacimiento">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="inputTelefono">Teléfono</label>
-                  <input type="number" class="form-control" id="inputTelefono" ng-model="vm.nuevoCliente.telefono">
-                </div> 
-              </div>
-            </div>
-  
-            <div class="my-3">
-              <h3>Dirección</h3>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputProvincia">Provincia</label>
-                  <input type="text" class="form-control" id="inputProvincia" ng-model="vm.nuevoCliente.provincia">
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputCanton">Cantón</label>
-                  <input type="text" class="form-control" id="inputCanton" ng-model="vm.nuevoCliente.canton">
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputDistrito">Distrito</label>
-                  <input type="text" class="form-control" id="inputDistrito" ng-model="vm.nuevoCliente.distrito">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputDireccion">Dirección exacta:</label>
-                <textarea class="form-control" id="inputDireccion" rows="3" ng-model="vm.nuevoCliente.direccion"></textarea>
-              </div>
-            </div>
-  
-            <div class="my-3">
-              <h3>Información de Pago</h3>
-              <!-- Otros datos -->
-              <div class="form-group">
-                <label for="inputTitularTarjeta">Titular de la tarjeta</label>
-                <input type="text" class="form-control" id="inputTitularTarjeta" ng-model="vm.nuevoCliente.titularTarjeta">
-              </div>
-              <div class="form-group">
-                <label for="inputNumeroTarjeta">Numero de tarjeta:</label>
-                <input type="number" class="form-control" id="inputNumeroTarjeta" ng-model="vm.nuevoCliente.numeroTarjeta">
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputMesVencimiento">Mes</label>
-                  <input type="text" class="form-control" id="inputMesVencimiento" ng-model="vm.nuevoCliente.mesVencimiento">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="inputAnnoVencimiento">Año</label>
-                  <input type="number" class="form-control" id="inputAnnoVencimiento" ng-model="vm.nuevoCliente.annoVencimiento">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="inputCcv">Codigo de Seguridad (CCV)</label>
-                  <input type="number" class="form-control" id="inputCcv" ng-model="vm.nuevoCliente.ccv">
-                </div>
-              </div>
-              <button type="submit" class="btn actionBtn">Registrar Cliente</button> 
-            </div>
-          </form>
-      </div>
+  <div class="row">
+    <div class="col-md-4 py-5 px-5 panelIzquierdo">
+      <h1>Correos de Costa Rica</h1>
+      <a href="#!/mantClientes" class="btn btnAccion">Lista de Clientes</a>
     </div>
-  </section>
+    <div class="col-md-8 py-5 px-5 contenido">
+      <h2>Registrar Clientes</h2>
+      <form ng-submit="vm.registrarCliente(vm.nuevoCliente)">
+        <!-- Información Personal -->
+        <div class="my-3">
+          <h3>Información Personal</h3>
+          <div class="form-group">
+            <label for="inputIdentificacion">Nº de Identificación:</label>
+            <input type="number" class="form-control" id="inputIdentificacion" ng-model="vm.nuevoCliente.identificacion">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputNombre">Nombre</label>
+              <input type="text" class="form-control" id="inputNombre" ng-model="vm.nuevoCliente.nombre">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputApellido1">Primer Apellido</label>
+              <input type="text" class="form-control" id="inputApellido1" ng-model="vm.nuevoCliente.apellido1">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail">Correo Electrónico:</label>
+              <input type="email" class="form-control" id="inputEmail" ng-model="vm.nuevoCliente.email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputContrasenna">Contraseña:</label>
+              <input type="password" class="form-control" id="inputContrasenna" ng-model="vm.nuevoCliente.contrasenna">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFechaNacimiento">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" id="inputFechaNacimiento" ng-model="vm.nuevoCliente.fechaNacimiento">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputTelefono">Teléfono</label>
+              <input type="number" class="form-control" id="inputTelefono" ng-model="vm.nuevoCliente.telefono">
+            </div> 
+          </div>
+        </div>
+        <!-- Direccion -->
+        <div class="my-3">
+          <h3>Dirección</h3>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputProvincia">Provincia</label>
+              <input type="text" class="form-control" id="inputProvincia" ng-model="vm.nuevoCliente.provincia">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputCanton">Cantón</label>
+              <input type="text" class="form-control" id="inputCanton" ng-model="vm.nuevoCliente.canton">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputDistrito">Distrito</label>
+              <input type="text" class="form-control" id="inputDistrito" ng-model="vm.nuevoCliente.distrito">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputDireccion">Dirección exacta:</label>
+            <textarea class="form-control" id="inputDireccion" rows="3" ng-model="vm.nuevoCliente.direccion"></textarea>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <h3>Información de Pago</h3>
+          <!-- Otros datos -->
+          <div class="form-group">
+            <label for="inputTitularTarjeta">Titular de la tarjeta</label>
+            <input type="text" class="form-control" id="inputTitularTarjeta" ng-model="vm.nuevoCliente.titularTarjeta">
+          </div>
+          <div class="form-group">
+            <label for="inputNumeroTarjeta">Numero de tarjeta:</label>
+            <input type="number" class="form-control" id="inputNumeroTarjeta" ng-model="vm.nuevoCliente.numeroTarjeta">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputMesVencimiento">Mes</label>
+              <input type="text" class="form-control" id="inputMesVencimiento" ng-model="vm.nuevoCliente.mesVencimiento">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputAnnoVencimiento">Año</label>
+              <input type="number" class="form-control" id="inputAnnoVencimiento" ng-model="vm.nuevoCliente.annoVencimiento">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputCcv">Codigo de Seguridad (CCV)</label>
+              <input type="number" class="form-control" id="inputCcv" ng-model="vm.nuevoCliente.ccv">
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btnAccion">Registrar Cliente</button> 
+    </form>
+  </div>
+</section>
+</main>
   

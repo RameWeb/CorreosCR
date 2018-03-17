@@ -1,15 +1,17 @@
-$deepPurple: linear-gradient(to right, #2F3640 100%, #353B48 100%);
-$slateblue: #8C7AE6;
-$white: #FFF;
+@import "../setting";
 
-.content{
-  background-image: $white;
-}
-.actionBtn{
-  background-color: $slateblue;
-  color: $white;
-}
-.panelIzq{
-  background-image: $deepPurple;
-  height: 100vh;
+#registrarRepartidores{
+  .contenido{
+    background-image: $white;
+  }
+  .btnAccion{
+    background-color: $slateblue;
+    color: $white;
+  }
+  .panelIzquierdo{
+    background-image: $deepPurple;
+    color: $white;
+    min-height: 100vh;
+    overflow: scroll;
+  }
 }
