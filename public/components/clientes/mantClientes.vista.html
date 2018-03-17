@@ -1,0 +1,43 @@
+<section class="container-fluid my-5">
+    <div class="row">
+      <div class="col-md-4" id="leftPanel">
+        <h1>Correos de Costa Rica</h1>
+      </div>
+      <div class="col-md-8">
+        <h2>Lista de Clientes</h2>
+        <div class="form-group">
+          <label for="inputBuscar">Buscar cliente</label>
+          <input type="text" class="form-control" id="inputBuscar" ng-model="buscarCliente.nombre">
+          </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nº Identificación</th>
+              <th>Nombre</th>
+              <th>1er Apellido</th>
+              <th>Correo Electrónico</th>
+              <th>Teléfono</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="cliente in vm.listaClientes | filter:buscarCliente">
+              <td>{{cliente.identificacion}}</td>
+              <td>{{cliente.nombre}}</td>
+              <td>{{cliente.apellido1}}</td>
+              <td>{{cliente.email}}</td>
+              <td>{{cliente.telefono}}</td>
+              <td>
+                <li class="nav-item dropdown" style="list-style:none">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="">Modificar Repartidor</a>
+                    <a class="dropdown-item" href="">Desactivar Repartido</a>
+                  </div>
+                </li>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>

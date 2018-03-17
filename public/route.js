@@ -70,6 +70,25 @@
       },
       controller: 'controladorClientes',
       controllerAs: 'vm'
+    })
+
+    .state('mantClientes', {
+      url: '/mantClientes',
+      templateUrl: './components/clientes/mantClientes.vista.html',
+      data:{
+        pageTitle: 'Mantenimiento de Clientes'
+      },
+      params: {
+        objUsuarioTemp: ''
+      },
+      css: './sources/styles/components/clientes.style.scss',
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/clientes/clientes.controlador.js')
+        }]
+      },
+      controller: 'controladorClientes',
+      controllerAs: 'vm'
     }),
 
     $urlRouterProvider.otherwise('/');

@@ -20,3 +20,25 @@ class Repartidor{
   }
 }
 
+class Cliente{
+  constructor(pIdentificacion,pNombre,pApellido1,pEmail,pContrasenna,pFechaNacimiento,pTelefono,pProvincia,pCanton,pDistrito,pDireccion,pTitularTarjeta,pNumeroTarjeta,pMesVencimiento,pAnnoVencimiento,pCcv){
+    this.identificacion = pIdentificacion;
+    this.nombre = pNombre;
+    this.apellido1 = pApellido1;
+    this.email = pEmail;
+    this.contrasenna = pContrasenna;
+    this.fechaNacimiento = pFechaNacimiento;
+    this.telefono = pTelefono;
+    this.provincia = pProvincia;
+    this.canton = pCanton;
+    this.distrito = pDistrito;
+    this.direccion = pDireccion;
+    this.titularTarjeta = pTitularTarjeta;
+    this.numeroTarjeta = pNumeroTarjeta;
+    this.mesVencimiento = pMesVencimiento;
+    this.annoVencimiento = pAnnoVencimiento;
+    this.ccv = pCcv;
+    this.paquetes = [];
+  }
+}
+
