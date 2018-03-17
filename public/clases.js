@@ -1,10 +1,11 @@
 class Sucursales{
-  constructor(pProvincia, pCanton, pDistrito, pDireccion, pTelefono){
+  constructor(pProvincia, pCanton, pDistrito, pDireccion, pTelefono, pidSucursal){
     this.provincia = pProvincia;
     this.canton = pCanton;
     this.distrito = pDistrito;
     this.direccion = pDireccion;
-    this.telefono = pTelefono;  
+    this.telefono = pTelefono;
+    this.idSucursal = pidSucursal;
   }
 }
 

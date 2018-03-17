@@ -1,16 +1,17 @@
-<main>
-  <div class="container">
+<main id="registroSucursales">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
-          <a href="/#!/sucursales" class="btn btn-light">Regresar</a>
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
         <h2>Correos de Costa Rica</h2>
+        <a href="/#!/sucursales" class="btn btn-light">Regresar</a>
+
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 py-5 px-5 contenido">
         <h2>Lista Sucursales</h2>
 
         <div class="form-group">
           <label for="txtBuscar">Buscar</label>
-          <input type="text" id="txtBuscar" class="form-control" ng-model="buscarSucursal.provincia">
+          <input type="text" id="txtBuscar" class="form-control" ng-model="buscarSucursal.canton">
         </div>
 
         <table class="table">
@@ -32,10 +33,10 @@
               <td>{{sucursal.direccion}}</td>
               <td>{{sucursal.telefono}}</td>
               <td>
-                <li class="nav-item dropdown" style="list-style:none">
+                <li class="nav-item dropdown btnAccion" style="list-style:none">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">Modificar sucursal</a>
+                    <a class="dropdown-item" href="" ng-click="vm.modificar(sucursal)">Modificar sucursal</a>
                     <a class="dropdown-item" href="">Desactivar sucursal</a>
                   </div>
                 </li>

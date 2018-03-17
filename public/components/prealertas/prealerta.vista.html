@@ -1,14 +1,15 @@
-<main>
-  <div class="container">
+<navegacion-Principal></navegacion-Principal>
+
+<main id="registroPrealertas">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
         <h2>Correos de Costa Rica</h2>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-8 py-5 px-5 contenido">
         <div class="col-6">
           <h2>Prelaertar un paquete</h2>
-
           <form name="formRegistrarPrealerta" autocomplete="off" ng-submit="vm.registrarPrealerta(vm.nuevaPrealerta)" novalidate>
 
                 <div class="form-group">
@@ -24,6 +25,9 @@
               <div class="form-group">
                 <label for="formGroupExampleInput">Tipo de producto</label>
                 <input type="text" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.tipoProducto">
+                <datalist>
+
+                </datalist>
               </div>
         
               <div class="form-group">
@@ -50,12 +54,11 @@
 
               <a href="/#!/mantenimientoPrealertas" class="btn btn-light">Listar</a>
           </form>
+        </div>
          <div class="col-6">
 
-         </div> 
-        </div>
+         </div>
       </div>
     </div>
-  </div>
   </div>
 </main>

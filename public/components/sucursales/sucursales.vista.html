@@ -1,25 +1,18 @@
-<main>
-  <div class="container">
+<main id="registroSucursales">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
         <h2>Correos de Costa Rica</h2>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-8 py-5 px-5 contenido">
         <div class="col-6">
-          <h2 class="titulares"> Sucursales</h2>
+          <h2> Sucursales</h2>
 
           <form name="formRegistrarSucursales" autocomplete="off" ng-submit="vm.registrarSucursal(vm.nuevaSucursal)" novalidate>
             
             <div class="form-group">
               <label for="sltProvincia">Provincia:</label>
-              <select id="sltProvincia" name="sltProvincia"class="form-control" ng-change="vm.rellenarCantones(vm.nuevaSucursal.provincia._id)" ng-options="provincia as provincia.name for provincia in vm.provincias track by provincia._id" ng-model="vm.nuevaSucursal.provincia" required>
-                <option>-- Seleccione una Provincia --</option>
-              </select>
-            </div> 
-            
-            <div class="form-group">
-              <label for="">Provincia:</label>
               <select id="sltProvincia" name="sltProvincia"class="form-control" ng-change="vm.rellenarCantones(vm.nuevaSucursal.provincia._id)" ng-options="provincia as provincia.name for provincia in vm.provincias track by provincia._id" ng-model="vm.nuevaSucursal.provincia" required>
                 <option>-- Seleccione una Provincia --</option>
               </select>
@@ -46,21 +39,17 @@
 
             <div class="form-group">
               <label for=formGroupExampleInput"">Teléfono</label>
-              <input type="text" name="telefono" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono" required>
+              <input type="tel" name="telefono" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono" placeholder="2222-2222" pattern="[0-9]+" maxlength="8" minlength="8" required>
             </div>
 
             <button type="submit" class="btn btn-info" ng-click="vm.registrarSucursal()">Registrar</button>
 
             <a href="/#!/mantenimientoSucursales" class="btn btn-light">Listar</a>
-
           </form>
         </div>
 
-        <div class="col-6">
-
-        </div>
+        <div class="col-6"></div>
       </div>
     </div>
-  </div>
   </div>
 </main>

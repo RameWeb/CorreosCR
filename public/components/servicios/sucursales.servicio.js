@@ -10,7 +10,9 @@
 
     let publicAPI = {
       addSucursal : _addSucursal,
-      getSucursal : _getSucursal
+      getSucursal : _getSucursal,
+      getSucursalSeleccionada: _getSucursalSeleccionada,
+      actualizarSucursal: _actualizarSucursal
     }
     return publicAPI;
 
@@ -31,13 +33,29 @@
       }else{
         listaSucursalesLocal.forEach(obj => {
           
-          let objSucursales = new Sucursales(obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.telefono);
+          let objSucursales = new Sucursales(obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.telefono, obj.idSucursal);
 
           listaSucursales.push(objSucursales);
         })
       }
 
       return listaSucursales;
+    }
+
+    function _getSucursalSeleccionada(idSucursal){
+      let listaSucursales = _getSucursal(),
+          sucursalSeleccionada;
+
+      for(let i = 0; i < listaSucursales.length; i++){
+        if (idSucursal == listaSucursales[i].idSucursal){
+          sucursalSeleccionada = listaSucursales[i];
+        }
+      }
+      return sucursalSeleccionada;
+    }
+
+    function _actualizarSucursal(pnuevaSucursal){
+    //id coincida con los que ya esxisten
     }
 
   }

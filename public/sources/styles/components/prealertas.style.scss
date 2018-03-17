@@ -1,0 +1,26 @@
+@import "../setting";
+
+#registroPrealertas{
+  .contenido{
+    background-color: $white;
+  }
+  
+  .panelIzquierdo{
+    background-image: $deepPurple;
+    color: $white;
+    height: 100vh;
+  }
+  
+  .btnAccion{
+    background-color: $slateblue;
+    color: $white;
+  }
+  
+  h1,h2{
+    font-family: $fuenteTitulos;
+    }
+
+  h3,p,label{
+    font-family: $fuenteContenido;
+  }
+}

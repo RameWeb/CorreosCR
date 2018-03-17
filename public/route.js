@@ -31,13 +31,28 @@
 
     .state('mantenimientoSucursales',{
       url: '/mantenimientoSucursales',
-      templateUrl: './components/sucursales/mantenimientoSucursales.vista.html',
+      templateUrl: './components/sucursales/listarSucursal/mantenimientoSucursales.vista.html',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/sucursales/sucursales.controlador.js')
         }]
       },
       controller: 'controladorSucursales',
+      controllerAs: 'vm'
+    })
+
+    .state('modificarSucursal',{
+      url: '/modificarSucursal',
+      templateUrl: './components/sucursales/modificarSucursal/modificarSucursal.vista.html',
+      params:{
+        idSucursal: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/sucursales/modificarSucursal/modificarSucursal.controlador.js')
+        }]
+      },
+      controller: 'controladorModificarSucursal',
       controllerAs: 'vm'
     })
     

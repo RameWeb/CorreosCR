@@ -2,16 +2,23 @@
   'use strict';
   angular
   .module('correos-cr')
-  .controller('controladorSucursales', controladorSucursales);
+  .controller('controladorModificarSucursal', controladorModificarSucursal);
 
-  controladorSucursales.$inject = ['$http', '$stateParams', '$state', 'servicioSucursales'];
+  controladorModificarSucursal.$inject = ['$http', '$stateParams', '$state', 'servicioSucursales'];
 
-  function controladorSucursales($http, $stateParams, $state, servicioSucursales){
+  function controladorModificarSucursal($http, $stateParams, $state, servicioSucursales){
+
+    let sucursalSeleccionada;
+
+    if($stateParams.idSucursal == ''){
+      $state.go('mantenimientoSucursales');
+    }else{
+      sucursalSeleccionada = servicioSucursales.getSucursalSeleccionada($stateParams.idSucursal);
+    }
+
+    console.log(sucursalSeleccionada);
+
     let vm = this;
-
-    // vm.costaRica = servicioSucursales.mapInfo();
-
-    vm.nuevaSucursal = {};
     
     vm.provincias = $http({
       method: 'GET',
@@ -57,28 +64,26 @@
       });
     }
 
+    vm.nuevaSucursal = {
+      provincia: sucursalSeleccionada.provincia,
+      canton: sucursalSeleccionada.canton,
+      distrito: sucursalSeleccionada.distrito,
+      direccion: sucursalSeleccionada.direccion,
+      telefono: sucursalSeleccionada.telefono
+    };
+
     listarSucursales();
     
     // Funcion que es llamada desde el html para regustra un nuevo usuario
-    vm.registrarSucursal = (pnuevaSucursal) => {
-      
-      let idRandom = (Math.random()*Math.random())*1000;
+    vm.modificarSucursal = (pnuevaSucursal) => {
 
-      console.log(idRandom);
-
-      // Tomamos el objeto sin formato y lo comvertimos en un objeto de tipo cliente
-      let objNuevaSucursal = new Sucursales(pnuevaSucursal.provincia.name, pnuevaSucursal.canton.name, pnuevaSucursal.distrito.name,  pnuevaSucursal.direccion, pnuevaSucursal.telefono, idRandom);
+      let objSucursalModificada = new Sucursal(pnuevaSucursal.provincia.name, pnuevaSucursal.canton.name, pnuevaSucursal.distrito.name,  pnuevaSucursal.direccion, pnuevaSucursal.telefono, sucursalSeleccionada.idSucursal);
         
-      console.log(objNuevaSucursal);
+      console.log(objSucursalModificada);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      servicioSucursales.addSucursal(objNuevaSucursal);
+      servicioSucursales.actualizarSucursal(objNuevaSucursal);
 
-      // Retroalimentacion Visual para los usuarios: SweetAlert
-      swal("Registro exitoso", "La nueva sucursal se ha sido registrado correctamente", "success", {
-        button: "Aceptar",
-      });
-      
       listarSucursales();
       // Se limpia el formulario
       vm.nuevaSucursal = null;
@@ -89,8 +94,9 @@
     }
 
     vm.modificar = (psucursal) =>{
+      $stateParams(psucursal.idSucursal)
 
-      $state.go('modificarSucursal', {idSucursal: JSON.stringify(psucursal.idSucursal)})
+      $state.go('sucursales')
     }
   }
 })();
