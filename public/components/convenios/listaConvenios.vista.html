@@ -1,6 +1,7 @@
 <div class="container">
 <div class="row">
     <div class="col-md-6">
+            <a href="/#!/convenios" class="btn btn-light">Regresar</a>
         <div class="col-md-6">
               <input ng-model="searchText" class="form-control" placeholder="Buscar convenio" >
              
@@ -24,7 +25,11 @@
                       <td>{{convenios.tiempo}}</td>
                       <td>{{convenios.costo}}</td>
                       <td>
-                               <!--aqui van acciones -->
+                            <li class="nav-item dropdown" style="list-style:none">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="">Modificar convenio</a>
+                                      <a class="dropdown-item" href="">Eliminar convenio</a>
 
                       </td>
                       

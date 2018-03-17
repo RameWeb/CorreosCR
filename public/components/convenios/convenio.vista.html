@@ -27,7 +27,8 @@
                   <input type="number" class="form-control" ng-model="vm.nuevoConvenios.costo" required>
               </div>
 
-              <button type="submit" class="btn btn-success" >Registrar</button>
+              <button type="submit" class="btn btn-success"ng-click="vm.registrarConvenios()" >Registrar</button>
+              <a href="/#!/lista-convenios" class="btn btn-light">Listar</a>
             </form>
         </div>
     </div>
