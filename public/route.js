@@ -34,6 +34,22 @@
       controllerAs: 'vm'
     })
 
+    .state('lista-convenios', {
+      url: '/lista-convenios',
+      templateUrl: './components/convenios/listaConvenios.vista.html',
+      data:{
+        pageTitle: 'Lista convenios | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/convenios/convenios.controlador.js')
+        }]
+      },
+      controller: 'controladorConvenios',
+      controllerAs: 'vm'
+    })
+    
+
     .state('paquetes', {
       url: '/paquetes',
       templateUrl: './components/paquetes/paquetes.vista.html',

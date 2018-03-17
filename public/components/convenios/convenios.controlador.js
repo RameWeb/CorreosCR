@@ -26,18 +26,22 @@
       servicioConvenios.addConvenios(objNuevoConvenios);
 
       swal("Registro exitoso", "El convenio ha sido registrado correctamente", "success", {
-        button: "Aceptar",
+        button: "Aceptar", 
       });
 
       vm.nuevoConvenios = null;
       listarConvenios();
     }
 
+    
    
 
     function listarConvenios() {
       vm.listaConvenios = servicioConvenios.getConvenios();
+     
+     
     }
-
   }
+  
+  
 })();

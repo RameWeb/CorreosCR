@@ -1,0 +1,41 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-6">
+        <div class="col-md-6">
+              <input ng-model="searchText" class="form-control" placeholder="Buscar convenio" >
+             
+        </div>
+      <table class="table">
+              <thead>
+                      <tr>
+                          <th>Institución</th>
+                          <th>Tipo</th>
+                          <th>Tiempo</th>
+                          <th>Costo</th>
+                          <th>Acciones</th>
+                      </tr>
+                      
+                  </thead>
+                  
+                  <tbody>
+                    <tr ng-repeat="convenios in vm.listaConvenios | filter:searchText">
+                      <td>{{convenios.nombreInstitucion}}</td>
+                      <td>{{convenios.tipo}}</td>
+                      <td>{{convenios.tiempo}}</td>
+                      <td>{{convenios.costo}}</td>
+                      <td>
+                               <!--aqui van acciones -->
+
+                      </td>
+                      
+                      <td>
+                          <!--aqui va boton de asignar repartidor -->
+                        </td>
+                      
+                    </tr>
+                  </tbody>
+      </table>
+    </div>
+
+</div>
+</div>
