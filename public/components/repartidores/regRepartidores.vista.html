@@ -1,10 +1,10 @@
 <section class="container-fluid my-5">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 py-5 px-5 leftPanel">
       <h1>Correos de Costa Rica</h1>
-      <a href="#!/mantRepartidores" class="btn btn-primary">Lista de Repartidores</a>
+      <a href="#!/mantRepartidores" class="btn actionBtn">Lista de Repartidores</a>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 py-5 px-5 content">
       <h2>Registrar Repartidores</h2>
       <div>
         <form ng-submit="vm.registrarRepartidor(vm.nuevoRepartidor)">
@@ -114,7 +114,7 @@
               <input type="date" class="form-control" id="inputVencimiento" ng-model="vm.nuevoRepartidor.vencimientoLicencia">
             </div>
         
-            <button type="submit" class="btn btn-primary">Registrar repartidor</button>      
+            <button type="submit" class="btn actionBtn">Registrar repartidor</button>      
           </div>
 
         </form>

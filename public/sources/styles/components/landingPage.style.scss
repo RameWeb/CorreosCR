@@ -1,3 +1,16 @@
+// variables de color
+$deepPurple: linear-gradient(to right, #2F3640 100%, #353B48 100%);
+$slateblue: #8C7AE6;
+$white: #FFF;
+
 #landing{
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  background-image: $deepPurple;
+  height: 100vh;
+}
+.actionBtn{
+  background-color: $slateblue;
+  color: $white;
+}
+.content{
+  background-color: $white;
 }

@@ -1,3 +1,14 @@
-#leftPanel{
-  background-image: linear-gradient(to right, #434343 0%, black 100%) !important;
+$deepPurple: linear-gradient(to right, #2F3640 100%, #353B48 100%);
+$slateblue: #8C7AE6;
+$white: #FFF;
+
+.content{
+  background-image: $white;
+}
+.actionBtn{
+  background-color: $slateblue;
+  color: $white;
+}
+.leftPanel{
+  background-image: $deepPurple;
 }
