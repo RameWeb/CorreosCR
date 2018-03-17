@@ -47,3 +47,26 @@ class Cliente{
   }
 }
 
+class Empleados{
+  constructor(pRolEmpleado,pIdentificacion,pNombre,pApellido1,pEmail,pContrasenna,pFechaNacimiento,pTelefono,pProvincia,pCanton,pDistrito,pDireccion,pRolAduana,pSucursalAsignada,pSucursalRepartidor,pLicencia,pFotoLicencia,pVencimientoLicencia){
+    this.rolEmpleado = pRolEmpleado
+    this.identificacion = pIdentificacion;
+    this.nombre = pNombre;
+    this.apellido1 = pApellido1;
+    this.email = pEmail;
+    this.contrasenna = pContrasenna;
+    this.fechaNacimiento = pFechaNacimiento;
+    this.telefono = pTelefono;
+    this.provincia = pProvincia;
+    this.canton = pCanton;
+    this.distrito = pDistrito;
+    this.direccion = pDireccion;
+    this.rolAduana = pRolAduana;
+    this.sucursalAsignada = pSucursalAsignada;
+    this.sucursalRepartidor = pSucursalRepartidor;
+    this.licencia = pLicencia;
+    this.fotoLicencia = pFotoLicencia;
+    this.vencimientoLicencia = pVencimientoLicencia;
+  }
+}
+

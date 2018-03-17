@@ -81,13 +81,30 @@
       params: {
         objUsuarioTemp: ''
       },
-      css: './sources/styles/components/clientes.style.scss',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/clientes/clientes.controlador.js')
         }]
       },
       controller: 'controladorClientes',
+      controllerAs: 'vm'
+    })
+
+    .state('regEmpleados', {
+      url: '/regEmpleados',
+      templateUrl: './components/empleados/regEmpleados.vista.html',
+      data:{
+        pageTitle: 'Registro de Empleados'
+      },
+      params: {
+        objUsuarioTemp: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/empleados/empleados.controlador.js')
+        }]
+      },
+      controller: 'controladorEmpleados',
       controllerAs: 'vm'
     }),
 
