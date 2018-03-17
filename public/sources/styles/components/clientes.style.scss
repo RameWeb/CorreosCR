@@ -5,8 +5,9 @@ $white: #FFF;
 .content{
   background-color: $white;
 }
-.leftPanel{
+.panelIzq{
   background-image: $deepPurple;
+  height: 100vh;
 }
 .actionBtn{
   background-color: $slateblue;
