@@ -10,23 +10,33 @@
           <h2 class="titulares"> Sucursales</h2>
 
           <form name="formRegistrarSucursales" autocomplete="off" ng-submit="vm.registrarSucursal(vm.nuevaSucursal)" novalidate>
+            
             <div class="form-group">
-              <label for="formGroupExampleInput">Provincia:</label>
-              <input type="text" name="provincia" class="form-control myInput" list="listaProvincias" ng-model="vm.nuevaSucursal.provincia" required>
-              <datalist id="listaProvincias">
-                <option data-ng-repeat="provincia in vm.costaRica"> 
-              </datalist>
+              <label for="sltProvincia">Provincia:</label>
+              <select id="sltProvincia" name="sltProvincia"class="form-control" ng-change="vm.rellenarCantones(vm.nuevaSucursal.provincia._id)" ng-options="provincia as provincia.name for provincia in vm.provincias track by provincia._id" ng-model="vm.nuevaSucursal.provincia" required>
+                <option>-- Seleccione una Provincia --</option>
+              </select>
+            </div> 
+            
+            <div class="form-group">
+              <label for="">Provincia:</label>
+              <select id="sltProvincia" name="sltProvincia"class="form-control" ng-change="vm.rellenarCantones(vm.nuevaSucursal.provincia._id)" ng-options="provincia as provincia.name for provincia in vm.provincias track by provincia._id" ng-model="vm.nuevaSucursal.provincia" required>
+                <option>-- Seleccione una Provincia --</option>
+              </select>
+            </div> 
+
+            <div class="form-group">
+              <label for="sltCanton">Cantón:</label>
+              <select id="sltCanton" name="sltCanton" class="form-control" ng-change="vm.rellenarDistrito(vm.nuevaSucursal.canton._id)" ng-options="canton as canton.name for canton in vm.cantones track by canton._id" ng-model="vm.nuevaSucursal.canton">
+                <option>--Seleccione un cantón--</option>
+              </select>
             </div>
 
             <div class="form-group">
-              <label for="formGroupExampleInput">Cantón:</label>
-              <input type="text" name="canton" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.canton" required>
-
-            </div>
-
-            <div class="form-group">
-              <label for="formGroupExampleInput">Distrito:</label>
-              <input type="text" name="distrito" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.distrito">
+              <label for="sltDistrito">Distrito:</label>
+              <select id="sltDistrito" name="sltDistrito" class="form-control" ng-options="distrito as distrito.name for distrito in vm.distritos track by distrito._id" ng-model="vm.nuevaSucursal.distrito">
+                <option>--Seleccione un distrito</option>
+              </select>
             </div>
 
             <div class="form-group">
@@ -37,7 +47,6 @@
             <div class="form-group">
               <label for=formGroupExampleInput"">Teléfono</label>
               <input type="text" name="telefono" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono" required>
-
             </div>
 
             <button type="submit" class="btn btn-info" ng-click="vm.registrarSucursal()">Registrar</button>

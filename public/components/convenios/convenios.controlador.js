@@ -2,35 +2,41 @@
   'use strict';
   angular
   .module('correos-cr')
-  .controller('controladorSucursales', controladorSucursales);
+  .controller('controladorConveniosCliente', controladorConveniosCliente);
 
-  controladorSucursales.$inject = [];
+  controladorConveniosCliente.$inject = ['$stateParams', '$state', 'servicioConveniosCliente'];
 
-  function controladorSucursales(){
+  function controladorConveniosCliente($stateParams, $state, servicioConveniosCliente){
     let vm = this;
 
-    vm.nuevaSucursal = {};
-    
+    vm.nuevoConvenio = {};
+    listarConvenios();
+
     // Funcion que es llamada desde el html para regustra un nuevo usuario
-    vm.registrarSucursal = (pnuevaSucursal) => {
+    vm.registrarConvenio = (pnuevoConvenio) => {
       
-      // console.log(pnuevaSucursal);
+      console.log(pnuevoConvenio);
 
       // Tomamos el objeto sin formato y lo comvertimos en un objeto de tipo cliente
-      let objNuevaSucursal = new Sucursales(vm.nuevaSucursal.provincia, vm.nuevaSucursal.canton, vm.nuevaSucursal.distrito, vm.nuevaSucursal.direccion, vm.nuevaSucursal.telefono);
-      console.log(objNuevaSucursal);
+      let objNuevoConvenio = new ConveniosClientes(pnuevoConvenio.tipo, pnuevoConvenio.cliente,pnuevoConvenio.factura, pnuevoConvenio.direccion);
 
+      console.log(objNuevoConvenio);
+
+      servicioConveniosCliente.addConveniosCliente(objNuevoConvenio);
+      
       // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "La nueva sucursal se ha sido registrado correctamente", "success", {
         button: "Aceptar",
       });
 
-      // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      // servicioEntierros.agregarEntierro(pnuevoEntierro)
+      listarConvenios();
 
       // Se limpia el formulario
-      vm.nuevaSucursal = null;
+      vm.nuevoConvenio = null;
     }
 
+    function listarConvenios(){
+      vm.listaConvenios = servicioConveniosCliente.getConveniosCliente();
+    }  
   }
 })();

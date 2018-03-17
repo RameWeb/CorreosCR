@@ -19,3 +19,16 @@ class Prealertas{
     this.courier = pCourier;
   }
 }
+
+class ConveniosClientes{
+  constructor(pTipo, pFactura, pDireccion){
+    this.tipo = pTipo;
+    this.cliente = [];
+    this.factura = pFactura;
+    this.direccion = pDireccion;
+  }
+
+  agregarCliente(pnuevoCliente) {
+    this.cliente.push(pnuevoCliente);
+  }
+}
