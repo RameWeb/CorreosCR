@@ -31,7 +31,7 @@
       }else{
         listaEmpleadosLocal.forEach(obj => {
           
-          let objEmpleados = new Cliente(obj.identificacion,obj.nombre,obj.apellido1,obj.email,obj.contrasenna,obj.fechaNacimiento,obj.telefono,obj.provincia,obj.canton,obj.distrito,obj.direccion,obj.titularTarjeta,obj.numeroTarjeta,obj.mesVencimiento,obj.annoVencimiento,obj.ccv);
+          let objEmpleados = new Empleado(obj.rolEmpleado,obj.identificacion,obj.nombre,obj.apellido1,obj.email,obj.contrasenna,obj.fechaNacimiento,obj.telefono,obj.provincia,obj.canton,obj.distrito,obj.direccion,obj.rolAduana,obj.sucursalAsignada,obj.licencia,obj.fotoLicencia,obj.vencimientoLicencia);
 
           listaEmpleados.push(objEmpleados);
         })

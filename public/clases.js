@@ -47,9 +47,9 @@ class Cliente{
   }
 }
 
-class Empleados{
-  constructor(pRolEmpleado,pIdentificacion,pNombre,pApellido1,pEmail,pContrasenna,pFechaNacimiento,pTelefono,pProvincia,pCanton,pDistrito,pDireccion,pRolAduana,pSucursalAsignada,pSucursalRepartidor,pLicencia,pFotoLicencia,pVencimientoLicencia){
-    this.rolEmpleado = pRolEmpleado
+class Empleado{
+  constructor(pRolEmpleado,pIdentificacion,pNombre,pApellido1,pEmail,pContrasenna,pFechaNacimiento,pTelefono,pProvincia,pCanton,pDistrito,pDireccion,pRolAduana,pSucursalAsignada,pLicencia,pFotoLicencia,pVencimientoLicencia){
+    this.rolEmpleado = pRolEmpleado;
     this.identificacion = pIdentificacion;
     this.nombre = pNombre;
     this.apellido1 = pApellido1;
@@ -63,7 +63,6 @@ class Empleados{
     this.direccion = pDireccion;
     this.rolAduana = pRolAduana;
     this.sucursalAsignada = pSucursalAsignada;
-    this.sucursalRepartidor = pSucursalRepartidor;
     this.licencia = pLicencia;
     this.fotoLicencia = pFotoLicencia;
     this.vencimientoLicencia = pVencimientoLicencia;

@@ -106,6 +106,24 @@
       },
       controller: 'controladorEmpleados',
       controllerAs: 'vm'
+    })
+
+    .state('mantEmpleados', {
+      url: '/mantEmpleados',
+      templateUrl: './components/empleados/mantEmpleados.vista.html',
+      data:{
+        pageTitle: 'Lista de Empleados'
+      },
+      params: {
+        objUsuarioTemp: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/empleados/empleados.controlador.js')
+        }]
+      },
+      controller: 'controladorEmpleados',
+      controllerAs: 'vm'
     }),
 
     $urlRouterProvider.otherwise('/');

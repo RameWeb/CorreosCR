@@ -22,7 +22,7 @@
     vm.registrarEmpleados = (pNuevoEmpleado) => {
       console.log(pNuevoEmpleado);
 
-      let nuevoEmpleado = new Empleados(vm.nuevoEmpleado.rolEmpleado, vm.nuevoEmpleado.identificacion,vm.nuevoEmpleado.nombre,vm.nuevoEmpleado.apellido1,vm.nuevoEmpleado.email,vm.nuevoEmpleado.contrasenna,vm.nuevoEmpleado.fechaNacimiento,vm.nuevoEmpleado.telefono,vm.nuevoEmpleado.provincia,vm.nuevoEmpleado.canton,vm.nuevoEmpleado.distrito,vm.nuevoEmpleado.direccion,vm.nuevoEmpleado.rolAduana,vm.nuevoEmpleado.sucursalAsignada,vm.nuevoEmpleado.sucursalRepartidor,vm.nuevoEmpleado.licencia,vm.nuevoEmpleado.fotoLicencia,vm.nuevoEmpleado.vencimientoLicencia);
+      let nuevoEmpleado = new Empleado(vm.nuevoEmpleado.rol, vm.nuevoEmpleado.identificacion,vm.nuevoEmpleado.nombre,vm.nuevoEmpleado.apellido1,vm.nuevoEmpleado.email,vm.nuevoEmpleado.contrasenna,vm.nuevoEmpleado.fechaNacimiento,vm.nuevoEmpleado.telefono,vm.nuevoEmpleado.provincia,vm.nuevoEmpleado.canton,vm.nuevoEmpleado.distrito,vm.nuevoEmpleado.direccion,vm.nuevoEmpleado.rolAduana,vm.nuevoEmpleado.sucursalAsignada,vm.nuevoEmpleado.licencia,vm.nuevoEmpleado.fotoLicencia,vm.nuevoEmpleado.vencimientoLicencia);
       console.log(nuevoEmpleado);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
