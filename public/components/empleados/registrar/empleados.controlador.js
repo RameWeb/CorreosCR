@@ -29,7 +29,7 @@
       servicioEmpleados.agregarEmpleados(nuevoEmpleado);
 
       //   // Retroalimentacion Visual para los usuarios: SweetAlert
-      swal("Registro exitoso", "El cliente se ha sido registrado correctamente", "success", {
+      swal("Registro exitoso", "El empleado se ha sido registrado correctamente", "success", {
         button: "Aceptar",
       });
 

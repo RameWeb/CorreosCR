@@ -14,7 +14,7 @@
     }
     return publicAPI;
 
-    // Guardar repartidores en localStorage
+    // Guardar clientes en localStorage
     function _agregarClientes(pnuevoCliente){
       let listaClientes = _obtenerClientes();
       listaClientes.push(pnuevoCliente);

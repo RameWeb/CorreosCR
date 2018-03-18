@@ -19,7 +19,7 @@
 
     .state('regRepartidores', {
       url: '/regRepartidores',
-      templateUrl: './components/repartidores/regRepartidores.vista.html',
+      templateUrl: './components/repartidores/registrar/regRepartidores.vista.html',
       data:{
         pageTitle: 'Registrar Repartidores'
       },
@@ -28,7 +28,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/repartidores/repartidores.controlador.js')
+          return $ocLazyLoad.load('./components/repartidores/registrar/repartidores.controlador.js')
         }]
       },
       controller: 'controladorRepartidores',
@@ -37,7 +37,7 @@
 
     .state('mantRepartidores', {
       url: '/mantRepartidores',
-      templateUrl: './components/repartidores/mantRepartidores.vista.html',
+      templateUrl: './components/repartidores/listarBuscar/mantRepartidores.vista.html',
       data:{
         pageTitle: 'Mantenimiento de Repartidores'
       },
@@ -46,7 +46,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/repartidores/repartidores.controlador.js')
+          return $ocLazyLoad.load('./components/repartidores/registrar/repartidores.controlador.js')
         }]
       },
       controller: 'controladorRepartidores',
@@ -55,7 +55,7 @@
 
     .state('regClientes', {
       url: '/regClientes',
-      templateUrl: './components/clientes/regClientes.vista.html',
+      templateUrl: './components/clientes/registrar/regClientes.vista.html',
       data:{
         pageTitle: 'Registrar Clientes'
       },
@@ -65,7 +65,7 @@
       css: './sources/styles/components/clientes.style.scss',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/clientes/clientes.controlador.js')
+          return $ocLazyLoad.load('./components/clientes/registrar/clientes.controlador.js')
         }]
       },
       controller: 'controladorClientes',
@@ -74,7 +74,7 @@
 
     .state('mantClientes', {
       url: '/mantClientes',
-      templateUrl: './components/clientes/mantClientes.vista.html',
+      templateUrl: './components/clientes/listarBuscar/mantClientes.vista.html',
       data:{
         pageTitle: 'Mantenimiento de Clientes'
       },
@@ -83,7 +83,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/clientes/clientes.controlador.js')
+          return $ocLazyLoad.load('./components/clientes/registrar/clientes.controlador.js')
         }]
       },
       controller: 'controladorClientes',
@@ -92,7 +92,7 @@
 
     .state('regEmpleados', {
       url: '/regEmpleados',
-      templateUrl: './components/empleados/regEmpleados.vista.html',
+      templateUrl: './components/empleados/registrar/regEmpleados.vista.html',
       data:{
         pageTitle: 'Registro de Empleados'
       },
@@ -101,7 +101,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/empleados/empleados.controlador.js')
+          return $ocLazyLoad.load('./components/empleados/registrar/empleados.controlador.js')
         }]
       },
       controller: 'controladorEmpleados',
@@ -110,7 +110,7 @@
 
     .state('mantEmpleados', {
       url: '/mantEmpleados',
-      templateUrl: './components/empleados/mantEmpleados.vista.html',
+      templateUrl: './components/empleados/listarBuscar/mantEmpleados.vista.html',
       data:{
         pageTitle: 'Lista de Empleados'
       },
@@ -119,7 +119,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/empleados/empleados.controlador.js')
+          return $ocLazyLoad.load('./components/empleados/registrar/empleados.controlador.js')
         }]
       },
       controller: 'controladorEmpleados',
