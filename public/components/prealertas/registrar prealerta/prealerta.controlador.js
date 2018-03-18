@@ -17,10 +17,12 @@
     // Funcion que es llamada desde el html para regustra un nuevo usuario
     vm.registrarPrealerta = (pnuevaPrealerta) => {
       
-      console.log(pnuevaPrealerta);
+      let idRandom = ((Math.random()*Math.random())*1000);
+
+      console.log(idRandom);
 
       // Tomamos el objeto sin formato y lo comvertimos en un objeto de tipo cliente
-      let objNuevaPrealerta = new Prealertas(pnuevaPrealerta.tracking, pnuevaPrealerta.url, pnuevaPrealerta.tipoProducto,  pnuevaPrealerta.valor, pnuevaPrealerta.peso, pnuevaPrealerta.factura, pnuevaPrealerta.courier);
+      let objNuevaPrealerta = new Prealertas(pnuevaPrealerta.tracking, pnuevaPrealerta.url, pnuevaPrealerta.tipoProducto,  pnuevaPrealerta.valor, pnuevaPrealerta.peso, pnuevaPrealerta.factura, pnuevaPrealerta.courier, idRandom);
         
       console.log(objNuevaPrealerta);
 
@@ -39,6 +41,11 @@
 
     function listarPrealertas(){
     vm.listaPrealertas = servicioPrealertas.getPrealerta();
+    }
+
+    vm.modificar = (pprealerta) =>{
+
+      $state.go('modificarPrealerta', {idPrealerta: JSON.stringify(pprealerta.idPrealerta)})
     }
   }
 })();

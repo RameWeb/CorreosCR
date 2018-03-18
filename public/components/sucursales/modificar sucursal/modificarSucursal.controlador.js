@@ -16,7 +16,7 @@
       sucursalSeleccionada = servicioSucursales.getSucursalSeleccionada($stateParams.idSucursal);
     }
 
-    console.log(sucursalSeleccionada);
+    // console.log(sucursalSeleccionada);
 
     let vm = this;
     
@@ -47,7 +47,7 @@
     }
 
     vm.rellenarDistrito = (pidCanton) => {
-      console.log(pidCanton);
+      // console.log(pidCanton);
       vm.distritos = $http({
         method: 'GET',
         url: '../../sources/data/distritos.json'
@@ -72,17 +72,19 @@
       telefono: sucursalSeleccionada.telefono
     };
 
-    listarSucursales();
+    // listarSucursales();
     
     // Funcion que es llamada desde el html para regustra un nuevo usuario
     vm.modificarSucursal = (pnuevaSucursal) => {
 
-      let objSucursalModificada = new Sucursal(pnuevaSucursal.provincia.name, pnuevaSucursal.canton.name, pnuevaSucursal.distrito.name,  pnuevaSucursal.direccion, pnuevaSucursal.telefono, sucursalSeleccionada.idSucursal);
+      let idSucursal = sucursalSeleccionada.idSucursal;
+
+      let objSucursalModificada = new Sucursales(vm.nuevaSucursal.provincia, vm.nuevaSucursal.canton, vm.nuevaSucursal.distrito,  vm.nuevaSucursal.direccion, vm.nuevaSucursal.telefono, idSucursal);
         
       console.log(objSucursalModificada);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      servicioSucursales.actualizarSucursal(objNuevaSucursal);
+      vm.sucursalSeleccionada = servicioSucursales.actualizarSucursal(objSucursalModificada);
 
       listarSucursales();
       // Se limpia el formulario
@@ -93,10 +95,5 @@
       vm.listaSucursales = servicioSucursales.getSucursal();
     }
 
-    vm.modificar = (psucursal) =>{
-      $stateParams(psucursal.idSucursal)
-
-      $state.go('sucursales')
-    }
   }
 })();

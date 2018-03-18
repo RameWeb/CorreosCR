@@ -10,7 +10,8 @@
 
     let publicAPI = {
       addPrealerta : _addPrealerta,
-      getPrealerta : _getPrealerta
+      getPrealerta : _getPrealerta,
+      getPrealertaSeleccionada: _getPrealertaSeleccionada
     }
     return publicAPI;
 
@@ -31,13 +32,25 @@
       }else{
         listaPrealertasLocal.forEach(obj => {
           
-          let objPrealertas = new Prealertas(obj.tracking, obj.url, obj.tipoProducto, obj.valor, obj.peso, obj.factura, obj.courier);
+          let objPrealertas = new Prealertas(obj.tracking, obj.url, obj.tipoProducto, obj.valor, obj.peso, obj.factura, obj.courier, obj.idPrealerta);
 
           listaPrealertas.push(objPrealertas);
         })
       }
 
       return listaPrealertas;
+    }
+
+    function _getPrealertaSeleccionada(idPrealerta){
+      let listaPrealertas = _getPrealerta(),
+          prealertaSeleccionada;
+
+      for (let i= 0; i < listaPrealertas.length; i++){
+        if (idPrealerta == listaPrealertas[i].idPrealerta){
+          prealertaSeleccionada = listaPrealertas[i];
+        };
+      }
+      return prealertaSeleccionada;        
     }
   }
 })();

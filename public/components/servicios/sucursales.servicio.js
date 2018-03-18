@@ -43,20 +43,32 @@
     }
 
     function _getSucursalSeleccionada(idSucursal){
-      let listaSucursales = _getSucursal(),
-          sucursalSeleccionada;
+      let listaSucursales = _getSucursal();
+      let sucursalSeleccionada;
 
       for(let i = 0; i < listaSucursales.length; i++){
         if (idSucursal == listaSucursales[i].idSucursal){
           sucursalSeleccionada = listaSucursales[i];
+          // console.log(sucursalSeleccionada);
+          return sucursalSeleccionada;
         }
       }
-      return sucursalSeleccionada;
     }
 
-    function _actualizarSucursal(pnuevaSucursal){
-    //id coincida con los que ya esxisten
+    function _actualizarSucursal(psucursalModificada){
+      let listaSucursales = _getSucursal();
+
+      for(let i = 0; i < listaSucursales.length; i++){
+        if (psucursalModificada.idSucursal == listaSucursales[i].idSucursal){
+          listaSucursales[i] = psucursalModificada;
+          // console.log(listaSucursales[i]);
+          alert('Bien hecho amiguita');
+
+          localStorage.setItem('sucursalesLS', JSON.stringify(listaSucursales)); 
+        }
+      }
     }
 
+    // console.log(_getSucursal());
   }
 })();

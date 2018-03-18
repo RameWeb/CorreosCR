@@ -3,12 +3,14 @@
 #registroPrealertas{
   .contenido{
     background-color: $white;
+    max-height: 100vh;
+    overflow: scroll;
   }
   
   .panelIzquierdo{
     background-image: $deepPurple;
     color: $white;
-    height: 100vh;
+    min-height: 100vh;
   }
   
   .btnAccion{

@@ -17,12 +17,12 @@
       }
     })
 
-    .state('sucursales',{
-      url: '/sucursales',
-      templateUrl: './components/sucursales/sucursales.vista.html',
+    .state('registroSucursales',{
+      url: '/registroSucursales',
+      templateUrl: './components/sucursales/registrar sucursal/sucursales.vista.html',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/sucursales/sucursales.controlador.js')
+          return $ocLazyLoad.load('./components/sucursales/registrar sucursal/sucursales.controlador.js')
         }]
       },
       controller: 'controladorSucursales',
@@ -31,10 +31,10 @@
 
     .state('mantenimientoSucursales',{
       url: '/mantenimientoSucursales',
-      templateUrl: './components/sucursales/listarSucursal/mantenimientoSucursales.vista.html',
+      templateUrl: './components/sucursales/listar sucursal/mantenimientoSucursales.vista.html',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/sucursales/sucursales.controlador.js')
+          return $ocLazyLoad.load('./components/sucursales/registrar sucursal/sucursales.controlador.js')
         }]
       },
       controller: 'controladorSucursales',
@@ -43,25 +43,25 @@
 
     .state('modificarSucursal',{
       url: '/modificarSucursal',
-      templateUrl: './components/sucursales/modificarSucursal/modificarSucursal.vista.html',
+      templateUrl: './components/sucursales/modificar sucursal/modificarSucursal.vista.html',
       params:{
         idSucursal: ''
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/sucursales/modificarSucursal/modificarSucursal.controlador.js')
+          return $ocLazyLoad.load('./components/sucursales/modificar sucursal/modificarSucursal.controlador.js')
         }]
       },
       controller: 'controladorModificarSucursal',
       controllerAs: 'vm'
     })
     
-    .state('prealerta',{
-      url: '/prealerta',
-      templateUrl: './components/prealertas/prealerta.vista.html',
+    .state('regPrealerta',{
+      url: '/regPrealerta',
+      templateUrl: './components/prealertas/registrar prealerta/prealerta.vista.html',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/prealertas/prealerta.controlador.js')
+          return $ocLazyLoad.load('./components/prealertas/registrar prealerta/prealerta.controlador.js')
         }]
       },
       controller: 'controladorPrealertas',
@@ -70,13 +70,28 @@
 
     .state('mantenimientoPrealertas',{
       url: '/mantenimientoPrealertas',
-      templateUrl: './components/prealertas/mantenimientoPrealerta.vista.html',
+      templateUrl: './components/prealertas/listar prealerta/mantenimientoPrealerta.vista.html',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/prealertas/prealerta.controlador.js')
+          return $ocLazyLoad.load('./components/prealertas/registrar prealerta/prealerta.controlador.js')
         }]
       },
       controller: 'controladorPrealertas',
+      controllerAs: 'vm'
+    })
+
+    .state('modPrealerta',{
+      url: '/modPrealerta',
+      templateUrl: './components/prealertas/modificar prealertas/modificarPrealerta.vista.html',
+      params:{
+        idPrealerta: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/prealertas/modificar prealertas/modificarPrealerta.controlador.js')
+        }]
+      },
+      controller: 'controladorModificarPrealertas',
       controllerAs: 'vm'
     })
 

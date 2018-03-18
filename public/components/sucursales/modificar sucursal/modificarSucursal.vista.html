@@ -9,7 +9,7 @@
           <div class="col-6">
             <h2> Sucursales</h2>
   
-            <form name="formRegistrarSucursales" autocomplete="off" ng-submit="vm.modoficarSucursal(vm.nuevaSucursal)" novalidate>
+            <form name="formRegistrarSucursales" autocomplete="off" ng-submit="vm.modificarSucursal(vm.nuevaSucursal)" novalidate>
               
               <div class="form-group">
                 <label for="sltProvincia">Provincia:</label>
@@ -42,7 +42,7 @@
                 <input type="tel" name="telefono" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono" placeholder="2222-2222" pattern="[0-9]+" maxlength="8" minlength="8" required>
               </div>
   
-              <button type="submit" class="btn btn-info" ng-click="vm.modoficarSucursal()">Guardar cambios</button>
+              <button type="submit" class="btn btn-info">Guardar cambios</button>
   
               <a href="/#!/mantenimientoSucursales" class="btn btn-light">Cancelar</a>
             </form>
