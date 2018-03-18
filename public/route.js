@@ -32,6 +32,21 @@
       controllerAs: 'vm'
     })
 
+    .state('licencias', {
+      url: '/licencias',
+      templateUrl: './components/licencias/licencias.view.html',
+      data:{
+        pageTitle: 'Registro Licencias | Ejemplo Arquitectura'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/licencias/licencias.controller.js')
+        }]
+      },
+      controller: 'controladorLicencias',
+      controllerAs: 'vm'
+    })
+
     $urlRouterProvider.otherwise('/');
   }
 })();

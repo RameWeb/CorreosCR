@@ -18,7 +18,7 @@
     }).then( (success) => {
       vm.provincias = success.data;
     }, (error) => {
-      console.log("OcurriÃ³ un error " + error.data);
+      console.log("Ocurrió un error " + error.data);
     });
 
     vm.rellenarCantones = (pidProvincia) => {
@@ -34,7 +34,7 @@
         }
         vm.cantones = cantones;
       }, (error) => {
-        console.log("OcurriÃ³ un error " + error.data)
+        console.log("Ocurrió un error " + error.data)
       });
     }
 
@@ -52,7 +52,7 @@
         }
         vm.distritos = distritos;
       }, (error) => {
-        console.log("OcurriÃ³ un error " + error.data)
+        console.log("Ocurrió un error " + error.data)
       });
     }
 
@@ -62,12 +62,10 @@
     // Función que es llamada desde el html para registra una nueva direccion
     vm.registrarDireccion = (pnuevaDireccion) => {
 
-      console.log(pnuevaDireccion);
-
       // Tomamos el objeto sin formato y lo convertimos en una instancia de la clase direccion
       let objNuevaDireccion = new Direccion(pnuevaDireccion.provincia,pnuevaDireccion.canton,pnuevaDireccion.distrito);
      
-      console.log('objeto con direccion');
+      console.log('Dirección Registrada');
       console.log(objNuevaDireccion);
 
       // Pasamos al servicio el nuevo obj de tipo Direccion para ser almacenado en el localStorage

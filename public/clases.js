@@ -7,3 +7,11 @@ class Direccion{
     this.distrito = pDistrito;
   }
 }
+
+class Licencia{
+    constructor(pTipo,pCategoria,pDescripcion){
+      this.tipo = pTipo;
+      this.categoria = pCategoria;
+      this.descripcion = pDescripcion;
+  }
+}
