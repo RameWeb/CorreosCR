@@ -90,6 +90,24 @@
       controllerAs: 'vm'
     })
 
+    .state('modClientes', {
+      url: '/modClientes',
+      templateUrl: './components/clientes/modificar/modClientes.vista.html',
+      data:{
+        pageTitle: 'Modificar Clientes'
+      },
+      params: {
+        identificacion: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/clientes/modificar/modClientes.controlador.js')
+        }]
+      },
+      controller: 'controladorModClientes',
+      controllerAs: 'vm'
+    })
+
     .state('regEmpleados', {
       url: '/regEmpleados',
       templateUrl: './components/empleados/registrar/regEmpleados.vista.html',

@@ -11,6 +11,8 @@
     let publicAPI = {
       agregarClientes : _agregarClientes,
       obtenerClientes : _obtenerClientes,
+      obtenerClienteSeleccionado : _obtenerClienteSeleccionado,
+      actualizarCliente : _actualizarCliente
     }
     return publicAPI;
 
@@ -38,6 +40,40 @@
       }
       return listaClientes;
     }
+
+
+
+    function _obtenerClienteSeleccionado(identificacion){
+      let listaClientes = _obtenerClientes();
+      let clienteSeleccionado;
+
+      for(let i = 0; i < listaClientes.length; i++){
+        if (identificacion == listaClientes[i].identificacion){
+          clienteSeleccionado = listaClientes[i];
+          // console.log(sucursalSeleccionada);
+          return clienteSeleccionado;
+        }
+      }
+    }
+
+    function _actualizarCliente(pClienteModificado){
+      let listaClientes = _obtenerClientes();
+
+      for(let i = 0; i < listaClientes.length; i++){
+        if (pClienteModificado.identificacion == listaClientes[i].identificacion){
+          listaClientes[i] = pClienteModificado;
+          // console.log(listaSucursales[i]);
+
+          localStorage.setItem('clientesLS', JSON.stringify(listaClientes)); 
+        }
+      }
+    }
+
+
+
+
+
+
     // function actualizarLocal(plistaActualizada){
     //   localStorage.setItem('repartidoresLS', JSON.stringify(plistaActualizada));
     // }
