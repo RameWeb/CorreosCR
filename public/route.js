@@ -53,6 +53,25 @@
       controllerAs: 'vm'
     })
 
+    .state('modRepartidores', {
+      url: '/modRepartidores',
+      templateUrl: './components/repartidores/modificar/modRepartidores.vista.html',
+      data:{
+        pageTitle: 'Modificar Repartidores'
+      },
+      params: {
+        identificacion: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/repartidores/modificar/modRepartidores.controlador.js')
+        }]
+      },
+      controller: 'controladorModRepartidores',
+      controllerAs: 'vm'
+    })
+
+
     .state('regClientes', {
       url: '/regClientes',
       templateUrl: './components/clientes/registrar/regClientes.vista.html',

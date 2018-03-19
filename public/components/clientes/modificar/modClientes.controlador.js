@@ -18,7 +18,7 @@
 
     let vm = this;
 
-    vm.nuevoCliente = {
+    vm.nuevoClienteModificado = {
       identificacion: clienteSeleccionado.identificacion,
       nombre: clienteSeleccionado.nombre,
       apellido1: clienteSeleccionado.apellido1,
@@ -39,12 +39,12 @@
 
     vm.modificarCliente = (pNuevoCliente) =>{
       let identificacion = clienteSeleccionado.identificacion;
-      let clienteModificado = new Cliente(vm.nuevoCliente.identificacion,vm.nuevoCliente.nombre,vm.nuevoCliente.apellido1,vm.nuevoCliente.email,vm.nuevoCliente.contrasenna,vm.nuevoCliente.fechaNacimiento,vm.nuevoCliente.telefono,vm.nuevoCliente.provincia,vm.nuevoCliente.canton,vm.nuevoCliente.distrito,vm.nuevoCliente.direccion,vm.nuevoCliente.titularTarjeta,vm.nuevoCliente.numeroTarjeta,vm.nuevoCliente.mesVencimiento,vm.nuevoCliente.annoVencimiento,vm.nuevoCliente.ccv);
+      let clienteModificado = new Cliente(vm.nuevoClienteModificado.identificacion,vm.nuevoClienteModificado.nombre,vm.nuevoClienteModificado.apellido1,vm.nuevoClienteModificado.email,vm.nuevoClienteModificado.contrasenna,vm.nuevoClienteModificado.fechaNacimiento,vm.nuevoClienteModificado.telefono,vm.nuevoClienteModificado.provincia,vm.nuevoClienteModificado.canton,vm.nuevoClienteModificado.distrito,vm.nuevoClienteModificado.direccion,vm.nuevoClienteModificado.titularTarjeta,vm.nuevoClienteModificado.numeroTarjeta,vm.nuevoClienteModificado.mesVencimiento,vm.nuevoClienteModificado.annoVencimiento,vm.nuevoClienteModificado.ccv);
 
       console.log(clienteModificado);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      vm.clienteSeleccionad = servicioClientes.actualizarCliente(clienteModificado);
+      vm.clienteSeleccionado = servicioClientes.actualizarCliente(clienteModificado);
 
       //Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El cliente se ha sido modificado correctamente", "success", {
@@ -56,7 +56,7 @@
       listarClientes();
       
       // Se limpia el formulario
-      vm.nuevoCliente = null;
+      vm.nuevoClienteModificado = null;
     }
     
   // Imprimir lista de repartidores en el sistema

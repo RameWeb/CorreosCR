@@ -11,6 +11,8 @@
     let publicAPI = {
       agregarRepartidores : _agregarRepartidores,
       obtenerRepartidores : _obtenerRepartidores,
+      obtenerRepartidorSeleccionado : _obtenerRepartidorSeleccionado,
+      actualizarRepartidor : _actualizarRepartidor
     }
     return publicAPI;
 
@@ -31,15 +33,38 @@
       }else{
         listaRepartidoresLocal.forEach(obj => {
           
-          let objRepartidores = new Repartidor(obj.identificacion,obj.nombre,obj.apellido1,obj.fechaNacimiento,obj.telefono,obj.provincia,obj.canton,obj.distrito,obj.direccion,obj.puesto,obj.sucursal,obj.email,obj.contrasenna,obj.licencia,obj.fotoLicencia,obj.licenciaVencimiento);
+          let objRepartidores = new Repartidor(obj.identificacion,obj.nombre,obj.apellido1,obj.fechaNacimiento,obj.telefono,obj.provincia,obj.canton,obj.distrito,obj.direccion,obj.puesto,obj.sucursal,obj.email,obj.contrasenna,obj.licencia,obj.fotoLicencia,obj.vencimientoLicencia);
 
           listaRepartidores.push(objRepartidores);
         })
       }
       return listaRepartidores;
     }
-    // function actualizarLocal(plistaActualizada){
-    //   localStorage.setItem('repartidoresLS', JSON.stringify(plistaActualizada));
-    // }
+    
+    function _obtenerRepartidorSeleccionado(identificacion){
+      let listaRepartidores = _obtenerRepartidores();
+      let repartidorSeleccionado;
+
+      for(let i = 0; i < listaRepartidores.length; i++){
+        if (identificacion == listaRepartidores[i].identificacion){
+          repartidorSeleccionado = listaRepartidores[i];
+          // console.log(sucursalSeleccionada);
+          return repartidorSeleccionado;
+        }
+      }
+    }
+
+    function _actualizarRepartidor(pRepartidorModificado){
+      let listaRepartidores = _obtenerRepartidores();
+
+      for(let i = 0; i < listaRepartidores.length; i++){
+        if (pRepartidorModificado.identificacion == listaRepartidores[i].identificacion){
+          listaRepartidores[i] = pRepartidorModificado;
+          // console.log(listaSucursales[i]);
+
+          localStorage.setItem('repartidoresLS', JSON.stringify(listaRepartidores)); 
+        }
+      }
+    }
   }
 })();
