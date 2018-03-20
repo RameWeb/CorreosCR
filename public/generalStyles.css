@@ -83,6 +83,47 @@ a.myNavLinks{
   font-weight: 300;
 }
 
+footer{
+  background-color: #333945;
+  height: 300px;
+}
+
+.navFooter ul{
+  list-style: none;
+}
+
+.navFooter ul li{
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.navFooter ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contactoFooter img{
+  margin: 20px 20px;
+}
+
+.contactoFooter h3{
+  margin-bottom: 20px;
+}
+
+h3.titularMenu{
+  color: #fff;
+  text-align: center; 
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+h3.titularContacto{
+  color:#fff;
+  text-align: center;
+  font-weight: 600;
+}
+
 
 
 /* Media Queries */
