@@ -1,0 +1,53 @@
+<main id="conveniosForm">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="titulares">Correos de Costa Rica</h2>
+        </div>
+  
+          <div class="col-md-6">
+            <div class="col-8">
+              <h2 class="titulares">Convenios</h2>
+              <form name="formSolicitarConvenio" autocomplete="off" ng-submit="vm.modificarConvenio(vm.nuevoConvenio)" novalidate>
+
+    
+                  <div class="form-group">
+                    <label for="sltConvenio">Servicio</label>
+                    <select id="sltConvenio" class="form-control" ng-model="vm.nuevoConvenio.tipo" required>
+                      <option>Pasaporte</option>
+                      <option>Licencias</option>
+                      <option>Visa</option>
+                    </select>
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="sltCliente">Cliente</label>
+                    <select id="sltCliente" class="form-control" ng-model="vm.nuevoConvenio.cliente" required>
+                      <option>Camila Gutiérrez</option>
+                      <option>Daniela Hernandez</option>
+                      <option>Juan Perez</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="">Dirección</label>
+                    <input type="text" class="form-control" ng-model="vm.nuevoConvenio.direccion" required>
+                  </div>
+    
+                  <button type="submit" class="btn btn-info">Guardar cambios</button>
+  
+                  <a href="/#!/listaConvenios" class="btn btn-light">Cancelar</a>
+                </form>
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="col-6">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>

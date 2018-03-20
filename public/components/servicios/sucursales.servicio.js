@@ -62,7 +62,6 @@
         if (psucursalModificada.idSucursal == listaSucursales[i].idSucursal){
           listaSucursales[i] = psucursalModificada;
           // console.log(listaSucursales[i]);
-          alert('Bien hecho amiguita');
 
           localStorage.setItem('sucursalesLS', JSON.stringify(listaSucursales)); 
         }

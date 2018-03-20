@@ -7,16 +7,15 @@
 
         <div class="col-md-6">
           <div class="col-8">
-            <h2 class="titulares">Sucursales</h2>
+            <h2 class="titulares">Convenios</h2>
             <form name="formSolicitarConvenio" autocomplete="off" ng-submit="vm.registrarConvenio(vm.nuevoConvenio)" enctype="multipart/form-data" novalidate>
                 <div class="my-2">
                   <span>A continuación indique el servicio para el cual desea solicitar el envío.</span>
                 </div>
   
                 <div class="form-group">
-                  <label for="">Servicio</label>
+                  <label for="sltConvenio">Servicio</label>
                   <select id="sltConvenio" class="form-control" ng-model="vm.nuevoConvenio.tipo" required>
-                    <option>-- Tipo de convenio --</option>
                     <option>Pasaporte</option>
                     <option>Licencias</option>
                     <option>Visa</option>
@@ -24,24 +23,23 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="">Cliente</label>
+                  <label for="sltCliente">Cliente</label>
                   <select id="sltCliente" class="form-control" ng-model="vm.nuevoConvenio.cliente" required>
-                    <option>-- Nombre del cliente --</option>
+                    <option>Camila Gutiérrez</option>
+                    <option>Daniela Hernandez</option>
+                    <option>Juan Perez</option>
                   </select>
                 </div>
-  
-                <div class="form-group">
-                  <label for="">Factura</label>
-                  <input type="file" id="fileConvenio" class="form-control" ng-model="vm.nuevoConvenio.factura" required>
-                </div>
-  
+                
                 <div class="form-group">
                   <label for="">Dirección</label>
-                  <input type="text" id="txtDireccionConvenio" class="form-control" ng-model="vm.nuevoConvenio.direccion" required>
+                  <input type="text" class="form-control" ng-model="vm.nuevoConvenio.direccion" required>
                 </div>
   
                 <button type="submit" class="btn btn-info"
                 ng-click="vm.registrarConvenio()">Registrar</button>
+
+                <a href="/#!/listaConvenios" class="btn btn-light">Listar</a>
               </form>
               </div>
             </div>

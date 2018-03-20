@@ -1,0 +1,46 @@
+<main id="registroSucursales">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
+        <h2>Correos de Costa Rica</h2>
+        <a href="/#!/registrarConvCliente" class="btn btn-light">Regresar</a>
+
+      </div>
+      <div class="col-md-8 py-5 px-5 contenido">
+        <h2>Lista convenios</h2>
+
+        <div class="form-group">
+          <label for="txtBuscar">Buscar</label>
+          <input type="text" id="txtBuscar" class="form-control" ng-model="buscarConvenio.cliente">
+        </div>
+
+        <table class="table">
+          <thead>
+              <tr>
+                <th>Servicio</th>
+                <th>Cliente</th>
+                <th>Dirección</th>
+                <th>Aciones</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="convenio in vm.listaConvenios | filter:buscarConvenio">
+              <td>{{convenio.tipo}}</td>
+              <td>{{convenio.cliente}}</td>
+              <td>{{convenio.direccion}}</td>
+              <td>
+                <li class="nav-item dropdown btnAccion" style="list-style:none">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="" ng-click="vm.modificar(convenio)">Modificar convenio</a>
+                    <a class="dropdown-item" href="">Desactivar convenio</a>
+                  </div>
+                </li>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>

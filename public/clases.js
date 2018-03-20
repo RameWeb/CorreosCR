@@ -22,14 +22,9 @@ class Prealertas{
 }
 
 class ConveniosClientes{
-  constructor(pTipo, pFactura, pDireccion){
+  constructor(pTipo, pCliente, pDireccion){
     this.tipo = pTipo;
-    this.cliente = [];
-    this.factura = pFactura;
+    this.cliente = pCliente;
     this.direccion = pDireccion;
-  }
-
-  agregarCliente(pnuevoCliente) {
-    this.cliente.push(pnuevoCliente);
   }
 }

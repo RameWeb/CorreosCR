@@ -11,7 +11,7 @@
     let sucursalSeleccionada;
 
     if($stateParams.idSucursal == ''){
-      $state.go('mantenimientoSucursales');
+      $state.go('listarSucursal');
     }else{
       sucursalSeleccionada = servicioSucursales.getSucursalSeleccionada($stateParams.idSucursal);
     }
@@ -85,6 +85,12 @@
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
       vm.sucursalSeleccionada = servicioSucursales.actualizarSucursal(objSucursalModificada);
+
+      swal("Registro exitoso", "La sucursal se ha sido modificada correctamente", "success", {
+        button: "Aceptar",
+      });
+
+      $state.go('listarSucursal');
 
       listarSucursales();
       // Se limpia el formulario
