@@ -10,20 +10,20 @@
   font-weight: 700;
 }
 .gray{
-  background-color: #2B2B2B;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000;
   border: none;
 }
 .call{
-  background-color: #FC427B;
+  background-color: #8979e4;
   color: #fff;
 }
 input.myCheckbox[type=checkbox]:checked + label:before{
-  background-color: #FC427B !important;
+  background-color: #8979e4 !important;
 }
 input.myInput, select.mySelect{
   background-color: #222222 !important;
-  color: #FC427B !important;
+  color: #8979e4 !important;
   border: none !important;
 }
 hr{
@@ -35,16 +35,12 @@ hr{
 }
 
 .btnAction{
-  background-color: #FFD655;
-  color: #000;
+  background-color: #8979e4;
+  color: #fff;
 }
-.pinkNav{
-  background-color: #ED5E78;
+.blueNav{
+  background-color: #333945;
   /* height: 65px; */
-}
-.bEntierro{
-  background-color:greenyellow;
-  color: black;
 }
 a.myNavLinks{
   font-weight: 700;
@@ -61,13 +57,13 @@ a.myNavLinks{
   font-size: 4em;
 }
 
-#nosotros, #servicios, #testimonios, footer{
+#nosotros, #servicios, #nuestrosclientes, footer{
   margin-top: 150px;
 }
 
 .ourServices{
   background-color: #f6f6f6;
-  border: 5px solid #e67e22;
+  border: 5px solid #8979e4;
   border-radius: 50%;
   height: 150px;
   width: 150px;
@@ -76,7 +72,7 @@ a.myNavLinks{
 
 .ourTestimonies{
   background-color: #f6f6f6;
-  border: 5px solid #85E3CD;
+  border: 5px solid #8979e4;
   border-radius: 50%;
   height: 150px;
   width: 150px;
@@ -109,167 +105,3 @@ a.myNavLinks{
     height: 35vh;
   }
 }
-
-/***** Camila Landing *****/
-.titular{
-  color: #fff;
-}
-
-.titular h2{
-  font-weight: 700;
-}
-
-.titular p{
-  text-align: justify;
-}
-.imgLogo{
-  text-align: center;
-}
-
-footer{
-  background-color: #ED5E78;
-  height: 300px;
-}
-
-.navFooter ul{
-  list-style: none;
-}
-
-.navFooter ul li{
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.navFooter ul li a{
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-h3.titularMenu{
-  color: #fff;
-  text-align: center; 
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-h3.titularContacto{
-  color:#fff;
-  text-align: center;
-  font-weight: 600;
-}
-
-.contactoFooter img{
-  margin: 20px 20px;
-}
-
-.contactoFooter h3{
-  margin-bottom: 20px;
-}
-.Animador{
-  background-color: #222222 !important;
-  color: #FC427B !important;
-  border: none !important;
-}
-
-.margin{
-  margin-left: 5%;
-}
-.title{
-  text-align: center;
-  margin-top: 100px;
-  color: aquamarine;
-}
-.icon{
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-.TheCheckBox{
-  background-color: #FC427B;
-  color: #fff;
-}
-
-/*==================================
-ESTILOS RETOQUES
-====================================*/
-
-.db-bk-color-one {
-  background-color: #ffb655;
-  }
-  
-  .db-bk-color-two {
-  background-color: #85E3CD;
-  
-  }
-  
-  .db-bk-color-three {
-  background-color: #ff7956;
-  }
-  
-  .db-padding-btm {
-  padding-bottom: 50px;
-  }
-  .db-padding-top {
-  padding-top: 30px;
-  }
-  
-  .db-button-color-square {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.50);
-  text-transform: uppercase;
-  border: none;
-  border-radius: 0px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  }
-  
-  .db-button-color-square:hover {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.50);
-  border: none;
-  }
-  
-  .db-pricing-eleven {
-  margin-bottom: 30px;
-  margin-top: 50px;
-  text-align: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-  color: #fff;
-  line-height: 30px;
-  }
-  
-  .db-pricing-eleven .price {
-  background-color: rgba(0, 0, 0, 0);
-  padding: 40px 20px 20px 20px;
-  font-size: 60px;
-  font-weight: 900;
-  color: #FFFFFF;
-  }
-  
-  .db-pricing-eleven .price small {
-  color: #B8B8B8;
-  display: block;
-  font-size: 12px;
-  margin-top: 22px;
-  }
-  
-  .db-pricing-eleven .type {
-  background-color: #3e3d42;
-  padding: 50px 20px;
-  font-weight: 900;
-  font-size: 1.5em;
-  }
-  
-  .db-attached > .col-lg-4,
-  .db-attached > .col-lg-3,
-  .db-attached > .col-md-4,
-  .db-attached > .col-md-3,
-  .db-attached > .col-sm-4,
-  .db-attached > .col-sm-3 {
-  padding-left: 0;
-  padding-right: 0;
-  }
-  
-  button.btn{
-  margin: 20px;
-  }
