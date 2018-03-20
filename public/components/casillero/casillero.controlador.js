@@ -15,10 +15,10 @@
     vm.registrarCasillero = (pnuevoCasillero) => {
 
 
-      let idRandom = (Math.floor(Math.random()*999999999999999)+999999999999999);
+      let numeroCasillero = (Math.floor(Math.random()*999999999999999)+999999999999999);
                       
 
-      console.log(idRandom);
+      console.log(numeroCasillero);
 
 
 
@@ -27,13 +27,13 @@
      // console.log(pnuevoCasillero);
 
       let objNuevoCasillero = new Casillero(pnuevoCasillero.idRandom);
-      console.log(objNuevaSucursal);
+      console.log(objNuevaCasillero);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
       servicioCasillero.addCasillero(objNuevaCasillero);
      
-     // console.log('objeto con casillero');
-     // console.log(objNuevoCasillero);
+   console.log('objeto con casillero');
+    console.log(objNuevoCasillero);
 
   
 
