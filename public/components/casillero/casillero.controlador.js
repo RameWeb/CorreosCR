@@ -4,9 +4,9 @@
   .module('correos-cr')
   .controller('controladorCasillero', controladorCasillero);
 
-  controladorCasillero.$inject = ['$stateParams', '$state', 'servicioCasillero'];
+  controladorCasillero.$inject = ['$stateParams', '$state' , 'servicioCasillero'];
 
-  function controladorCasillero($stateParams, $state, servicioCasillero){
+  function controladorCasillero($stateParams, $state){
 
     let vm = this;
 
@@ -14,14 +14,28 @@
     
     vm.registrarCasillero = (pnuevoCasillero) => {
 
-      console.log(pnuevoCasillero);
 
-      let objNuevoCasillero = new Casillero(pnuevoCasillero.nombre);
+      let idRandom = (Math.floor(Math.random()*999999999999999)+999999999999999);
+                      
+
+      console.log(idRandom);
+
+
+
+        
+
+     // console.log(pnuevoCasillero);
+
+      let objNuevoCasillero = new Casillero(pnuevoCasillero.idRandom);
+      console.log(objNuevaSucursal);
+
+      // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
+      servicioCasillero.addCasillero(objNuevaCasillero);
      
-      console.log('objeto con casillero');
-      console.log(objNuevoCasillero);
+     // console.log('objeto con casillero');
+     // console.log(objNuevoCasillero);
 
-      servicioCasillero.addCasillero(objNuevoCasillero);
+  
 
       swal("Registro exitoso", "Se te ha asignado un casillero", "success", {
         button: "Aceptar",
@@ -33,7 +47,6 @@
 
   
 
-   
-    
   }
+
 })();

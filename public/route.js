@@ -110,6 +110,22 @@
       controller: 'controladorCasillero',
       controllerAs: 'vm'
     })
+
+
+    .state('contrasenna', {
+      url: '/contrasenna',
+      templateUrl: './components/contrasenna/contrasenna.vista.html',
+      data:{
+        pageTitle: 'Mi contraseña| Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/contrasenna/contrasenna.controlador.jss')
+        }]
+      },
+      controller: 'controladorContrasenna',
+      controllerAs: 'vm'
+    })
   
 
     $urlRouterProvider.otherwise('/');

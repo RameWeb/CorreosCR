@@ -1,0 +1,38 @@
+<main id="contrasenna">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h1 align="center">Password Strength Checker Using AngularJS</h1>
+        <hr>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="text-center">
+              <h3>
+                <i class="glyphicon glyphicon-lock" style="font-size:50px;"></i>
+              </h3>
+              <h2 class="text-center">Password Strength Checker</h2>
+              <form name="password_form">
+                  <label for="pass">Password</label>
+                    <div class="form-group input-group">
+                            <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                  </span>
+                  <input  type="password" name="pass" id="pass" ng-model="user_input.pass" ng-model-options="{allowInvalid: true}" pattern-validator="((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,8})" class="form-control" placeholder="Enter Password" type="password" >
+                  </div>
+                  <div class="form-group">
+                    <label>Password Strength</label>
+                    <password-strength ng-model="user_input.pass"></password-strength>
+                  </div>
+                  <div class="alert alert-info" ng-show="password_form.pass.$error.pass_Check">
+                    <strong>Info!</strong> Please enter At leaset 8 characters, and combine uppercase letters, lowercase letter, number and symbols.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>

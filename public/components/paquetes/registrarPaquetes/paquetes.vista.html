@@ -27,6 +27,14 @@
                 <label for="">Valor</label>
                 <input type="number" class="form-control" ng-model="vm.nuevoPaquetes.valor" required>
             </div>
+            <div class="form-group">
+                   <label for="">Estado de paquete</label>
+            <select class="selectpicker form-control">
+                <option>En proceso de almacenaje</option>
+                <option>En tránsito al centro de distribución</option>
+                <option>Entregado</option>
+              </select>
+            </div>
 
             <button type="submit" class="btn btn-success" ng-click="vm.registrarPaquetes()">Registrar</button>
             <a href="/#!/listarPaquetes" class="btn btn-light">Listar</a>

@@ -9,18 +9,19 @@ class Convenios{
 }
 
 class Paquetes{
-  constructor(pTracking, pNombre, pPeso, pValor){
+  constructor(pTracking, pNombre, pPeso, pValor, pEstado){
     this.tracking = pTracking;
     this.nombre = pNombre;
     this.peso = pPeso;
     this.valor = pValor;
+    this.estado = pEstado;
     this.repartidor = [];
   }
 }
 
 class Casillero{
-  constructor(pNombre){
-    this.nombre = pNombre;
+  constructor(pidRandom){
+    this.idRandom = pidRandom;
     
   }
 }
