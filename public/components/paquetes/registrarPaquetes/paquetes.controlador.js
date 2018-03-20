@@ -39,7 +39,7 @@
       vm.listaPaquetes = servicioPaquetes.getPaquetes();
     }
 
-
+   
     
   }
 })();

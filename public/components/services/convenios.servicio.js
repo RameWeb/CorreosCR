@@ -10,7 +10,9 @@
 
     let publicAPI = {
       addConvenios : _addConvenios,
-      getConvenios : _getConvenios
+      getConvenios : _getConvenios,
+      getConveniosSeleccionada: _getConveniosSeleccionada,
+      actualizarConvenios: _actualizarConvenios
     }
     return publicAPI;
 
@@ -41,12 +43,35 @@
 
     
       actualizarLocal(listaConvenios);
+
+      function _getConveniosSeleccionada(idConvenios){
+        let listaConvenios = _getConvenios();
+        let conveniosSeleccionada;
+  
+        for(let i = 0; i < listaConvenios.length; i++){
+          if (idConvenios == listaConvenios[i].idConvenios){
+            conveniosSeleccionada = listaConvenios[i];
+            // console.log(sucursalSeleccionada);
+            return conveniosSeleccionada;
+          }
+        }
+      }
+  
+      function _actualizarConvenios(pconveniosModificada){
+        let listaConvenios = _getConvenios();
+  
+        for(let i = 0; i < listaConvenios.length; i++){
+          if (pconveniosModificada.idConvenios == listaConvenios[i].idConvenios){
+            listaConvenios[i] = pconveniosModificada;
+            // console.log(listaSucursales[i]);
+  
+            localStorage.setItem('conveniosLS', JSON.stringify(listaConvenios)); 
+          }
+        }
+      }
+  
     }
 
-   
-    function actualizarLocal(plistaActualizada){
-      localStorage.setItem('conveniosLS', JSON.stringify(plistaActualizada));
-    }
-
+  
  
 })();

@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+                <a href="/#!/paquetes" class="btn btn-light">Regresar</a>
+            <div class="col-md-6">
+                  <input ng-model="searchText" class="form-control" placeholder="Buscar paquete" >
+                 
+            </div>
+            <table class="table">
+                <thead>
+                        <tr>
+                            <th>N. Tracking</th>
+                            <th>Dueño paquete</th>
+                            <th>Peso</th>
+                            <th>Valor</th>
+                            <th>Acciones</th>
+                        </tr>
+                        
+                    </thead>
+                    
+                    <tbody>
+                      <tr ng-repeat="paquetes in vm.listaPaquetes | filter:searchText">
+                        <td>{{paquetes.tracking}}</td>
+                        <td>{{paquetes.nombre}}</td>
+                        <td>{{paquetes.peso}}</td>
+                        <td>{{paquetes.valor}}</td>
+                        <td>
+                            <li class="nav-item dropdown" style="list-style:none">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="">Modificar paquete</a>
+                                  <a class="dropdown-item" href="">Eliminar paquete</a>
+
+                        </td>
+                        
+                        <td>
+                            <!--aqui va boton de asignar repartidor -->
+                          </td>
+                        
+                      </tr>
+                    </tbody>
+        </table>
+        </div>
+    
+    </div>
+    </div>

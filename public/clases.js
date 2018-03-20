@@ -1,9 +1,10 @@
 class Convenios{
-  constructor(pNombreInstitucion, pTipo, pTiempo, pCosto){
+  constructor(pNombreInstitucion, pTipo, pTiempo, pCosto, pidConvenios){
     this.nombreInstitucion = pNombreInstitucion;
     this.tipo = pTipo;
     this.tiempo = pTiempo;
     this.costo = pCosto;
+    this.idConvenios = pidConvenios;
   }
 }
 
@@ -14,5 +15,12 @@ class Paquetes{
     this.peso = pPeso;
     this.valor = pValor;
     this.repartidor = [];
+  }
+}
+
+class Casillero{
+  constructor(pNombre){
+    this.nombre = pNombre;
+    
   }
 }
