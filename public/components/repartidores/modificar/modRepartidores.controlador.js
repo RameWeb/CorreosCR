@@ -19,6 +19,8 @@
 
     let vm = this;
 
+    vm.sucursales = ["San Jose", "Alajuela", "Heredia", "Cartago", "Guanacaste","Puntarenas", "Limon"];
+
     vm.nuevoRepartidor = {
       // identificacion: repartidorSeleccionado.identificacion,
       identificacion: repartidorSeleccionado.identificacion,
@@ -33,7 +35,7 @@
       distrito: repartidorSeleccionado.distrito,
       direccion: repartidorSeleccionado.direccion,
       puesto: repartidorSeleccionado.puesto,
-      sucursalAsignada: repartidorSeleccionado.sucursal,
+      sucursal: repartidorSeleccionado.sucursal,
       email: repartidorSeleccionado.email,
       contrasenna: repartidorSeleccionado.contrasenna,
       licencia: repartidorSeleccionado.licencia,
