@@ -15,8 +15,31 @@
         pageTitle: 'Inicio | Correos de Costa Rica'
       }
     })
+    .state('consultarBitacora', {
+      url: '/consultarBitacora',
+      templateUrl: './components/consultarBitacora/consultarBitacora.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/factura/envioFactura.controlador.js')
+        }]
+      },
+      controller:'controladorEmail',
+      controllerAs:'vm'
+    })
+
+    .state('enviarFactura', {
+      url: '/enviarFactura',
+      templateUrl: './components/factura/envioFactura.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/factura/envioFactura.controlador.js')
+        }]
+      },
+      controller:'controladorEmail',
+      controllerAs:'vm'
+    })
     .state('rankingTipoDeProductosProductos', {
-      url: '/pineapple',
+      url: '/rankingTipoDeProductosProductos',
       templateUrl: './components/rankingProductos/ranking.vista.html',
       resolve:{
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
