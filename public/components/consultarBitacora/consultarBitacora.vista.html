@@ -1,30 +1,41 @@
-<section class="container-fluid my-5">
-  <div class="row">
-      <div class="col-md-4">
-        <h1>Correos de Costa Rica</h1>
-        
-      </div>
-      <div class="col-md-8">
-          <h2>Consultar bitácora</h2>
-          <div>
-            <form ng-submit="vm.registrarCanton(vm.nuevoCanton)" > 
-              <!-- Información del nuevo canton  -->
-              <div class="my-3">
-                  <div class="form-group">
-      <div class="">
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                  <label for="">Nombre del canton</label>
-                <input type="text"id="txtCantonNombre"class="form-control myInput"  ng-model="vm.nuevoCanton.nombreCanton"  required>
-              </div>
-             </div>
-        </div>
-       <button type="submit" class="btnGuardar" id="btnGuardar">Guardar</button>
-       
-      </div>
-   </form>      
-   </div>
+<main id="courier">
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-4 py-5 px-5 panelIzquierdo">
+      <h2>Correos de Costa Rica</h2>
+      <a href="/#!/registrarTipoProducto" class="btn btn-light">Regresar</a>
+  
+    </div>
+    <div class="col-md-8 py-5 px-5 contenido">
+      <h2>Consultar bitácora</h2>
+  
+      <div class="form-group col-6">
+      <label for="txtBuscar">Buscar</label>
+      <input type="text" id="txtBuscar" class="form-control" ng-model="buscarestadosDePaquetes.fecha">
+      </div><div class="col-12">
+  <table class="table">
+  <thead>
+    <tr>
+    <th>Estado del paquete</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+   
+    
+    </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="estadoDelPaquete in vm.bitacora.estadosDePaquetes | filter:buscarestadosDePaquetes.fecha">
+    <td>{{estadoDelPaquete.estadoDelPaquete}}</td>
+    <td>{{estadoDelPaquete.fecha}}</td>
+    <td>{{estadoDelPaquete.Hora}}</td>
+    
+  </tr>
+  </tbody>
+  </table>
   </div>
-</div>
-</section>
+  </div>
+  </div>
+  </main>
+  
+
+  

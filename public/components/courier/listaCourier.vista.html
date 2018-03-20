@@ -1,20 +1,44 @@
+<main id="courier">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
+        <h2>Correos de Costa Rica</h2>
+        <a href="/#!/registrarCourier" class="btn btn-light">Regresar</a>
+
+      </div>
+      <div class="col-md-8 py-5 px-5 contenido">
+        <h2>Lista Prealertas</h2>
+
+        <div class="form-group col-6">
+          <label for="txtBuscar">Buscar</label>
+          <input type="text" id="txtBuscar" class="form-control" ng-model="buscarCourier">
+        </div>
 <div class="col-9">
     <table class="table">
     <thead>
         <tr>
           <th>Nombre del Courier</th>
-          
-       
-          
         </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="courier in  vm.listaCouriers">
+      <tr ng-repeat="courier in  vm.listaCouriers| filter:buscarCourier">
         <td>{{courier.nombreCourier}}</td>
-     
-        
-        
+        <td>
+          <li class="nav-item dropdown btnAccion" style="list-style:none">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="">Modificar courier</a>
+              <a class="dropdown-item" href="">Eliminar courier</a>
+            </div>
+          </li>
+        </td>
       </tr>
     </tbody>
-    </table>
-    </div>
+  </table>
+</div>
+</div>
+</div>
+</main>
+        
+        
+     

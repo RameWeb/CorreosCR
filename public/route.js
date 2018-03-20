@@ -20,10 +20,10 @@
       templateUrl: './components/consultarBitacora/consultarBitacora.vista.html',
       resolve:{
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/factura/envioFactura.controlador.js')
+          return $ocLazyLoad.load('./components/consultarBitacora/consultarBitacora.controlador.js')
         }]
       },
-      controller:'controladorEmail',
+      controller:'controladorBitacora',
       controllerAs:'vm'
     })
 
