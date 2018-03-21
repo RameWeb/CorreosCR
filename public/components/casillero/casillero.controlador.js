@@ -21,7 +21,9 @@
       console.log(numeroCasillero);
 
 
-
+      swal("Registro exitoso", "Se te ha asignado un casillero", "success", {
+        button: "Aceptar",
+      });
         
 
      // console.log(pnuevoCasillero);
@@ -37,9 +39,7 @@
 
   
 
-      swal("Registro exitoso", "Se te ha asignado un casillero", "success", {
-        button: "Aceptar",
-      });
+     
 
       vm.nuevoCasillero = null;
   

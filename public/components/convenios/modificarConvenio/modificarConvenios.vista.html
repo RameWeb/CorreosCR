@@ -1,5 +1,5 @@
 <main id="modificarConvenios">
-  <div class="container">
+  <div class="container-fluid">
       <div class="row">
 
           <div class="col-md-4 py-5 px-5 panelIzquierdo">
@@ -8,7 +8,7 @@
 
           <div class="col-md-8 py-5 px-5 contenido">
             <h2>Editar Convenio</h2>
-          </div>
+          
   
       
               <form name="formRegistrarConvenios" autocomplete="off" ng-submit="vm.modificarConvenios(vm.nuevaConvenios)" novalidate>
@@ -33,10 +33,10 @@
                     <input type="number" class="form-control myInput" ng-model="vm.nuevoConvenios.costo" required>
                 </div>
   
-                <button type="submit" class="btn btn-info" >Guardar cambios</button>
-                <a href="/#!/lista-convenios" class="btn btn-light">Cancelar</a>
+                <button type="submit" class="btn btnAccion" >Guardar cambios</button>
+                <a href="/#!/lista-convenios" class="btn btn-light">Volver a lista</a>
               </form>
           </div>
-      
+        </div>
   </div>
   </main>

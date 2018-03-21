@@ -10,8 +10,10 @@
 // Estilos de la aplicación
 // -----------------------------------------------------------------------------
 
-@import 'components/landingPage.style.scss';
-@import 'components/paquetes.style.scss';
-@import 'components/convenios.style.scss';
-@import 'components/empleados.style.scss';
+@import 'components/landingPage.style';
+@import 'components/paquetes.style';
+@import 'components/convenios.style';
+@import 'components/listaConvenios.style';
+@import 'components/modificarConvenios.style';
+
 //reemplazar por componentes

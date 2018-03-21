@@ -1,0 +1,47 @@
+<main id="registrarPaquetes">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+            <h2>Registro de Paquetes</h2>
+          </div>
+    
+          <div class="col-md-6">
+              <form ng-submit="vm.modificarPaquetes(vm.nuevaPaquetes)" novalidate >
+    
+                <div class="form-group">
+                  <label for="">Número de tracking</label>
+                  <input type="number" class="form-control" ng-model="vm.nuevoPaquetes.tracking" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="">Dueno de paquete</label>
+                    <input type="text" class="form-control" ng-model="vm.nuevoPaquetes.nombre" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="">Peso</label>
+                    <input type="text" class="form-control" ng-model="vm.nuevoPaquetes.peso" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="">Valor</label>
+                    <input type="number" class="form-control" ng-model="vm.nuevoPaquetes.valor" required>
+                </div>
+                <div class="form-group">
+                       <label for="">Estado de paquete</label>
+                <select class="selectpicker form-control" ng-model="vm.nuevoPaquetes.estado">
+                    <option>En proceso de almacenaje</option>
+                    <option>En tránsito al centro de distribución</option>
+                    <option>Entregado</option>
+                  </select>
+                </div>
+    
+                <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                <a href="/#!/listarPaquetes" class="btn btn-light">Listar</a>
+    
+              </form>
+          </div>
+      </div>
+    
+    </div>
+    </main>

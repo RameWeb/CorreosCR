@@ -1,11 +1,16 @@
-<div class="container">
+<main id="listaConvenios">
+<div class="container-fluid">
 <div class="row">
-    <div class="col-md-6">
-            <a href="/#!/convenios" class="btn btn-light">Regresar</a>
-        <div class="col-md-6">
+        <div class="col-md-4 py-5 px-5 panelIzquierdo">
+                <a href="/#!/convenios" class="btn btn-light">Regresar</a>
+                <h2>Correos de Costa Rica</h2>
+             </div>
+
+           
+        <div class="col-md-8 py-5 px-5 contenido">
               <input ng-model="searchText" class="form-control" placeholder="Buscar convenio" >
              
-        </div>
+        
       <table class="table">
               <thead>
                       <tr>
@@ -26,7 +31,7 @@
                       <td>{{convenios.costo}}</td>
                       <td>
                             <li class="nav-item dropdown" style="list-style:none">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
+                                    <a class="nav-link dropdown-toggle btnAccion" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
                                     <div class="dropdown-menu">
                                       <a class="dropdown-item" href="/#!/modificar-convenios">Modificar convenio</a>
                                       <a class="dropdown-item" href="">Eliminar convenio</a>
@@ -41,6 +46,7 @@
                   </tbody>
       </table>
     </div>
-
 </div>
 </div>
+</div>
+</main>

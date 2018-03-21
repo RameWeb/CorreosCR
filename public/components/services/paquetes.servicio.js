@@ -10,7 +10,9 @@
 
     let publicAPI = {
       addPaquetes : _addPaquetes,
-      getPaquetes : _getPaquetes
+      getPaquetes : _getPaquetes,
+      getPaquetesSeleccionada: _getPaquetesSeleccionada,
+      actualizarPaquetes: _actualizarPaquetes
     }
     return publicAPI;
 
@@ -44,9 +46,39 @@
     }
 
    
-    function actualizarLocal(plistaActualizada){
-      localStorage.setItem('paquetesLS', JSON.stringify(plistaActualizada));
+    //function actualizarLocal(plistaActualizada){
+     // localStorage.setItem('paquetesLS', JSON.stringify(plistaActualizada));
+    //}
+
+
+
+    function _getPaquetesSeleccionada(idPaquetes){
+      let listaPaquetes = _getPaquetes();
+      let paquetesSeleccionada;
+
+      for(let i = 0; i < listaPaquetes.length; i++){
+        if (idPaquetes == listaPaquetes[i].idPaquetes){
+          paquetesSeleccionada = listaPaquetes[i];
+          // console.log(sucursalSeleccionada);
+          return paquetesSeleccionada;
+        }
+      }
     }
 
+    function _actualizarPaquetes(ppaquetesModificada){
+      let listaPaquetes = _getPaquetes();
+
+      for(let i = 0; i < listaPaquetes.length; i++){
+        if (ppaquetesModificada.idPaquetes == listaPaquetes[i].idPaquetes){
+          listaPaquetes[i] = ppaquetesModificada;
+          // console.log(listaSucursales[i]);
+
+          localStorage.setItem('paquetesLS', JSON.stringify(listaPaquetes)); 
+        }
+      }
+    }
+
+    // console.log(_getSucursal());
+  
  
 })();

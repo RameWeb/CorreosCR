@@ -35,7 +35,7 @@
 
       let idConvenios = conveniosSeleccionada.idConvenios;
 
-      let objConveniosModificada = new Convenios(vm.nuevoConvenios.nombreInstitucion, vm.nuevoConvenios.tipo, vm.nuevoConvenios.tiempo, vm.nuevoConvenios.costo);
+      let objConveniosModificada = new Convenios(vm.nuevoConvenios.nombreInstitucion, vm.nuevoConvenios.tipo, vm.nuevoConvenios.tiempo, vm.nuevoConvenios.costo, idConvenios);
         
       console.log(objConveniosModificada);
 
