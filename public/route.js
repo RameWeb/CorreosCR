@@ -17,6 +17,14 @@
       }
     })
 
+    .state('admin', {
+      url: '/admin',
+      templateUrl: './components/admin/admin.vista.html',
+      data:{
+        pageTitle: 'Dashboard | Administrador'
+      }
+    })
+
     .state('direcciones', {
       url: '/direcciones',
       templateUrl: './components/direcciones/direcciones.view.html',
