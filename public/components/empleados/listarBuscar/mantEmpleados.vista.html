@@ -1,14 +1,14 @@
 <main id="registrarEmpleados">
   <section class="container-fluid">
     <div class="row">
-      <div class="col-md-4 py-5 px-5 panelIzquierdo">
+      <div class="col-md-3 py-5 px-5 panelIzquierdo">
         <h1>Correos de Costa Rica</h1>
         <a href="#!/regEmpleados" class="btn btnAccion">Registrar Empleados</a>
       </div>
-      <div class="col-md-8 py-5 px-5 contenido">
+      <div class="col-md-9 py-5 px-5 contenido">
         <h2>Lista de Empleados</h2>
         <div class="form-group">
-          <label for="inputBuscar">Buscar Empleado por identificacion:</label>
+          <label for="inputBuscar">Buscar empleado por identificacion:</label>
           <input type="text" class="form-control" id="inputBuscar" ng-model="buscarEmpleado.identificacion">
           </div>
         <table class="table">
@@ -27,7 +27,7 @@
               <td>{{empleado.nombre}}</td>
               <td>{{empleado.apellido1}}</td>
               <td>{{empleado.rolEmpleado}}</td>
-              <td>{{empleado.sucursalAsignada}}</td>
+              <td>{{empleado.sucursal}}</td>
               <td>
                 <li class="nav-item dropdown btnAccion" style="list-style:none">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>

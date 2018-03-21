@@ -1,21 +1,19 @@
 <main id="registrarEmpleados">
   <section class="container-fluid">
     <div class="row">
-      <div class="col-md-4 py-5 px-5 panelIzquierdo">
+      <div class="col-md-3 py-5 px-5 panelIzquierdo">
         <h1>Correos de Costa Rica</h1>
         <a href="#!/mantEmpleados" class="btn btnAccion">Lista de Empleados</a>
       </div>
-      <div class="col-md-8 py-5 px-5 contenido">
+      <div class="col-md-9 py-5 px-5 contenido">
         <h2>Registrar Empleados</h2>
         <form ng-submit="vm.registrarEmpleados(vm.nuevoEmpleado)">
           <div class="form-group">
-            <label for="inputIdentificacion">Seleccione el rol del empleado:</label>
-            <select class="form-control" ng-model="vm.nuevoEmpleado.rol">
-              <option value="Administrador">Administrador</option>
-              <option value="Encargado de Aduana">Encargado de Aduana</option>
-              <option value="Encargado de Sucursal">Encargado de Sucursal</option>
-              <option value="Repartidor">Repartidor</option>
-            </select>
+            <label for="inputRoles">Seleccione el rol del empleado:</label>
+            <input type="text" class="form-control" id="inputRoles" ng-model="vm.nuevoEmpleado.rol" list="listaRoles">
+            <datalist id="listaRoles">
+              <option data-ng-repeat="rol in vm.roles" value="{{rol}}">
+            </datalist>
           </div>
           <!-- Información Personal -->
           <div class="my-3">
@@ -81,13 +79,11 @@
           <div class="my-3" id="rolEncargado" ng-if="vm.nuevoEmpleado.rol == 'Encargado de Aduana'">
             <h3>Información Laboral</h3>
             <div class="form-group">
-              <label for="inputRol">Seleccione el rol del encargado:</label>
-              <select class="form-control" id="inputRol" ng-model="vm.nuevoEmpleado.rolAduana">
-                <option value="Aforador">Aforador</option>
-                <option value="Agente Aduanal">Agente Aduanal</option>
-                <option value="Gerente Aduanero">Gerente Aduanero</option>
-                <option value="Verificador">Verificador</option>
-              </select>
+              <label for="inputRolAduana">Seleccione el rol del encargado:</label>
+              <input type="text" class="form-control" id="inputRolAduana" ng-model="vm.nuevoEmpleado.rolAduana" list="listaRolesAduana">
+              <datalist id="listaRolesAduana">
+                <option data-ng-repeat="rolAduana in vm.rolesAduana" value="{{rolAduana}}">
+              </datalist>
             </div>
           </div>
 
@@ -96,10 +92,10 @@
             <h3>Información Laboral</h3>
             <div class="form-group">
               <label for="inputSucursal">Sucursal asignada:</label>
-              <input type="text" class="form-control" id="inputSucursal" ng-model="vm.nuevoEmpleado.sucursalAsignada" list="listaSucursales">
-              <!-- <datalist id="listaSucursales">
+              <input type="text" class="form-control" id="inputSucursal" ng-model="vm.nuevoEmpleado.sucursal" list="listaSucursales">
+              <datalist id="listaSucursales">
                 <option data-ng-repeat="sucursal in vm.sucursales" value="{{sucursal}}">
-              </datalist> -->
+              </datalist>
             </div>
           </div>
 
@@ -107,11 +103,13 @@
           <div class="my-3" id="repartidor" ng-if="vm.nuevoEmpleado.rol == 'Repartidor'">
             <h3>Información Laboral</h3>
             <div class="form-group">
-              <label for="inputSucursal">Sucursal asignada:</label>
-              <input type="text" class="form-control" id="inputSucursal" ng-model="vm.nuevoEmpleado.sucursalAsignada" list="listaSucursales">
-              <!-- <datalist id="listaSucursales">
-                <option data-ng-repeat="sucursal in vm.sucursales" value="{{sucursal}}">
-              </datalist> -->
+              <div class="form-group">
+                <label for="inputSucursal">Sucursal asignada:</label>
+                <input type="text" class="form-control" id="inputSucursal" ng-model="vm.nuevoEmpleado.sucursal" list="listaSucursales">
+                <datalist id="listaSucursales">
+                  <option data-ng-repeat="sucursal in vm.sucursales" value="{{sucursal}}">
+                </datalist>
+              </div>
             </div>
             <div class="form-group">
               <label for="inputPassword4">Tipo de Licencia</label>
