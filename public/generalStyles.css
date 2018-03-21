@@ -47,18 +47,23 @@ a.myNavLinks{
   font-size: 1em;
 }
 .cover{
-  background-image: url("../../icons/herofuneraria.jpg");
+  background-image: url("../../img/herobackground.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
 .jumboContent{
-  color: #2B2B2B;
-  font-size: 4em;
+  color: #fff;
+  font-size: 3em;
 }
 
-#nosotros, #servicios, #nuestrosclientes, footer{
-  margin-top: 150px;
+#nosotros{
+  padding-top: 130px;
+}
+
+#nuestrosclientes, #servicios {
+  padding-top: 130px;
+  padding-bottom: 150px;
 }
 
 .ourServices{
@@ -85,7 +90,7 @@ a.myNavLinks{
 
 footer{
   background-color: #333945;
-  height: 300px;
+  height: 200px;
 }
 
 .navFooter ul{
@@ -124,6 +129,12 @@ h3.titularContacto{
   font-weight: 600;
 }
 
+.navbar {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  z-index: 1;
+}
 
 
 /* Media Queries */
