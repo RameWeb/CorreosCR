@@ -1,3 +1,5 @@
+@import "../setting";
+
 .bg-black{
   background: #000;
 }
@@ -47,7 +49,7 @@ a.myNavLinks{
   font-size: 1em;
 }
 .cover{
-  background-image: url("../../img/herobackground.jpg");
+  background-image: $background;
   background-size: cover;
   background-position: center;
   height: 100vh;
