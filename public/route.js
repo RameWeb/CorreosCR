@@ -13,7 +13,7 @@
       url: '/',
       templateUrl: './components/landingPage/landing.vista.html',
       data:{
-        pageTitle: 'Inicio | Registro Direcciones'
+        pageTitle: 'Correos de Costa Rica'
       }
     })
 
@@ -22,6 +22,14 @@
       templateUrl: './components/admin/admin.vista.html',
       data:{
         pageTitle: 'Dashboard | Administrador'
+      }
+    })
+
+    .state('cliente', {
+      url: '/cliente',
+      templateUrl: './components/cliente/cliente.vista.html',
+      data:{
+        pageTitle: 'Dashboard | Cliente'
       }
     })
 
