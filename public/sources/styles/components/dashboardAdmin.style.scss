@@ -1,10 +1,11 @@
 @import "../setting";
 
-#registroPrealertas{
+#dashboardAdmin{
   .contenido{
     background-color: $white;
     max-height: 100vh;
     overflow: scroll;
+    padding-top: 150px;
   }
   
   .panelIzquierdo{
