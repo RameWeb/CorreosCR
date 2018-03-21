@@ -11,6 +11,8 @@
     let publicAPI = {
       agregarEmpleados : _agregarEmpleados,
       obtenerEmpleados : _obtenerEmpleados,
+      obtenerEmpleadoSeleccionado : _obtenerEmpleadoSeleccionado,
+      actualizarEmpleado : _actualizarEmpleado
     }
     return publicAPI;
 
@@ -18,13 +20,13 @@
     function _agregarEmpleados(pnuevoEmpleado){
       let listaEmpleados = _obtenerEmpleados();
       listaEmpleados.push(pnuevoEmpleado);
-      localStorage.setItem('EmpleadosLS', JSON.stringify(listaEmpleados));
+      localStorage.setItem('empleadosLS', JSON.stringify(listaEmpleados));
     }
 
     // Funcion que trae todos los usuarios del localStorage y a partir de esos datos vuelve a crear un arreglo con todos los objetos de tipo usuario
     function _obtenerEmpleados(){
       let listaEmpleados = [];
-      let listaEmpleadosLocal = JSON.parse(localStorage.getItem("EmpleadosLS"));
+      let listaEmpleadosLocal = JSON.parse(localStorage.getItem("empleadosLS"));
 
       if(listaEmpleadosLocal == null){
         listaEmpleados = [];
@@ -38,6 +40,33 @@
       }
       return listaEmpleados;
     }
+
+    function _obtenerEmpleadoSeleccionado(identificacion){
+      let listaEmpleados = _obtenerEmpleados();
+      let empleadoSeleccionado;
+
+      for(let i = 0; i < listaEmpleados.length; i++){
+        if (identificacion == listaEmpleados[i].identificacion){
+          empleadoSeleccionado = listaEmpleados[i];
+          // console.log(sucursalSeleccionada);
+          return empleadoSeleccionado;
+        }
+      }
+    }
+
+    function _actualizarEmpleado(pEmpleadoModificado){
+      let listaEmpleados = _obtenerEmpleados();
+
+      for(let i = 0; i < listaEmpleados.length; i++){
+        if (pEmpleadoModificado.identificacion == listaEmpleados[i].identificacion){
+          listaEmpleados[i] = pEmpleadoModificado;
+          // console.log(listaSucursales[i]);
+
+          localStorage.setItem('empleadosLS', JSON.stringify(listaEmpleados));
+        }
+      }
+    }
+
     // function actualizarLocal(plistaActualizada){
     //   localStorage.setItem('repartidoresLS', JSON.stringify(plistaActualizada));
     // }

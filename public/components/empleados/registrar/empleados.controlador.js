@@ -41,6 +41,8 @@
       // Se limpia el formulario
       vm.nuevoEmpleado = null;
 
+      $state.go('mantClientes');
+
       listarEmpleados();
     }
 
@@ -49,5 +51,8 @@
       vm.listaEmpleados = servicioEmpleados.obtenerEmpleados();
     }
 
+    vm.modificar = (pEmpleado) =>{
+      $state.go('modEmpleados', {identificacion: JSON.stringify(pEmpleado.identificacion)})
+    }
   }
 })();

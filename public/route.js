@@ -161,6 +161,24 @@
       },
       controller: 'controladorEmpleados',
       controllerAs: 'vm'
+    })
+
+    .state('modEmpleados', {
+      url: '/modEmpleados',
+      templateUrl: './components/empleados/modificar/modEmpleados.vista.html',
+      data:{
+        pageTitle: 'Modificar Empleados'
+      },
+      params: {
+        identificacion: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/empleados/modificar/modEmpleados.controlador.js')
+        }]
+      },
+      controller: 'controladorModEmpleados',
+      controllerAs: 'vm'
     }),
 
     $urlRouterProvider.otherwise('/');
