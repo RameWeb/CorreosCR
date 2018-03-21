@@ -11,8 +11,9 @@
     let publicAPI = {
       addPaquetes : _addPaquetes,
       getPaquetes : _getPaquetes,
-      getPaquetesSeleccionada: _getPaquetesSeleccionada,
+      getPaquetesSeleccionado: _getPaquetesSeleccionado,
       actualizarPaquetes: _actualizarPaquetes
+
     }
     return publicAPI;
 
@@ -32,7 +33,7 @@
       }else{
         listaPaquetesLocal.forEach(obj => {
           
-          let objPaquetes = new Paquetes(obj.tracking, obj.nombre, obj.peso, obj.valor, obj.estado);
+          let objPaquetes = new Paquetes(obj.tracking, obj.nombre, obj.peso, obj.valor, obj.estado, obj.idPaquetes);
 
           listaPaquetes.push(objPaquetes);
         })
@@ -52,31 +53,36 @@
 
 
 
-    function _getPaquetesSeleccionada(idPaquetes){
+    function _getPaquetesSeleccionado(idPaquetes){
       let listaPaquetes = _getPaquetes();
-      let paquetesSeleccionada;
+      let paquetesSeleccionado;
 
       for(let i = 0; i < listaPaquetes.length; i++){
         if (idPaquetes == listaPaquetes[i].idPaquetes){
-          paquetesSeleccionada = listaPaquetes[i];
+          paquetesSeleccionado = listaPaquetes[i];
           // console.log(sucursalSeleccionada);
-          return paquetesSeleccionada;
+          return paquetesSeleccionado;
         }
       }
     }
 
-    function _actualizarPaquetes(ppaquetesModificada){
+    function _actualizarPaquetes(ppaquetesModificado){
       let listaPaquetes = _getPaquetes();
 
       for(let i = 0; i < listaPaquetes.length; i++){
-        if (ppaquetesModificada.idPaquetes == listaPaquetes[i].idPaquetes){
-          listaPaquetes[i] = ppaquetesModificada;
+        if (ppaquetesModificado.idPaquetes == listaPaquetes[i].idPaquetes){
+          listaPaquetes[i] = ppaquetesModificado;
           // console.log(listaSucursales[i]);
 
           localStorage.setItem('paquetesLS', JSON.stringify(listaPaquetes)); 
         }
       }
     }
+
+
+    
+      
+      
 
     // console.log(_getSucursal());
   

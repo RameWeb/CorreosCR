@@ -9,12 +9,13 @@ class Convenios{
 }
 
 class Paquetes{
-  constructor(pTracking, pNombre, pPeso, pValor, pEstado){
+  constructor(pTracking, pNombre, pPeso, pValor, pEstado, pidPaquetes){
     this.tracking = pTracking;
     this.nombre = pNombre;
     this.peso = pPeso;
     this.valor = pValor;
     this.estado = pEstado;
+    this.idPaquetes = pidPaquetes;
     this.repartidor = [];
   }
 }

@@ -46,7 +46,7 @@
         button: "Aceptar",
       });
 
-      $state.go('listarConvenios');
+      $state.go('lista-convenios');
 
       listarConvenios();
       // Se limpia el formulario

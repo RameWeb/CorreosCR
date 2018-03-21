@@ -4,59 +4,63 @@
   .module('correos-cr')
   .controller('controladorModificarPaquetes', controladorModificarPaquetes);
 
-  controladorModificarPaquetes.$inject = ['$http', '$stateParams', '$state', 'servicioPaquetes'];
+  controladorModificarPaquetes.$inject = ['$http','$stateParams', '$state', 'servicioPaquetes'];
 
   function controladorModificarPaquetes($http, $stateParams, $state, servicioPaquetes){
 
-    let paquetesSeleccionada;
+    let paquetesSeleccionado;
 
     if($stateParams.idPaquetes == ''){
-      $state.go('listarPaquetes');
+      $state.go('listarPaquetes')
     }else{
-      paquetesSeleccionada = servicioPaquetes.getPaquetesSeleccionada($stateParams.idPaquetes);
+      paquetesSeleccionado = servicioPaquetes.getPaquetesSeleccionado($stateParams.idPaquetes);
     }
 
-    // console.log(sucursalSeleccionada);
+    //console.log(PaquetesSeleccionado);
 
     let vm = this;
-    
-    
 
-    vm.nuevaPaquetes = {
-      tracking: paquetesSeleccionada.tracking,
-      nombre: paquetesSeleccionada.nombre,
-      peso: paquetesSeleccionada.peso,
-      valor: paquetesSeleccionada.valor,
-      estado: paquetesSeleccionada.estado
+    vm.nuevoPaquetes = {
+      tracking: paquetesSeleccionado.tracking,
+      nombre: paquetesSeleccionado.nombre,
+      peso: paquetesSeleccionado.peso,
+      valor: paquetesSeleccionado.valor,
+      estado: paquetesSeleccionado.estado,
+     
     };
 
-    // listarSucursales();
+    // listarPrealertas();
     
     // Funcion que es llamada desde el html para regustra un nuevo usuario
-    vm.modificarPaquetes = (pnuevaPaquetes) => {
+    vm.modificarPaquetes = (pnuevoPaquetes) => {
 
-      let idPaquetes = paquetesSeleccionada.idPaquetes;
+      let idPaquetes = paquetesSeleccionado.idPaquetes;
+      
+      // console.log(pnuevaPrealerta);
 
-      let objPaquetesModificada = new Paquetes(vm.nuevaPaquetes.tracking, vm.nuevaPaquetes.nombre, vm.nuevaPaquetes.peso,  vm.nuevaPaquetes.valor, vm.nuevaPaquetes.estado, idPaquetes);
+      // Tomamos el objeto sin formato y lo comvertimos en un objeto de tipo cliente
+      let objPaquetesModificado = new Paquetes(vm.nuevoPaquetes.tracking, vm.nuevoPaquetes.nombre, vm.nuevoPaquetes.peso,  vm.nuevoPaquetes.valor, vm.nuevoPaquetes.estado, idPaquetes);
         
-      console.log(objSucursalModificada);
+      console.log(objPaquetesModificado);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      vm.sucursalSeleccionada = servicioSucursales.actualizarSucursal(objSucursalModificada);
+      vm.paquetesSeleccionado = servicioPaquetes.actualizarPaquetes(objPaquetesModificado);
 
-      swal("Registro exitoso", "La sucursal se ha sido modificada correctamente", "success", {
+      // Retroalimentacion Visual para los usuarios: SweetAlert
+      swal("Registro exitoso", "El paquete ha sido registrado correctamente", "success", {
         button: "Aceptar",
       });
 
-      $state.go('listarSucursal');
+      $state.go('listarPaquetes');
 
-      listarSucursales();
+      listarPaquetes();
+
       // Se limpia el formulario
-      vm.nuevaSucursal = null;
+      vm.nuevaPaquetes = null;
     }
 
-    function listarSucursales(){
-      vm.listaSucursales = servicioSucursales.getSucursal();
+    function listarPaquetes(){
+    vm.listaPaquetes = servicioPaquetes.getPaquetes();
     }
 
   }

@@ -95,6 +95,35 @@
       controller: 'controladorPaquetes',
       controllerAs: 'vm'
     })
+    .state('modificarPaquetes', {
+      url: '/modificarPaquetes',
+      templateUrl: './components/paquetes//modificarPaquetes/modificarPaquetes.vista.html',
+      data:{
+        pageTitle: 'Editar paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/modificarPaquetes/modificarPaquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorModificarPaquetes',
+      controllerAs: 'vm'
+    })
+
+    .state('cambiarEstadoPaquetes', {
+      url: '/cambiarEstadoPaquetes',
+      templateUrl: './components/paquetes/cambiarEstadoPaquetes/cambiarEstadoPaquetes.vista.html',
+      data:{
+        pageTitle: 'Editar paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/cambiarEstadoPaquetes/cambiarEstadoPaquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorCambiarEstadoPaquetes',
+      controllerAs: 'vm'
+    })
 
     .state('casillero', {
       url: '/casillero',
