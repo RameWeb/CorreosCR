@@ -1,26 +1,25 @@
-<main id="conveniosForm">
-  <div class="container">
+<main id="registroSucursales">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6">
-        <h2 class="titulares">Correos de Costa Rica</h2>
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
+        <img src="./../../../sources/img/Group 98.svg" class="mt-5" alt="">
       </div>
 
-        <div class="col-md-6">
-          <div class="col-8">
-            <h2 class="titulares">Convenios</h2>
+        <div class="col-md-8 py-5 px-5 contenido">
+          <div class="col-5">
+            <h2>Convenios</h2>
             <form name="formSolicitarConvenio" autocomplete="off" ng-submit="vm.registrarConvenio(vm.nuevoConvenio)" enctype="multipart/form-data" novalidate>
                 <div class="my-2">
                   <span>A continuación indique el servicio para el cual desea solicitar el envío.</span>
                 </div>
   
                 <div class="form-group">
-                  <label for="sltConvenio">Servicio</label>
-                  <select id="sltConvenio" class="form-control" ng-model="vm.nuevoConvenio.tipo" required>
-                    <option>Pasaporte</option>
-                    <option>Licencias</option>
-                    <option>Visa</option>
-                  </select>
-                </div>
+                    <label for="formGroupExampleInput">Servicio</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevoConvenio.servicio" list="listaServicios">
+                    <datalist id="listaServicios">
+                      <option data-ng-repeat="servicio in vm.servicio" value="{{servicio}}">
+                    </datalist>
+                  </div>
 
                 <div class="form-group">
                   <label for="sltCliente">Cliente</label>

@@ -11,7 +11,8 @@
     let publicAPI = {
       addPrealerta : _addPrealerta,
       getPrealerta : _getPrealerta,
-      getPrealertaSeleccionada: _getPrealertaSeleccionada
+      getPrealertaSeleccionada: _getPrealertaSeleccionada,
+      actualizarPrealerta : _actualizarPrealerta
     }
     return publicAPI;
 
@@ -42,15 +43,30 @@
     }
 
     function _getPrealertaSeleccionada(idPrealerta){
-      let listaPrealertas = _getPrealerta(),
-          prealertaSeleccionada;
+      let listaPrealertas = _getPrealerta();
+      let prealertaSeleccionada;
 
       for (let i= 0; i < listaPrealertas.length; i++){
         if (idPrealerta == listaPrealertas[i].idPrealerta){
           prealertaSeleccionada = listaPrealertas[i];
-        };
+        }
       }
       return prealertaSeleccionada;        
+
     }
+
+    function _actualizarPrealerta(pprealertaModificada){
+      let listaPrealertas = _getPrealerta();
+
+      for(let i = 0; i < listaPrealertas.length; i++){
+        if (pprealertaModificada.idPrealerta == listaPrealertas[i].idPrealerta){
+          listaPrealertas[i] = pprealertaModificada;
+          // console.log(listaSucursales[i]);
+
+          localStorage.setItem('prealertasLS', JSON.stringify(listaPrealertas)); 
+        }
+      }
+    }
+
   }
 })();

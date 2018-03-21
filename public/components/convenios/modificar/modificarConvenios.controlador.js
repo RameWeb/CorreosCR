@@ -8,6 +8,8 @@
 
   function controladorModConveniosCliente($http, $stateParams, $state, servicioConveniosCliente){
 
+    let vm = this;
+
     let convenioSeleccionado;
 
     if($stateParams.idConvenio == ''){
@@ -16,15 +18,11 @@
       convenioSeleccionado = servicioConveniosCliente.obtenerConveniosSeleccionados($stateParams.idConvenio);
     }
 
-
-    let vm = this;
-
     vm.nuevoConvenio = {
       tipo: convenioSeleccionado.tipo,
       cliente: convenioSeleccionado.cliente,
-      direccion: convenioSeleccionado.direccion
+      direccion: convenioSeleccionado.direccion,
     };
-
 
     // listarConvenios();
 

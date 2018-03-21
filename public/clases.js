@@ -10,14 +10,14 @@ class Sucursales{
 }
 
 class Prealertas{
-  constructor(pTracking, pUrl, pTipoProducto, pValor, pPeso, pFactura, pCourier){
+  constructor(pTracking, pUrl, pTipoProducto, pValor, pPeso, pCourier, pidPrealerta){
     this.tracking = pTracking;
     this.url = pUrl;
     this.tipoProducto = pTipoProducto;
     this.valor = pValor;
     this.peso = pPeso;
-    this.factura = pFactura;
     this.courier = pCourier;
+    this.idPrealerta = pidPrealerta;
   }
 }
 

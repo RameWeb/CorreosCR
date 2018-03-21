@@ -9,7 +9,11 @@
   function controladorConveniosCliente($stateParams, $state, servicioConveniosCliente){
     let vm = this;
 
+    vm.servicio = ["Pasaporte", "Visa Americana", "Visa Canadiense", "Licencia de conducir", "Cédula o Identificación"];
+
     vm.nuevoConvenio = {};
+    vm.listaConvenios = listarConvenios();
+
     listarConvenios();
 
     // Funcion que es llamada desde el html para regustra un nuevo usuario
@@ -20,7 +24,7 @@
       console.log(idRandom);
 
       // Tomamos el objeto sin formato y lo comvertimos en un objeto de tipo cliente
-      let objNuevoConvenio = new ConveniosClientes(pnuevoConvenio.tipo, pnuevoConvenio.cliente, pnuevoConvenio.direccion, idRandom);
+      let objNuevoConvenio = new ConveniosClientes(pnuevoConvenio.servicio, pnuevoConvenio.cliente, pnuevoConvenio.direccion, idRandom);
 
       console.log(objNuevoConvenio);
 

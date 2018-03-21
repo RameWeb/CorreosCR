@@ -9,6 +9,12 @@
   function controladorPrealertas($stateParams, $state, servicioPrealertas){
     let vm = this;
 
+    vm.courier = ["DHL", "UPS", "Amazon", "FedEx", "TNT Express", "USPS", "CRBOx", "Aerocasillas", "JetBox"];
+
+    vm.tipoProducto = ["Accesorios para Vehículos", "Animales y Mascotas", "Arte y Antigüedades", "Bebés", "Cámaras y Fotografía", "Celulares y Teléfonos", "Coleccionables y Hobbies", "Computación", "Consolas y Videojuegos", "Deportes y Fitness", "Electrodomésticos", "Electrónica, Audio y Video", "Herramientas y Construcción", "Hogar, Muebles y Jardín", "Industrias y Oficinas", "Instrumentos Musicales", "Joyas y Relojes", "Juegos y Juguetes", "Libros, Revistas y Comics", "Música y Película", "Ropa y Accesorios", "Salud y Belleza", "Otras categorías"];
+
+    //Objeto sin formato
+
     vm.nuevaPrealerta = {};
     vm.listaPrealertas = listarPrealertas();
 
@@ -26,17 +32,18 @@
         
       console.log(objNuevaPrealerta);
 
+      servicioPrealertas.addPrealerta(objNuevaPrealerta);
+
       // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El nuevo paquete se ha sido prealertado correctamente", "success", {
         button: "Aceptar",
       });
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      servicioPrealertas.addPrealerta(objNuevaPrealerta);
+      listarPrealertas();
 
       // Se limpia el formulario
       vm.nuevaPrealerta = null;
-      listarPrealertas();
     }
 
     function listarPrealertas(){
