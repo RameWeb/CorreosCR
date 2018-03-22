@@ -19,7 +19,7 @@
 
     .state('regRepartidores', {
       url: '/regRepartidores',
-      templateUrl: './components/repartidores/registrar/regRepartidores.vista.html',
+      templateUrl: './components/usuarios/repartidores/registrar/regRepartidores.vista.html',
       data:{
         pageTitle: 'Registrar Repartidores'
       },
@@ -28,7 +28,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/repartidores/registrar/repartidores.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/repartidores/registrar/repartidores.controlador.js')
         }]
       },
       controller: 'controladorRepartidores',
@@ -37,7 +37,7 @@
 
     .state('mantRepartidores', {
       url: '/mantRepartidores',
-      templateUrl: './components/repartidores/listarBuscar/mantRepartidores.vista.html',
+      templateUrl: './components/usuarios/repartidores/listarBuscar/mantRepartidores.vista.html',
       data:{
         pageTitle: 'Mantenimiento de Repartidores'
       },
@@ -46,7 +46,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/repartidores/registrar/repartidores.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/repartidores/registrar/repartidores.controlador.js')
         }]
       },
       controller: 'controladorRepartidores',
@@ -55,7 +55,7 @@
 
     .state('modRepartidores', {
       url: '/modRepartidores',
-      templateUrl: './components/repartidores/modificar/modRepartidores.vista.html',
+      templateUrl: './components/usuarios/epartidores/modificar/modRepartidores.vista.html',
       data:{
         pageTitle: 'Modificar Repartidores'
       },
@@ -64,7 +64,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/repartidores/modificar/modRepartidores.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/repartidores/modificar/modRepartidores.controlador.js')
         }]
       },
       controller: 'controladorModRepartidores',
@@ -74,7 +74,7 @@
 
     .state('regClientes', {
       url: '/regClientes',
-      templateUrl: './components/clientes/registrar/regClientes.vista.html',
+      templateUrl: './components/usuarios/clientes/registrar/regClientes.vista.html',
       data:{
         pageTitle: 'Registrar Clientes'
       },
@@ -84,7 +84,7 @@
       css: './sources/styles/components/clientes.style.scss',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/clientes/registrar/clientes.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/clientes/registrar/clientes.controlador.js')
         }]
       },
       controller: 'controladorClientes',
@@ -93,7 +93,7 @@
 
     .state('mantClientes', {
       url: '/mantClientes',
-      templateUrl: './components/clientes/listarBuscar/mantClientes.vista.html',
+      templateUrl: './components/usuarios/clientes/listarBuscar/mantClientes.vista.html',
       data:{
         pageTitle: 'Mantenimiento de Clientes'
       },
@@ -102,7 +102,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/clientes/registrar/clientes.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/clientes/registrar/clientes.controlador.js')
         }]
       },
       controller: 'controladorClientes',
@@ -111,7 +111,7 @@
 
     .state('modClientes', {
       url: '/modClientes',
-      templateUrl: './components/clientes/modificar/modClientes.vista.html',
+      templateUrl: './components/usuarios/clientes/modificar/modClientes.vista.html',
       data:{
         pageTitle: 'Modificar Clientes'
       },
@@ -120,7 +120,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/clientes/modificar/modClientes.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/clientes/modificar/modClientes.controlador.js')
         }]
       },
       controller: 'controladorModClientes',
@@ -129,7 +129,7 @@
 
     .state('regEmpleados', {
       url: '/regEmpleados',
-      templateUrl: './components/empleados/registrar/regEmpleados.vista.html',
+      templateUrl: './components/usuarios/empleados/registrar/regEmpleados.vista.html',
       data:{
         pageTitle: 'Registro de Empleados'
       },
@@ -138,7 +138,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/empleados/registrar/empleados.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/empleados/registrar/empleados.controlador.js')
         }]
       },
       controller: 'controladorEmpleados',
@@ -147,7 +147,7 @@
 
     .state('mantEmpleados', {
       url: '/mantEmpleados',
-      templateUrl: './components/empleados/listarBuscar/mantEmpleados.vista.html',
+      templateUrl: './components/usuarios/empleados/listarBuscar/mantEmpleados.vista.html',
       data:{
         pageTitle: 'Lista de Empleados'
       },
@@ -156,7 +156,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/empleados/registrar/empleados.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/empleados/registrar/empleados.controlador.js')
         }]
       },
       controller: 'controladorEmpleados',
@@ -165,7 +165,7 @@
 
     .state('modEmpleados', {
       url: '/modEmpleados',
-      templateUrl: './components/empleados/modificar/modEmpleados.vista.html',
+      templateUrl: './components/usuarios/empleados/modificar/modEmpleados.vista.html',
       data:{
         pageTitle: 'Modificar Empleados'
       },
@@ -174,7 +174,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/empleados/modificar/modEmpleados.controlador.js')
+          return $ocLazyLoad.load('./components/usuarios/empleados/modificar/modEmpleados.controlador.js')
         }]
       },
       controller: 'controladorModEmpleados',

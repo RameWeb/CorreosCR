@@ -4,15 +4,15 @@
   .module('correos-cr')
   .controller('controladorModEmpleados', controladorModEmpleados);
 
-  controladorModEmpleados.$inject = ['$http','$stateParams', '$state','servicioEmpleados'];
+  controladorModEmpleados.$inject = ['$http','$stateParams', '$state','servicioUsuarios'];
 
-  function controladorModEmpleados($http, $stateParams, $state, servicioEmpleados){
+  function controladorModEmpleados($http, $stateParams, $state, servicioUsuarios){
     let empleadoSeleccionado;
 
     if($stateParams.identificacion == ''){
       $state.go('mantEmpleados');
     }else{
-      empleadoSeleccionado = servicioEmpleados.obtenerEmpleadoSeleccionado($stateParams.identificacion);
+      empleadoSeleccionado = servicioUsuarios.obtenerEmpleadoSeleccionado($stateParams.identificacion);
     }
     console.log(empleadoSeleccionado);
 
@@ -79,7 +79,7 @@
       console.log(empleadoModificado);
 
        // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-       vm.empleadoSeleccionado = servicioEmpleados.actualizarEmpleado(empleadoModificado);
+       vm.empleadoSeleccionado = servicioUsuarios.actualizarUsuario(empleadoModificado);
 
       //   // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El empleado se ha sido modificado correctamente", "success", {
@@ -96,7 +96,7 @@
 
     // Imprimir lista de repartidores en el sistema
     function listarEmpleados(){
-      vm.listaEmpleados = servicioEmpleados.obtenerEmpleados();
+      vm.listaEmpleados = servicioUsuarios.obtenerUsuario();
     }
 
     vm.modificar = (pEmpleado) =>{

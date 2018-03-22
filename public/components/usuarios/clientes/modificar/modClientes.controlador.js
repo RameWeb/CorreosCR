@@ -12,7 +12,7 @@
     if($stateParams.identificacion == ''){
       $state.go('mantClientes');
     }else{
-      clienteSeleccionado = servicioClientes.obtenerClienteSeleccionado($stateParams.identificacion);
+      clienteSeleccionado = servicioUsuarios.obtenerUsuarioPorRol($stateParams.identificacion);
     }
     console.log(clienteSeleccionado);
 

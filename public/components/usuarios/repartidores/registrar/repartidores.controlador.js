@@ -4,9 +4,9 @@
   .module('correos-cr')
   .controller('controladorRepartidores', controladorRepartidores);
 
-  controladorRepartidores.$inject = ['$stateParams', '$state','servicioRepartidores'];
+  controladorRepartidores.$inject = ['$stateParams', '$state','servicioUsuarios'];
 
-  function controladorRepartidores($stateParams, $state, servicioRepartidores){
+  function controladorRepartidores($stateParams, $state, servicioUsuarios){
     let vm = this;
 
     vm.sucursales = ["San Jose", "Alajuela", "Heredia", "Cartago", "Guanacaste","Puntarenas", "Limon"];
@@ -26,7 +26,7 @@
       console.log(nuevoRepartidor);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      servicioRepartidores.agregarRepartidores(nuevoRepartidor);
+      servicioUsuarios.agregarRepartidores(nuevoRepartidor);
 
       //   // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El entierro se ha sido registrado correctamente", "success", {
@@ -41,7 +41,7 @@
 
     // Imprimir lista de repartidores en el sistema
     function listarRepartidores(){
-      vm.listaRepartidores = servicioRepartidores.obtenerRepartidores();
+      vm.listaRepartidores = servicioUsuarios.obtenerRepartidores();
     }
 
     vm.modificar = (prepartidor) =>{

@@ -4,16 +4,16 @@
   .module('correos-cr')
   .controller('controladorModRepartidores', controladorModRepartidores);
 
-  controladorModRepartidores.$inject = ['$http','$stateParams', '$state','servicioRepartidores'];
+  controladorModRepartidores.$inject = ['$http','$stateParams', '$state','servicioUsuarios'];
 
-  function controladorModRepartidores($http, $stateParams, $state, servicioRepartidores){
+  function controladorModRepartidores($http, $stateParams, $state, servicioUsuarios){
     
     let repartidorSeleccionado;
 
     if($stateParams.identificacion == ''){
       $state.go('mantRepartidores');
     }else{
-      repartidorSeleccionado = servicioRepartidores.obtenerRepartidorSeleccionado($stateParams.identificacion);
+      repartidorSeleccionado = servicioUsuarios.obtenerUsuarioPorRol($stateParams.identificacion);
     }
     console.log(repartidorSeleccionado);
 
@@ -50,7 +50,7 @@
     console.log(repartidorModificado);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      vm.RepartidorSeleccionado = servicioRepartidores.actualizarRepartidor(repartidorModificado);
+      vm.RepartidorSeleccionado = servicioUsuarios.actualizarRepartidor(repartidorModificado);
 
       // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El repartidor se ha sido modificado correctamente", "success", {
@@ -67,7 +67,7 @@
 
     // Imprimir lista de repartidores en el sistema
     function listarRepartidores(){
-      vm.listaRepartidores = servicioRepartidores.obtenerRepartidores();
+      vm.listaRepartidores = servicioUsuarios.obtenerRepartidores();
     }
   }
 })();

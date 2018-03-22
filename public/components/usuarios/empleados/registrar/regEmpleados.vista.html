@@ -12,7 +12,7 @@
             <label for="inputRoles">Seleccione el rol del empleado:</label>
             <input type="text" class="form-control" id="inputRoles" ng-model="vm.nuevoEmpleado.rol" list="listaRoles">
             <datalist id="listaRoles">
-              <option data-ng-repeat="rol in vm.roles" value="{{rol}}">
+              <option ng-repeat="rol in vm.roles" value="{{rol}}">
             </datalist>
           </div>
           <!-- Información Personal -->
