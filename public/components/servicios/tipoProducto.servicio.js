@@ -9,7 +9,9 @@
   function servicioTipoProductos($log, $http){
     const publicAPI = {
       addTipoProducto : _addTipoProducto,
-      getTipoProductos : _getTipoProductos 
+      getTipoProductos : _getTipoProductos,
+      obtenertipoProductoSeleccionado : _obtenertipoProductoSeleccionado,
+      actualizarTipoProducto : _actualizarTipoProducto
     };
     return publicAPI;
 
@@ -36,5 +38,32 @@
       }
       return listaTipoProductos;
     }
+    function _obtenertipoProductoSeleccionado(nombreTipoProducto){
+      let  listaTipoProductos = _getTipoProductos();
+      let tipoProductoSeleccionado;
+
+      for(let i = 0; i <listaTipoProducto.length; i++){
+        if (nombreTipoProducto == listaTipoProductos[i].nombreTipoProducto){
+          tipoProductoSeleccionado = listaTipoProductos[i];
+          // console.log(sucursalSeleccionada);
+          return tipoProductoSeleccionado;
+        }
+      }
+    }
+
+    function _actualizarTipoProducto(ptipoProductoModificado){
+      let listaTipoProductos = _getTipoProductos();
+
+      for(let i = 0; i <listaTipoProductos.length; i++){
+        if (ptipoProductoModificado.nombreTipoProducto == listaTipoProductos[i].nombreTipoProducto){
+          listaTipoProductos[i] = ptipoProductoModificado;
+          // console.log(listaSucursales[i]);
+
+          localStorage.setItem('tipoProductoLS', JSON.stringify(listaTipoProductos)); 
+        }
+      }
+    }
+
+
   };
 })();

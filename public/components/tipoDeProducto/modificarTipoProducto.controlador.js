@@ -11,7 +11,7 @@
     let tipoProductoSeleccionado;
 
     if($stateParams.nombreTipoProducto == ''){
-      $state.go('mantTipoProducto');
+      $state.go('tipoProducto');
     }else{
       tipoProductoSeleccionado = servicioTipoProductos.getTipoProductos($stateParams.nombreTipoProducto);
     }
