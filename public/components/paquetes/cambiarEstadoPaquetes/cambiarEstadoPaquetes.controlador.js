@@ -12,7 +12,7 @@
     if($stateParams.idPaquetes == ''){
       $state.go('listarPaquetes');
     }else{
-      paquetesSeleccionado = servicioPaquetes.obtenerPaquetesSeleccionado($stateParams.idPaquetes);
+      paquetesSeleccionado = servicioPaquetes.getPaquetesSeleccionado($stateParams.idPaquetes);
     }
     console.log(paquetesSeleccionado);
 
@@ -53,7 +53,7 @@
 
     // Imprimir lista de repartidores en el sistema
     function listarPaquetes(){
-      vm.listaPaquetes = servicioPaquetes.obtenerPaquetes();
+      vm.listaPaquetes = servicioPaquetes.getPaquetes();
     }
 
     vm.modificar = (pEstado) =>{

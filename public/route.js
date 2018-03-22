@@ -125,6 +125,21 @@
       controllerAs: 'vm'
     })
 
+    .state('notificarEstadoPaquetes', {
+      url: '/notificarEstadoPaquetes',
+      templateUrl: './components/notificarCliente/notificarEstado.vista.html',
+      data:{
+        pageTitle: 'Editar paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/registrarPaquetes/paquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorPaquetes',
+      controllerAs: 'vm'
+    })
+
     .state('casillero', {
       url: '/casillero',
       templateUrl: './components/casillero/casillero.vista.html',
