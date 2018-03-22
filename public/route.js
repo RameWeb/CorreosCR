@@ -27,17 +27,7 @@
       controllerAs:'vm'
     })
 
-    .state('enviarFactura', {
-      url: '/enviarFactura',
-      templateUrl: './components/factura/envioFactura.vista.html',
-      resolve:{
-        load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/factura/envioFactura.controlador.js')
-        }]
-      },
-      controller:'controladorEmail',
-      controllerAs:'vm'
-    })
+    
     .state('rankingTipoDeProductosProductos', {
       url: '/rankingTipoDeProductosProductos',
       templateUrl: './components/rankingProductos/ranking.vista.html',
@@ -49,7 +39,17 @@
       controller:'controladorRanking',
       controllerAs:'vm'
     })
-    
+    .state('modificarTipoProducto', {
+      url: '/modificarTipoProducto',
+      templateUrl: './components/tipoDeProducto/modificarTipoProducto.vista.html',
+      resolve:{
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/tipoDeProducto/modificarTipoProducto.controlador.js')
+        }]
+      },
+      controller:'controladorModProducto',
+      controllerAs:'vm'
+    })
     .state('registroTipoProducto', {
       url: '/registrarTipoProducto',
       templateUrl: './components/tipoDeProducto/tipoProducto.vista.html',

@@ -1,0 +1,34 @@
+<main id="registrarTipoProducto">
+  <section class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 py-5 px-5 panelIzquierdo">
+        <h1>Correos de Costa Rica</h1>
+        <a href="#!/ListaTipoProducto" class="btn btnAccion">Lista de tipos de productos</a>
+      </div>
+      <div class="col-md-9 py-5 px-5 contenido">
+        <h2>Modificar tipo de producto</h2>
+        <div>
+          <form ng-submit="  vm.modificarTipoProducto( vm.nuevoTipoProducto)">
+            <!-- Información Personal -->
+            <div class="my-3">
+              <h3>Modificar el tipo de producto</h3>
+              <div class="form-group">
+                <label for="inputIdentificacion">Nombre del tipo de producto:</label>
+                <input type="text" class="form-control" id="inputNombre" ng-model="vm.nuevoTipoProducto.nombreTipoProducto" >
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputNombre">Impuesto del producto</label>
+                  <input type="text" class="form-control" id="inputImpuesto" ng-model="vm.nuevoTipoProducto.impuesto">
+                </div>
+              <button type="submit" class="btn btnAccion">Guardar cambios</button>
+              <a href="/#!/mantRepartidores" class="btn btn-light">Cancelar</a>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
