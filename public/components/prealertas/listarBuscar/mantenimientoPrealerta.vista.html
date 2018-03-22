@@ -1,17 +1,18 @@
 <navegacion-Principal></navegacion-Principal>
 
-<main id="registroPrealertas">
+<main id="registroSucursales">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3 py-5 px-5 panelIzquierdo">
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
         <h2>Correos de Costa Rica</h2>
         <a href="/#!/registroPrealerta" class="btn btn-light">Regresar</a>
 
       </div>
-      <div class="col-md-9 py-4 px-4 contenido">
-        <h2>Lista Prealertas</h2>
 
-        <div class="form-group col-6">
+      <div class="col-md-8 py-5 px-5 contenido">
+        <h2>Lista Prealertas activas</h2>
+
+        <div class="form-group col-7">
           <label for="txtBuscar">Buscar</label>
           <input type="text" id="txtBuscar" class="form-control" ng-model="buscarPrealerta.tracking">
         </div>
@@ -19,12 +20,11 @@
         <table class="table">
           <thead>
               <tr>
-                <th>Numero tracking</th>
+                <th>Tracking</th>
                 <th>URL</th>
-                <th>Tipo</th>
+                <th>Tipo producto</th>
                 <th>Valor</th>
-                <th>Peso(kg)</th>
-                <!-- <th>Factura</th> -->
+                <th>Peso</th>
                 <th>Courier</th>
                 <th>Acciones</th>
               </tr>
@@ -36,14 +36,13 @@
               <td>{{prealerta.tipoProducto}}</td>
               <td>{{prealerta.valor}}</td>
               <td>{{prealerta.peso}}</td>
-              <!-- <td>{{prealerta.factura}}</td> -->
               <td>{{prealerta.courier}}</td>
               <td>
                 <li class="nav-item dropdown btnAccion" style="list-style:none">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones</a>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" ng-click="vm.modificar(prealerta)">Modificar prealerta</a>
-                    <a class="dropdown-item">Eliminar prealerta</a>
+                    <a class="dropdown-item" href="" ng-click="vm.modificar(prealerta)">Modificar prealerta</a>
+                    <a class="dropdown-item" href="">Desactivar prealerta</a>
                   </div>
                 </li>
               </td>

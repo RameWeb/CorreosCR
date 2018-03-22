@@ -19,7 +19,7 @@
     }
 
     vm.nuevoConvenio = {
-      tipo: convenioSeleccionado.tipo,
+      servicio: convenioSeleccionado.servicio,
       cliente: convenioSeleccionado.cliente,
       direccion: convenioSeleccionado.direccion,
     };
@@ -31,7 +31,7 @@
       
       let idConvenio = convenioSeleccionado.idConvenio;
 
-      let objConvenioSeleccionado = new ConveniosClientes(vm.nuevoConvenio.tipo, vm.nuevoConvenio.cliente, vm.nuevoConvenio.direccion, idConvenio);
+      let objConvenioSeleccionado = new ConveniosClientes(vm.nuevoConvenio.servicio, vm.nuevoConvenio.cliente, vm.nuevoConvenio.direccion, idConvenio);
 
       console.log(objConvenioSeleccionado);
 

@@ -20,6 +20,9 @@
     .state('registroSucursal',{
       url: '/registroSucursal',
       templateUrl: './components/sucursales/registrar/sucursales.vista.html',
+      data:{
+        pageTitle: 'Registrar Sucursales'
+      },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/sucursales/registrar/sucursales.controlador.js')
@@ -32,6 +35,9 @@
     .state('listarSucursal',{
       url: '/listarSucursal',
       templateUrl: './components/sucursales/listarBuscar/mantenimientoSucursales.vista.html',
+      data:{
+        pageTitle: 'Listar Sucursales'
+      },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/sucursales/registrar/sucursales.controlador.js')
@@ -44,6 +50,9 @@
     .state('modificarSucursal',{
       url: '/modificarSucursal',
       templateUrl: './components/sucursales/modificar/modificarSucursal.vista.html',
+      data:{
+        pageTitle: 'Modificar Sucursales'
+      },
       params:{
         idSucursal: ''
       },
@@ -59,6 +68,9 @@
     .state('registroPrealerta',{
       url: '/registroPrealerta',
       templateUrl: './components/prealertas/registrar/prealerta.vista.html',
+      data:{
+        pageTitle: 'Registrar Prealertas'
+      },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/prealertas/registrar/prealerta.controlador.js')
@@ -71,6 +83,9 @@
     .state('listarPrealerta',{
       url: '/listarPrealerta',
       templateUrl: './components/prealertas/listarBuscar/mantenimientoPrealerta.vista.html',
+      data:{
+        pageTitle: 'Listar Prealertas'
+      },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/prealertas/registrar/prealerta.controlador.js')
@@ -83,8 +98,11 @@
     .state('modificarPrealerta',{
       url: '/modificarPrealerta',
       templateUrl: './components/prealertas/modificar/modificarPrealerta.vista.html',
-      params:{
-        idPrealerta: ''
+      data:{
+        pageTitle: 'Modificar Prealertas'
+      },
+      params: {
+        tracking: ''
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
@@ -98,6 +116,9 @@
     .state('registrarConvCliente',{
       url: '/registrarConvCliente',
       templateUrl: './components/convenios/registrar/convenios.vista.html',
+      data:{
+        pageTitle: 'Registrar Convenios'
+      },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/convenios/registrar/convenios.controlador.js')
@@ -111,6 +132,9 @@
     .state('listaConvenios',{
       url: '/listaConvenios',
       templateUrl: './components/convenios/listarBuscar/mantenimientoConvenios.vista.html',
+      data:{
+        pageTitle: 'Listar Convenios'
+      },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/convenios/registrar/convenios.controlador.js')
@@ -123,6 +147,9 @@
     .state('modificarConvCliente',{
       url: '/modificarConvCliente',
       templateUrl: './components/convenios/modificar/modificarConvenios.vista.html',
+      data:{
+        pageTitle: 'Modificar Convenios'
+      },
       params:{
         idConvenio: ''
       },

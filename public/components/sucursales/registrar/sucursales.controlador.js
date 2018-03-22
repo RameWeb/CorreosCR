@@ -59,6 +59,10 @@
     
     // Funcion que es llamada desde el html para regustra un nuevo usuario
     vm.registrarSucursal = (pnuevaSucursal) => {
+
+      if (pnuevaSucursal.estadoSucursal == null){
+        pnuevaSucursal.estadoSucursal = true;
+      }
       
       let idRandom = (Math.random()*Math.random())*1000;
 

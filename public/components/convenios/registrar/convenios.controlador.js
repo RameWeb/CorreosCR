@@ -4,15 +4,14 @@
   .module('correos-cr')
   .controller('controladorConveniosCliente', controladorConveniosCliente);
 
-  controladorConveniosCliente.$inject = ['$stateParams', '$state', 'servicioConveniosCliente'];
+  controladorConveniosCliente.$inject = ['$http', '$stateParams', '$state', 'servicioConveniosCliente'];
 
-  function controladorConveniosCliente($stateParams, $state, servicioConveniosCliente){
+  function controladorConveniosCliente($http, $stateParams, $state, servicioConveniosCliente){
     let vm = this;
 
     vm.servicio = ["Pasaporte", "Visa Americana", "Visa Canadiense", "Licencia de conducir", "Cédula o Identificación"];
 
     vm.nuevoConvenio = {};
-    vm.listaConvenios = listarConvenios();
 
     listarConvenios();
 
@@ -48,6 +47,5 @@
     vm.modificar = (pconvenio) =>{
       $state.go('modificarConvCliente', {idConvenio: JSON.stringify(pconvenio.idConvenio)})
     }
-
   }
 })();
