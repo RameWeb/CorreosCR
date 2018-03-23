@@ -24,7 +24,7 @@
       direccion: convenioSeleccionado.direccion,
     };
 
-    // listarConvenios();
+    // listarConvenios();//
 
     // Funcion que es llamada desde el html para regustra un nuevo usuario
     vm.modificarConvenio = (pnuevoConvenio) => {
