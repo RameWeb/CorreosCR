@@ -33,6 +33,7 @@
         registroExitoso = false;
       }else{
         listaUsuarios.push(pNuevoUsuario);
+        console.log(listaUsuarios);
         registroExitoso = localStorageFactories.setItem(coleccionUsuarios, listaUsuarios);
       };
 

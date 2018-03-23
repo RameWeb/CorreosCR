@@ -78,7 +78,7 @@
         // Se limpia el formulario
         vm.nuevoEmpleado = null;
 
-        $state.go('mantClientes');
+        $state.go('mantEmpleados');
       }else{
         swal("Ha ocurrido un error", "El empleado se ha sido registrado correctamente", "error", {
           button: "Aceptar",
