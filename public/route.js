@@ -17,166 +17,254 @@
       }
     })
 
-    .state('regRepartidores', {
-      url: '/regRepartidores',
-      templateUrl: './components/usuarios/repartidores/registrar/regRepartidores.vista.html',
+   
+    .state('registroSucursal',{
+      url: '/registroSucursal',
+      templateUrl: './components/sucursales/registrar/sucursales.vista.html',
       data:{
-        pageTitle: 'Registrar Repartidores'
-      },
-      params: {
-        objUsuarioTemp: ''
+        pageTitle: 'Registrar Sucursales'
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/repartidores/registrar/repartidores.controlador.js')
+          return $ocLazyLoad.load('./components/sucursales/registrar/sucursales.controlador.js')
         }]
       },
-      controller: 'controladorRepartidores',
+      controller: 'controladorSucursales',
       controllerAs: 'vm'
     })
 
-    .state('mantRepartidores', {
-      url: '/mantRepartidores',
-      templateUrl: './components/usuarios/repartidores/listarBuscar/mantRepartidores.vista.html',
+    .state('listarSucursal',{
+      url: '/listarSucursal',
+      templateUrl: './components/sucursales/listarBuscar/mantenimientoSucursales.vista.html',
       data:{
-        pageTitle: 'Mantenimiento de Repartidores'
-      },
-      params: {
-        objUsuarioTemp: ''
+        pageTitle: 'Listar Sucursales'
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/repartidores/registrar/repartidores.controlador.js')
+          return $ocLazyLoad.load('./components/sucursales/registrar/sucursales.controlador.js')
         }]
       },
-      controller: 'controladorRepartidores',
+      controller: 'controladorSucursales',
       controllerAs: 'vm'
     })
 
-    .state('modRepartidores', {
-      url: '/modRepartidores',
-      templateUrl: './components/usuarios/epartidores/modificar/modRepartidores.vista.html',
+    .state('modificarSucursal',{
+      url: '/modificarSucursal',
+      templateUrl: './components/sucursales/modificar/modificarSucursal.vista.html',
       data:{
-        pageTitle: 'Modificar Repartidores'
+        pageTitle: 'Modificar Sucursales'
       },
-      params: {
-        identificacion: ''
+      params:{
+        idSucursal: ''
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/repartidores/modificar/modRepartidores.controlador.js')
+          return $ocLazyLoad.load('./components/sucursales/modificar/modificarSucursal.controlador.js')
         }]
       },
-      controller: 'controladorModRepartidores',
+      controller: 'controladorModificarSucursal',
+      controllerAs: 'vm'
+    })
+    
+    .state('registroPrealerta',{
+      url: '/registroPrealerta',
+      templateUrl: './components/prealertas/registrar/prealerta.vista.html',
+      data:{
+        pageTitle: 'Registrar Prealertas'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/prealertas/registrar/prealerta.controlador.js')
+        }]
+      },
+      controller: 'controladorPrealertas',
       controllerAs: 'vm'
     })
 
-    .state('regClientes', {
-      url: '/regClientes',
-      templateUrl: './components/usuarios/clientes/registrar/regClientes.vista.html',
+    .state('listarPrealerta',{
+      url: '/listarPrealerta',
+      templateUrl: './components/prealertas/listarBuscar/mantenimientoPrealerta.vista.html',
       data:{
-        pageTitle: 'Registrar Clientes'
+        pageTitle: 'Listar Prealertas'
       },
-      params: {
-        objUsuarioTemp: ''
-      },
-      css: './sources/styles/components/clientes.style.scss',
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/clientes/registrar/clientes.controlador.js')
+          return $ocLazyLoad.load('./components/prealertas/registrar/prealerta.controlador.js')
         }]
       },
-      controller: 'controladorClientes',
+      controller: 'controladorPrealertas',
       controllerAs: 'vm'
     })
 
-    .state('mantClientes', {
-      url: '/mantClientes',
-      templateUrl: './components/usuarios/clientes/listarBuscar/mantClientes.vista.html',
+    .state('modificarPrealerta',{
+      url: '/modificarPrealerta',
+      templateUrl: './components/prealertas/modificar/modificarPrealerta.vista.html',
       data:{
-        pageTitle: 'Mantenimiento de Clientes'
+        pageTitle: 'Modificar Prealertas'
       },
       params: {
-        objUsuarioTemp: ''
+        tracking: ''
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/clientes/registrar/clientes.controlador.js')
+          return $ocLazyLoad.load('./components/prealertas/modificar/modificarPrealerta.controlador.js')
         }]
       },
-      controller: 'controladorClientes',
+      controller: 'controladorModificarPrealertas',
       controllerAs: 'vm'
     })
 
-    .state('modClientes', {
-      url: '/modClientes',
-      templateUrl: './components/usuarios/clientes/modificar/modClientes.vista.html',
+    .state('registrarConvCliente',{
+      url: '/registrarConvCliente',
+      templateUrl: './components/convenios/registrar/convenios.vista.html',
       data:{
-        pageTitle: 'Modificar Clientes'
-      },
-      params: {
-        identificacion: ''
+        pageTitle: 'Registrar Convenios'
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/clientes/modificar/modClientes.controlador.js')
+          return $ocLazyLoad.load('./components/convenios/registrar/convenios.controlador.js')
         }]
       },
-      controller: 'controladorModClientes',
+      controller: 'controladorConveniosCliente',
       controllerAs: 'vm'
     })
 
-    .state('regEmpleados', {
-      url: '/regEmpleados',
-      templateUrl: './components/usuarios/empleados/registrar/regEmpleados.vista.html',
+    
+
+    .state('convenios', {
+      url: '/convenios',
+      templateUrl: './components/convenios/registrarConvenio/convenio.vista.html',
       data:{
-        pageTitle: 'Registro de Empleados'
-      },
-      params: {
-        objUsuarioTemp: ''
+        pageTitle: 'Registro convenios | Correos CR'
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/empleados/registrar/empleados.controlador.js')
+          return $ocLazyLoad.load('./components/convenios/registrarConvenio/convenios.controlador.js')
         }]
       },
-      controller: 'controladorEmpleados',
+      controller: 'controladorConvenios',
       controllerAs: 'vm'
     })
 
-    .state('mantEmpleados', {
-      url: '/mantEmpleados',
-      templateUrl: './components/usuarios/empleados/listarBuscar/mantEmpleados.vista.html',
+    .state('lista-convenios', {
+      url: '/lista-convenios',
+      templateUrl: './components/convenios/listarConvenio/listaConvenios.vista.html',
       data:{
-        pageTitle: 'Lista de Empleados'
-      },
-      params: {
-        objUsuarioTemp: ''
+        pageTitle: 'Lista convenios | Correos CR'
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/empleados/registrar/empleados.controlador.js')
+          return $ocLazyLoad.load('./components/convenios/registrarConvenio/convenios.controlador.js')
         }]
       },
-      controller: 'controladorEmpleados',
+      controller: 'controladorConvenios',
+
       controllerAs: 'vm'
     })
 
-    .state('modEmpleados', {
-      url: '/modEmpleados',
-      templateUrl: './components/usuarios/empleados/modificar/modEmpleados.vista.html',
+    
+    .state('modificar-convenios', {
+      url: '/modificar-convenios',
+      templateUrl: './components/convenios/modificarConvenio/modificarConvenios.vista.html',
       data:{
-        pageTitle: 'Modificar Empleados'
-      },
-      params: {
-        identificacion: ''
+        pageTitle: 'Lista convenios | Correos CR'
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/empleados/modificar/modEmpleados.controlador.js')
+          return $ocLazyLoad.load('./components/convenios/modificarConvenio/modificarConvenio.controlador.js')
         }]
       },
-      controller: 'controladorModEmpleados',
+      controller: 'controladorModificarConvenios',
+      controllerAs: 'vm'
+    })
+    
+
+    .state('paquetes', {
+      url: '/paquetes',
+      templateUrl: './components/paquetes/registrarPaquetes/paquetes.vista.html',
+      data:{
+        pageTitle: 'Registro llegada de paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/registrarPaquetes/paquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorPaquetes',
+      controllerAs: 'vm'
+    })
+
+    .state('listarPaquetes', {
+      url: '/listarPaquetes',
+      templateUrl: './components/paquetes/listarPaquetes/listarPaquetes.vista.html',
+      data:{
+        pageTitle: 'Lista llegada de paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/registrarPaquetes/paquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorPaquetes',
+      controllerAs: 'vm'
+    })
+    .state('modificarPaquetes', {
+      url: '/modificarPaquetes',
+      templateUrl: './components/paquetes//modificarPaquetes/modificarPaquetes.vista.html',
+      data:{
+        pageTitle: 'Editar paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/modificarPaquetes/modificarPaquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorModificarPaquetes',
+      controllerAs: 'vm'
+    })
+
+    .state('cambiarEstadoPaquetes', {
+      url: '/cambiarEstadoPaquetes',
+      templateUrl: './components/paquetes/cambiarEstadoPaquetes/cambiarEstadoPaquetes.vista.html',
+      data:{
+        pageTitle: 'Editar paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/cambiarEstadoPaquetes/cambiarEstadoPaquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorCambiarEstadoPaquetes',
+      controllerAs: 'vm'
+    })
+
+    .state('notificarEstadoPaquetes', {
+      url: '/notificarEstadoPaquetes',
+      templateUrl: './components/notificarCliente/notificarEstado.vista.html',
+      data:{
+        pageTitle: 'Editar paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/registrarPaquetes/paquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorPaquetes',
+      controllerAs: 'vm'
+    })
+
+    .state('casillero', {
+      url: '/casillero',
+      templateUrl: './components/casillero/casillero.vista.html',
+      data:{
+        pageTitle: 'Mi casillero | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/casillero/casillero.controlador.js')
+        }]
+      },
+      controller: 'controladorCasillero',
       controllerAs: 'vm'
     })
 
@@ -313,6 +401,22 @@
     controller:'controladorCourier',
     controllerAs:'vm'
   });
+
+    .state('contrasenna', {
+      url: '/contrasenna',
+      templateUrl: './components/contrasenna/contrasenna.vista.html',
+      data:{
+        pageTitle: 'Mi contraseña| Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/contrasenna/contrasenna.controlador.jss')
+        }]
+      },
+      controller: 'controladorContrasenna',
+      controllerAs: 'vm'
+    })
+  
 
     $urlRouterProvider.otherwise('/');
   }
