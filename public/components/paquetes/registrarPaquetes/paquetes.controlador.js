@@ -15,10 +15,12 @@
 
     listarPaquetes();
     vm.registrarPaquetes = (pnuevoPaquetes) => {
+       
+      let idRandom = (Math.random()*Math.random())*1000;
 
       console.log(pnuevoPaquetes);
 
-      let objNuevoPaquetes = new Paquetes(pnuevoPaquetes.tracking, pnuevoPaquetes.nombre, pnuevoPaquetes.peso, pnuevoPaquetes.valor, pnuevoPaquetes.estado);
+      let objNuevoPaquetes = new Paquetes(pnuevoPaquetes.tracking, pnuevoPaquetes.nombre, pnuevoPaquetes.peso, pnuevoPaquetes.valor, pnuevoPaquetes.estado, idRandom);
      
       console.log('objeto con paquete');
       console.log(objNuevoPaquetes);
