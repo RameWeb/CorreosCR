@@ -2,11 +2,11 @@
   'use strict';
   angular
   .module('correos-cr')
-  .service('servicioRepartidores', servicioRepartidores);
+  .service('servicioUsuarios', servicioUsuarios);
 
-  servicioRepartidores.$inject = ['$log','$http'];
+  servicioUsuarios.$inject = ['$log','$http'];
 
-  function servicioRepartidores($log, $http){
+  function servicioUsuarios($log, $http){
 
     let publicAPI = {
       agregarRepartidores : _agregarRepartidores,
