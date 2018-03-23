@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-// variables de color
-$deepPurple: linear-gradient(to right, #2F3640 100%, #353B48 100%);
-$slateblue: #8C7AE6;
-$white: #FFF;
-
-#landing{
-  background-image: $deepPurple;
-  height: 100vh;
-  .btnAccion{
-    background-color: $slateblue;
-    color: $white;
-  }
-  .contenido{
-    background-color: $white;
-  }
-  .panelIzquierdo{
-    background-image: $deepPurple;
-    color: $white;
-    min-height: 100vh;
-    overflow: scroll;
-  }
-}
-
-=======
 @import "../setting";
 
 .bg-black{
@@ -184,4 +159,3 @@ h3.titularContacto{
     height: 35vh;
   }
 }
->>>>>>> origin/Christine
