@@ -1,6 +1,6 @@
 @import "../setting";
 
-#registroSucursales{
+#registroTipoProducto{
   .contenido{
     background-color: $white;
     max-height: 100vh;
@@ -12,12 +12,6 @@
     color: $white;
     min-height: 100vh;
   }
-  
-  .btnAccion{
-    background-color: $slateblue;
-    color: $white;
-  }
-
   .btnAccion{
     background-color: $slateblue;
     color: $white;
@@ -32,7 +26,5 @@
     font-family: $fuenteContenido;
   }
 
-  textarea{
-    resize: none;
-  }
+  
 }
