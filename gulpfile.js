@@ -53,7 +53,8 @@ gulp.task('dependencies', () => {
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/popper.js/dist/umd/popper.min.js',
-    './node_modules/checklist-model/checklist-model.js'
+    './node_modules/checklist-model/checklist-model.js',
+    'node_modules/feather-icons/dist/feather.min.js'
   ])
     .pipe(gulp.dest('./public/lib/bootstrap'));
 
