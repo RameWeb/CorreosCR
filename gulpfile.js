@@ -63,6 +63,10 @@ gulp.task('dependencies', () => {
   ])
     .pipe(gulp.dest('./public/lib/sweetalert'));
 
+  gulp.src([
+    './node_modules/feather-icons/dist/feather.min.js',
+  ])
+    .pipe(gulp.dest('./public/lib/feathericons'));
 });
 
 gulp.task('reload', () => {
