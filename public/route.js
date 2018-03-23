@@ -9,6 +9,7 @@
 
     $stateProvider
 
+<<<<<<< HEAD
     .state('landingPage', {
       url: '/',
       templateUrl: './components/landingPage/landing.vista.html',
@@ -325,6 +326,62 @@
       controllerAs: 'vm'
     }),
 
+=======
+    .state('landing-page', {
+      url: '/',
+      templateUrl: './components/landingPage/landing.vista.html',
+      data:{
+        pageTitle: 'Correos de Costa Rica'
+      }
+    })
+
+    .state('admin', {
+      url: '/admin',
+      templateUrl: './components/admin/admin.vista.html',
+      data:{
+        pageTitle: 'Dashboard | Administrador'
+      }
+    })
+
+    .state('cliente', {
+      url: '/cliente',
+      templateUrl: './components/cliente/cliente.vista.html',
+      data:{
+        pageTitle: 'Dashboard | Cliente'
+      }
+    })
+
+    .state('direcciones', {
+      url: '/direcciones',
+      templateUrl: './components/direcciones/direcciones.view.html',
+      data:{
+        pageTitle: 'Registro Direcciones | Ejemplo Arquitectura'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/direcciones/direcciones.controller.js')
+        }]
+      },
+      controller: 'controladorDirecciones',
+      controllerAs: 'vm'
+    })
+
+    .state('licencias', {
+      url: '/licencias',
+      templateUrl: './components/licencias/licencias.view.html',
+      data:{
+        pageTitle: 'Registro Licencias | Ejemplo Arquitectura'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/licencias/licencias.controller.js')
+        }]
+      },
+      controller: 'controladorLicencias',
+      controllerAs: 'vm'
+    })
+
+>>>>>>> origin/Christine
     $urlRouterProvider.otherwise('/');
   }
 })();

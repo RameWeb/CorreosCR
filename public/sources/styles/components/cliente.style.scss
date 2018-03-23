@@ -1,37 +1,33 @@
 @import "../setting";
 
-#registroPrealertas{
+#cliente{
   .contenido{
     background-color: $white;
     max-height: 100vh;
     overflow: scroll;
+    margin-top: 170px;
   }
   
   .panelIzquierdo{
     background-image: $background;
-<<<<<<< HEAD
-=======
     background-size: cover;
->>>>>>> origin/Christine
     color: $white;
     min-height: 100vh;
   }
+
+  .panelIzquierdo img{
+    padding-top: 200px;
+  }
   
   .btnAccion{
     background-color: $slateblue;
     color: $white;
   }
-<<<<<<< HEAD
 
-  .btnAccion{
-    background-color: $slateblue;
-    color: $white;
-    font-family: $fuenteContenido;
+  button{
+    width: 300px;
   }
-
-=======
   
->>>>>>> origin/Christine
   h1,h2{
     font-family: $fuenteTitulos;
     }
@@ -39,11 +35,17 @@
   h3,p,label{
     font-family: $fuenteContenido;
   }
-<<<<<<< HEAD
 
-  textarea{
-    resize: none;
+  i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
   }
-=======
->>>>>>> origin/Christine
+
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
 }
