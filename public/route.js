@@ -9,15 +9,6 @@
 
     $stateProvider
 
-<<<<<<< HEAD
-    .state('landingPage', {
-      url: '/',
-      templateUrl: './components/landingPage/landing.vista.html',
-      data:{
-        pageTitle: 'Inicio'
-      }
-    })
-
     .state('registroSucursal',{
       url: '/registroSucursal',
       templateUrl: './components/sucursales/registrar/sucursales.vista.html',
@@ -326,7 +317,6 @@
       controllerAs: 'vm'
     }),
 
-=======
     .state('landing-page', {
       url: '/',
       templateUrl: './components/landingPage/landing.vista.html',
@@ -381,7 +371,6 @@
       controllerAs: 'vm'
     })
 
->>>>>>> origin/Christine
     $urlRouterProvider.otherwise('/');
   }
 })();
