@@ -49,7 +49,7 @@
       for (let i= 0; i < listaPrealertas.length; i++){
         if (tracking == listaPrealertas[i].tracking){
           prealertaSeleccionada = listaPrealertas[i];
-          return prealertaSeleccionada;        
+          return prealertaSeleccionada;
         }
       }
     }

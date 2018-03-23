@@ -4,44 +4,45 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4 py-5 px-5 panelIzquierdo">
-        <h2>Correos de Costa Rica</h2>
+        <img src="./../../../sources/img/Group 97.svg" class="mt-5" alt="">      
       </div>
 
       <div class="col-md-8 py-5 px-5 contenido">
         <div class="col-6">
           <h2>Modificar prealerta </h2>
           <form name="formRegistrarPrealerta" autocomplete="off" ng-submit="vm.modificarPrealerta(vm.nuevaPrealerta)" novalidate>
+
             <div class="form-group">
-              <label for="formGroupExampleInput">Número de tracking</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.tracking">
+              <label for="formGroupExampleInput">Tracking:</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.tracking" required>
             </div>
       
             <div class="form-group">
-              <label for="formGroupExampleInput">URL del producto</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.url">
+              <label for="formGroupExampleInput">URL del producto:</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.url" required>
             </div>
             
             <div class="form-group">
-              <label for="formGroupExampleInput">Tipo de producto</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.tipoProducto" list="listaProductos">
+              <label for="formGroupExampleInput">Tipo de producto:</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.tipoProducto" list="listaProductos" required>
                 <datalist id="listaProductos">
                   <option data-ng-repeat="tipoProducto in vm.tipoProducto" value="{{tipoProducto}}">
               </datalist>
             </div>
       
             <div class="form-group">
-              <label for=formGroupExampleInput"">Valor del paquete</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.valor">
+              <label for=formGroupExampleInput"">Valor del paquete:</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.valor" required>
             </div>
       
             <div class="form-group">
-              <label for=formGroupExampleInput"">Peso del paquete</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.peso">
+              <label for=formGroupExampleInput"">Peso del paquete:</label>
+              <input type="text" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaPrealerta.peso" required>
             </div>
       
             <div class="form-group">
-              <label for="formGroupExampleInput">Courier</label>
-              <input type="text" class="form-control" id="inputCourier" ng-model="vm.nuevaPrealerta.courier" list="listaCourier">
+              <label for="formGroupExampleInput">Courier:</label>
+              <input type="text" class="form-control" id="inputCourier" ng-model="vm.nuevaPrealerta.courier" list="listaCourier" required>
               <datalist id="listaCourier">
                 <option data-ng-repeat="courier in vm.courier" value="{{courier}}">
               </datalist>

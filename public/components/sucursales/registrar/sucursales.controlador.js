@@ -74,7 +74,7 @@
       console.log(objNuevaSucursal);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      servicioSucursales.addSucursal(objNuevaSucursal);
+      servicioSucursales.agregarSucursal(objNuevaSucursal);
 
       // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "La nueva sucursal se ha sido registrado correctamente", "success", {
@@ -87,7 +87,7 @@
     }
 
     function listarSucursales(){
-      vm.listaSucursales = servicioSucursales.getSucursal();
+      vm.listaSucursales = servicioSucursales.obtenerSucursal();
     }
 
     vm.modificar = (psucursal) =>{

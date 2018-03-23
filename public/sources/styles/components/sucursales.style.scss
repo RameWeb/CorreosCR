@@ -31,4 +31,8 @@
   h3,p,label{
     font-family: $fuenteContenido;
   }
+
+  textarea{
+    resize: none;
+  }
 }

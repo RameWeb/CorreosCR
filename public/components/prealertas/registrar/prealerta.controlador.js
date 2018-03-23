@@ -17,15 +17,17 @@
 
     vm.nuevaPrealerta = {};
 
-    vm.listaPrealertas = listarPrealertas();
-
     listarPrealertas();
     
     // Funcion que es llamada desde el html para regustra un nuevo usuario
     vm.registrarPrealerta = (pnuevaPrealerta) => {
+
+      // if (pnuevaPrealerta.estado == null) {
+      //   pnuevaPrealerta.estado = 0;
+      // }
       
       // Tomamos el objeto sin formato y lo comvertimos en un objeto de tipo cliente
-      let objNuevaPrealerta = new Prealertas(pnuevaPrealerta.tracking, pnuevaPrealerta.url, pnuevaPrealerta.tipoProducto, pnuevaPrealerta.valor, pnuevaPrealerta.peso, pnuevaPrealerta.courier);
+      let objNuevaPrealerta = new Prealertas(pnuevaPrealerta.tracking, pnuevaPrealerta.url, pnuevaPrealerta.tipoProducto, pnuevaPrealerta.valor, pnuevaPrealerta.peso, pnuevaPrealerta.courier, pnuevaPrealerta.estado);
         
       console.log(objNuevaPrealerta);
 

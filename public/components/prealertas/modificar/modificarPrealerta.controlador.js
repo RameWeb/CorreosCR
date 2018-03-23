@@ -16,7 +16,7 @@
       prealertaSeleccionada = servicioPrealertas.obtenerPrealertaSelecionada($stateParams.tracking);
     }
 
-    console.log(prealertaSeleccionada);
+    // console.log(prealertaSeleccionada);
 
     vm.nuevaPrealerta = {
       tracking: prealertaSeleccionada.tracking,
@@ -24,7 +24,7 @@
       tipoProducto: prealertaSeleccionada.tipoProducto,
       valor: prealertaSeleccionada.valor,
       peso: prealertaSeleccionada.peso,
-      courier: prealertaSeleccionada.courier,
+      courier: prealertaSeleccionada.courier
     };
 
     // listarPrealertas();

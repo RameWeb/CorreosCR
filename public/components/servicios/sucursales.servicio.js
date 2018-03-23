@@ -9,22 +9,22 @@
   function servicioSucursales($log, $http){
 
     let publicAPI = {
-      addSucursal : _addSucursal,
-      getSucursal : _getSucursal,
-      getSucursalSeleccionada: _getSucursalSeleccionada,
+      agregarSucursal : _agregarSucursal,
+      obtenerSucursal : _obtenerSucursal,
+      obtenerSucursalSeleccionada: _obtenerSucursalSeleccionada,
       actualizarSucursal: _actualizarSucursal
     }
     return publicAPI;
 
     // Funcion que almacena en el localStorage todos los usuarios
-    function _addSucursal(pnuevaSucursal){
-      let listaSucursales = _getSucursal();
+    function _agregarSucursal(pnuevaSucursal){
+      let listaSucursales = _obtenerSucursal();
       listaSucursales.push(pnuevaSucursal);
       localStorage.setItem('sucursalesLS', JSON.stringify(listaSucursales));
     }
 
     // Funcion que trae todos los usuarios del localStorage y a partir de esos datos vuelve a crear un arreglo con todos los objetos de tipo usuario
-    function _getSucursal(){
+    function _obtenerSucursal(){
       let listaSucursales = [];
       let listaSucursalesLocal = JSON.parse(localStorage.getItem("sucursalesLS"));
 
@@ -42,8 +42,8 @@
       return listaSucursales;
     }
 
-    function _getSucursalSeleccionada(idSucursal){
-      let listaSucursales = _getSucursal();
+    function _obtenerSucursalSeleccionada(idSucursal){
+      let listaSucursales = _obtenerSucursal();
       let sucursalSeleccionada;
 
       for(let i = 0; i < listaSucursales.length; i++){
@@ -56,7 +56,7 @@
     }
 
     function _actualizarSucursal(psucursalModificada){
-      let listaSucursales = _getSucursal();
+      let listaSucursales = _obtenerSucursal();
 
       for(let i = 0; i < listaSucursales.length; i++){
         if (psucursalModificada.idSucursal == listaSucursales[i].idSucursal){
@@ -68,6 +68,6 @@
       }
     }
 
-    // console.log(_getSucursal());
+    // console.log(_obtenerSucursal());
   }
 })();

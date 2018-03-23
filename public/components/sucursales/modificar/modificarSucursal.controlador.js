@@ -13,7 +13,7 @@
     if($stateParams.idSucursal == ''){
       $state.go('listarSucursal');
     }else{
-      sucursalSeleccionada = servicioSucursales.getSucursalSeleccionada($stateParams.idSucursal);
+      sucursalSeleccionada = servicioSucursales.obtenerSucursalSeleccionada($stateParams.idSucursal);
     }
 
     // console.log(sucursalSeleccionada);
@@ -96,7 +96,7 @@
     }
 
     function listarSucursales(){
-      vm.listaSucursales = servicioSucursales.getSucursal();
+      vm.listaSucursales = servicioSucursales.obtenerSucursal();
     }
 
   }
