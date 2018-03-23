@@ -34,6 +34,9 @@
     function listarTiposProductos(){
       vm.listaTipoProductos= servicioTipoProductos.getTipoProductos();
     }
+    vm.modificar = (ptipoProducto) =>{
+      $state.go('modRepartidores', {identificacion: JSON.stringify(prepartidor.identificacion)})
+    }
 
   }
 })();

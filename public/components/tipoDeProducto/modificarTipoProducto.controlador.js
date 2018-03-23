@@ -9,15 +9,13 @@
   function controladorModProducto($http, $stateParams, $state, servicioTipoProductos){
     
     let tipoProductoSeleccionado;
-
+    let vm = this;
     if($stateParams.nombreTipoProducto == ''){
       $state.go('tipoProducto');
     }else{
       tipoProductoSeleccionado = servicioTipoProductos.getTipoProductos($stateParams.nombreTipoProducto);
     }
     console.log(tipoProductoSeleccionado);
-
-    let vm = this;
     vm.nuevoTipoProducto = {
       // identificacion: repartidorSeleccionado.identificacion,
       nombreTipoProducto: tipoProductoSeleccionado.nombreTipoProducto,
