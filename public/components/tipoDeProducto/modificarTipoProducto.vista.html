@@ -1,34 +1,40 @@
-<main id="registrarTipoProducto">
-  <section class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 py-5 px-5 panelIzquierdo">
+<section class="container-fluid my-5">
+  <div class="row">
+      <div class="col-md-4">
         <h1>Correos de Costa Rica</h1>
-        <a href="#!/ListaTipoProducto" class="btn btnAccion">Lista de tipos de productos</a>
+        <a href="#!/ListaTipoProducto" class="btn btn-primary">Lista de tipos de productos</a>
       </div>
-      <div class="col-md-9 py-5 px-5 contenido">
-        <h2>Modificar tipo de producto</h2>
-        <div>
-          <form ng-submit="  vm.modificarTipoProducto( vm.nuevoTipoProducto)">
-            <!-- Información Personal -->
-            <div class="my-3">
-              <h3>Modificar el tipo de producto</h3>
+      <div class="col-md-8">
+          <h2>Registrar un nuevo tipo de producto </h2>
+          <div>
+            <form ng-submit=" vm.registrarTipoProducto(vm.nuevoTipoProducto)">
+              <!-- Información del nuevo tipo de producto  -->
+              <div class="my-3">
+                  <h3>Información del nuevo tipo de producto</h3>
+                  <div class="form-group">
+      <div class="">
+          <div class="row">
+            <div class="col">
               <div class="form-group">
-                <label for="inputIdentificacion">Nombre del tipo de producto:</label>
-                <input type="text" class="form-control" id="inputNombre" ng-model="vm.nuevoTipoProducto.nombreTipoProducto" disabled>
+                <label for="">Nombre del tipo de producto</label>
+                <input type="text"id="txtTipoProductoNombre"class="form-control myInput"  ng-model="vm.nuevoTipoProducto.nombreTipoProducto" disabled>
               </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputNombre">Impuesto del producto</label>
-                  <input type="text" class="form-control" id="inputImpuesto" ng-model="vm.nuevoTipoProducto.impuesto">
+
+             </div>
+             <div class="col">
+                <div class="form-group">
+                 <label for="">Impuesto del tipo de producto</label>
+                 <input type="number" min="0" id="txtImpuesto" class="form-control myInput" ng-model="vm.nuevoTipoProducto.impuesto" required>
                 </div>
-              <button type="submit" class="btn btnAccion">Guardar cambios</button>
-              <a href="/#!/mantRepartidores" class="btn btn-light">Cancelar</a>
-            </div>
-
-          </form>
+              </div>
         </div>
-
+       <button type="submit" class="btnGuardar" id="btnGuardar">Guardar</button>
+       
       </div>
-    </div>
-  </section>
-</main>
+   </form>      
+   </div>
+  </div>
+</div>
+</section>
+
+

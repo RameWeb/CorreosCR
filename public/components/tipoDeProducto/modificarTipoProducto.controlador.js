@@ -7,24 +7,26 @@
   controladorModProducto.$inject = ['$http','$stateParams', '$state','servicioTipoProductos'];
 
   function controladorModProducto($http, $stateParams, $state, servicioTipoProductos){
-    
-    let tipoProductoSeleccionado;
     let vm = this;
+
+    let tipoProductoSeleccionado;
+
     if($stateParams.nombreTipoProducto == ''){
-      $state.go('tipoProducto');
+      $state.go('ListaTipoProducto');
     }else{
       tipoProductoSeleccionado = servicioTipoProductos.getTipoProductos($stateParams.nombreTipoProducto);
     }
     console.log(tipoProductoSeleccionado);
+
     vm.nuevoTipoProducto = {
-      // identificacion: repartidorSeleccionado.identificacion,
       nombreTipoProducto: tipoProductoSeleccionado.nombreTipoProducto,
-      impuesto: tipoProductoSeleccionado.impuesto
+      impuesto: tipoProductoSeleccionado.impuesto,
       
     };
 
     vm.modificarTipoProducto = (pNuevoTipoProducto) =>{
       let nombreTipoProducto = tipoProductoSeleccionado.nombreTipoProducto;
+
       let tipoProductoModificado = new tipoProducto(vm.nuevoTipoProducto.nombreTipoProducto,vm.nuevoTipoProducto.impuesto);
 
     console.log(tipoProductoModificado);
@@ -37,7 +39,7 @@
         button: "Aceptar",
       });
 
-      $state.go('mantTipoProducto');
+      $state.go('ListaTipoProducto');
 
       listarTiposProductos();
 

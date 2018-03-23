@@ -207,6 +207,9 @@
     .state('modificarTipoProducto', {
       url: '/modificarTipoProducto',
       templateUrl: './components/tipoDeProducto/modificarTipoProducto.vista.html',
+      params:{
+        nombreTipoProducto:''
+      },
       resolve:{
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
           return $ocLazyLoad.load('./components/tipoDeProducto/modificarTipoProducto.controlador.js')
