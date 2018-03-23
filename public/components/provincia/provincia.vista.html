@@ -1,0 +1,30 @@
+<section class="container-fluid my-5">
+    <div class="row">
+        <div class="col-md-4">
+          <h1>Correos de Costa Rica</h1>
+          <a href="#!/listaProvincia" class="btn btn-primary">Lista de Provincias</a>
+        </div>
+        <div class="col-md-8">
+            <h2>Registrar una nueva provincia</h2>
+            <div>
+              <form ng-submit="vm.registrarProvincia(vm.nuevaProvincia)" > 
+                <!-- Información de la nueva Provincia  -->
+                <div class="my-3">
+                    <div class="form-group">
+        <div class="">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                    <label for="">Nombre de la provincia</label>
+                  <input type="text"id="txtProvinciaNombre"class="form-control myInput"  ng-model="vm.nuevaProvincia.nombreProvincia"  required>
+                </div>
+               </div>
+          </div>
+         <button type="submit" class="btnGuardar" id="btnGuardar">Guardar</button>
+         
+        </div>
+     </form>      
+     </div>
+    </div>
+  </div>
+</section>
