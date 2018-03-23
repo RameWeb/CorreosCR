@@ -449,7 +449,7 @@
     },
     controller:'controladorCourier',
     controllerAs:'vm'
-  });
+  })
 
     .state('landing-page', {
       url: '/',
