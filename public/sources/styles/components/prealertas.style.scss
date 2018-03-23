@@ -9,6 +9,7 @@
   
   .panelIzquierdo{
     background-image: $background;
+    background-size: cover;
     color: $white;
     min-height: 100vh;
 
@@ -16,7 +17,10 @@
       color: $white;
     }
   }
-  
+  .btnAccion{
+    background-color: $slateblue;
+    color: $white;
+
   .btnAccion{
     background-color: $slateblue;
     color: $white;
@@ -29,9 +33,5 @@
 
   h3,p,label{
     font-family: $fuenteContenido;
-  }
-
-  textarea{
-    resize: none;
   }
 }
