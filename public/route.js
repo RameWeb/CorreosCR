@@ -315,7 +315,7 @@
       },
       controller: 'controladorModEmpleados',
       controllerAs: 'vm'
-    }),
+    })
 
     .state('landing-page', {
       url: '/',
