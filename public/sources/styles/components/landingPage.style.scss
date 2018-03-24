@@ -7,10 +7,12 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
+
 .headlines{
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
+
 .gray{
   background-color: #ffffff;
   color: #000;
@@ -24,7 +26,7 @@ input.myCheckbox[type=checkbox]:checked + label:before{
   background-color: #8979e4 !important;
 }
 input.myInput, select.mySelect{
-  background-color: #222222 !important;
+  // background-color: #222222 !important;
   color: #8979e4 !important;
   border: none !important;
 }

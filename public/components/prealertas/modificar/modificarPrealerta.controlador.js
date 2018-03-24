@@ -11,7 +11,7 @@
     let prealertaSeleccionada;
 
     if($stateParams.tracking == ''){
-      $state.go('listarPrealerta')
+      $state.go('listarPrealerta');
     }else{
       prealertaSeleccionada = servicioPrealertas.obtenerPrealertaSelecionada($stateParams.tracking);
     }

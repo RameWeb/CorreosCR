@@ -80,7 +80,7 @@
 
     .state('listarSucursal',{
       url: '/listarSucursal',
-      templateUrl: './components/sucursales/listarBuscar/mantenimientoSucursales.vista.html',
+      templateUrl: './components/sucursales/listarBuscar/listaSucursales.vista.html',
       data:{
         pageTitle: 'Listar Sucursales'
       },
