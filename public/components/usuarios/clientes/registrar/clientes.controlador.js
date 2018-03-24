@@ -22,7 +22,9 @@
     vm.registrarCliente = (pNuevoCliente) => {
       console.log(pNuevoCliente);
 
-      let nuevoCliente= new Cliente(vm.nuevoCliente.identificacion, vm.nuevoCliente.nombre,vm.nuevoCliente.apellido1, vm.nuevoCliente.email,vm.nuevoCliente.contrasenna,vm.nuevoCliente.fechaNacimiento,vm.nuevoCliente.telefono,vm.nuevoCliente.provincia,vm.nuevoCliente.canton,vm.nuevoCliente.distrito,vm.nuevoCliente.direccion,vm.nuevoCliente.titularTarjeta,vm.nuevoCliente.numeroTarjeta,vm.nuevoCliente.mesVencimiento,vm.nuevoCliente.annoVencimiento,vm.nuevoCliente.ccv, 1);
+      let nuevaTarjeta = new Tarjeta(vm.nuevoCliente.titularTarjeta,vm.nuevoCliente.numeroTarjeta,vm.nuevoCliente.mesVencimiento,vm.nuevoCliente.annoVencimiento,vm.nuevoCliente.ccv);
+
+      let nuevoCliente= new Cliente(vm.nuevoCliente.identificacion, vm.nuevoCliente.nombre,vm.nuevoCliente.apellido1,vm.nuevoCliente.fechaNacimiento,vm.nuevoCliente.email,vm.nuevoCliente.contrasenna,vm.nuevoCliente.provincia,vm.nuevoCliente.canton,vm.nuevoCliente.distrito,vm.nuevoCliente.direccion,1,'Cliente',vm.nuevoCliente.telefono, nuevaTarjeta);
       console.log(nuevoCliente);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage

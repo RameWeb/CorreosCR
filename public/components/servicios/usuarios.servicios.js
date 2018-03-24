@@ -14,7 +14,8 @@
       agregarUsuario : _agregarUsuario,
       obtenerUsuario : _obtenerUsuario,
       actualizarUsuario : _actualizarUsuario,
-      obtenerUsuarioPorRol : _obtenerUsuarioPorRol
+      obtenerUsuarioPorRol : _obtenerUsuarioPorRol,
+      obtenerEmpleados : _obtenerEmpleados
     }
     return publicAPI;
 
@@ -33,6 +34,7 @@
         registroExitoso = false;
       }else{
         listaUsuarios.push(pNuevoUsuario);
+        console.log(listaUsuarios);
         registroExitoso = localStorageFactories.setItem(coleccionUsuarios, listaUsuarios);
       };
 
@@ -62,7 +64,7 @@
             break;
 
             case "Repartidor":
-              let objTempRepartidor = new Repartidor(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono, obj.puesto, obj.sucursal, obj.licencia, obj.fotoLicencia, obj.licenciaVencimiento);
+              let objTempRepartidor = new Repartidor(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono, obj.sucursal, obj.licencia,obj.fotoLicencia, obj.licenciaVencimiento);
 
               listaUsuarios.push(objTempRepartidor);
             break;
@@ -74,7 +76,6 @@
             break;
 
             default:
-
               let objTempUsuario = new Usuario(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario);
 
               listaUsuarios.push(objTempUsuario);
@@ -106,6 +107,19 @@
 
       for(let i = 0; i < listaUsuarios.length; i++){
         if(listaUsuarios[i].getTipoUsuario() == pRol){
+          listaUsuariosFiltrada.push(listaUsuarios[i]);
+        }
+      }
+
+      return listaUsuariosFiltrada;
+    }
+
+    function _obtenerEmpleados(pRol){
+      let listaUsuarios = _obtenerUsuario(),
+          listaUsuariosFiltrada = [];
+
+      for(let i = 0; i < listaUsuarios.length; i++){
+        if(listaUsuarios[i].getTipoUsuario() != pRol){
           listaUsuariosFiltrada.push(listaUsuarios[i]);
         }
       }

@@ -4,9 +4,9 @@
   .module('correos-cr')
   .controller('controladorModClientes', controladorModClientes);
 
-  controladorModClientes.$inject = ['$http','$stateParams', '$state','servicioClientes'];
+  controladorModClientes.$inject = ['$http','$stateParams', '$state','servicioUsuarios'];
 
-  function controladorModClientes($http, $stateParams, $state, servicioClientes){
+  function controladorModClientes($http, $stateParams, $state, servicioUsuarios){
     let clienteSeleccionado;
 
     if($stateParams.identificacion == ''){
