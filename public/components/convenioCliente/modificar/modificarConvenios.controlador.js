@@ -13,7 +13,7 @@
     let convenioSeleccionado;
 
     if($stateParams.idConvenio == ''){
-      $state.go('listaConvenios');
+      $state.go('listarConvCliente');
     }else{
       convenioSeleccionado = servicioConvenioClientes.obtenerConvenioSeleccionado($stateParams.idConvenio);
     }
@@ -21,7 +21,7 @@
     vm.nuevoConvenio = {
       servicio: convenioSeleccionado.servicio,
       cliente: convenioSeleccionado.cliente,
-      direccion: convenioSeleccionado.direccion,
+      direccion: convenioSeleccionado.direccion
     };
 
     // listarConvenios();//
@@ -43,7 +43,7 @@
         button: "Aceptar",
       });
 
-      $state.go('listaConvenios');
+      $state.go('listarConvCliente');
 
       listarConvenios();
 

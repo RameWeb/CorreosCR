@@ -161,20 +161,51 @@
 
     .state('registrarConvCliente',{
       url: '/registrarConvCliente',
-      templateUrl: './components/convenios/registrar/convenios.vista.html',
+      templateUrl: './components/convenioCliente/registrar/convenios.vista.html',
       data:{
         pageTitle: 'Registrar Convenios'
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/convenios/registrar/convenios.controlador.js')
+          return $ocLazyLoad.load('./components/convenioCliente/registrar/convenios.controlador.js')
         }]
       },
       controller: 'controladorConveniosCliente',
       controllerAs: 'vm'
     })
 
-    
+    .state('modificarConvCliente',{
+      url: '/modificarConvCliente',
+      templateUrl: './components/convenioCliente/modificar/modificarConvenios.vista.html',
+      data:{
+        pageTitle: 'Modificar Convenios'
+      },
+      params:{
+        idConvenio: ''
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/convenioCliente/modificar/modificarConvenios.controlador.js')
+        }]
+      },
+      controller: 'controladorModConveniosCliente',
+      controllerAs: 'vm'
+    })
+
+    .state('listarConvCliente',{
+      url: '/listarConvCliente',
+      templateUrl: './components/convenioCliente/listarBuscar/mantenimientoConvenios.vista.html',
+      data:{
+        pageTitle: 'Listar Convenios'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/convenioCliente/registrar/convenios.controlador.js')
+        }]
+      },
+      controller: 'controladorConveniosCliente',
+      controllerAs: 'vm'
+    })
 
     .state('convenios', {
       url: '/convenios',
