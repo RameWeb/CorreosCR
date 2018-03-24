@@ -79,10 +79,9 @@ class EmpleadoAduana extends Usuario{
 }
 
 class Repartidor extends Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono, pPuesto, pSucursal, pLicencia, pFotoLicencia,pLicenciaVencimiento){
+  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono,pSucursal,pLicencia,pFotoLicencia,pLicenciaVencimiento){
     super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
     this.telefono = pTelefono;
-    this.puesto = pPuesto;
     this.sucursal = pSucursal;
     this.licencia = pLicencia;
     this.fotoLicencia = pFotoLicencia;

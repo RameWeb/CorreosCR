@@ -54,7 +54,7 @@
         // Repartidor
         case "Repartidor":
 
-          let nuevoRepartidor= new Repartidor(pNuevoEmpleado.identificacion, pNuevoEmpleado.nombre, pNuevoEmpleado.apellido1, pNuevoEmpleado.fechaNacimiento, pNuevoEmpleado.email, pNuevoEmpleado.contrasenna, pNuevoEmpleado.provincia, pNuevoEmpleado.canton, pNuevoEmpleado.distrito, pNuevoEmpleado.direccion, estado,pNuevoEmpleado.rol, pNuevoEmpleado.sucursal, pNuevoEmpleado.licencia, pNuevoEmpleado.fotoLicencia, pNuevoEmpleado.vencimientoLicencia);
+          let nuevoRepartidor= new Repartidor(pNuevoEmpleado.identificacion, pNuevoEmpleado.nombre, pNuevoEmpleado.apellido1, pNuevoEmpleado.fechaNacimiento, pNuevoEmpleado.email, pNuevoEmpleado.contrasenna, pNuevoEmpleado.provincia, pNuevoEmpleado.canton, pNuevoEmpleado.distrito, pNuevoEmpleado.direccion, estado,pNuevoEmpleado.rol,pNuevoEmpleado.telefono, pNuevoEmpleado.sucursal, pNuevoEmpleado.licencia, pNuevoEmpleado.fotoLicencia, pNuevoEmpleado.vencimientoLicencia);
 
           console.log(nuevoRepartidor);
 
@@ -88,7 +88,7 @@
 
     // Imprimir lista de repartidores en el sistema
     function listarEmpleados(){
-      vm.listaEmpleados = servicioUsuarios.obtenerUsuario();
+      vm.listaEmpleados = servicioUsuarios.obtenerEmpleados("Cliente");
     }
 
     vm.modificar = (pEmpleado) =>{
