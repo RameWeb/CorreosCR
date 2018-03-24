@@ -1,0 +1,30 @@
+<section class="container-fluid my-5">
+    <div class="row">
+        <div class="col-md-4">
+          <h1>Correos de Costa Rica</h1>
+          <a href="#!/listaCantones" class="btn btn-primary">Lista de Cantones</a>
+        </div>
+        <div class="col-md-8">
+            <h2>Registrar un nuevo canton</h2>
+            <div>
+              <form ng-submit="vm.registrarCanton(vm.nuevoCanton)" > 
+                <!-- Información del nuevo canton  -->
+                <div class="my-3">
+                    <div class="form-group">
+        <div class="">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                    <label for="">Nombre del canton</label>
+                  <input type="text"id="txtCantonNombre"class="form-control myInput"  ng-model="vm.nuevoCanton.nombreCanton"  required>
+                </div>
+               </div>
+          </div>
+         <button type="submit" class="btnGuardar" id="btnGuardar">Guardar</button>
+         
+        </div>
+     </form>      
+     </div>
+    </div>
+  </div>
+</section>

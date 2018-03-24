@@ -1,3 +1,31 @@
+class tipoProducto{
+  constructor(pnombreTipoProducto, pimpuesto){
+      this.nombreTipoProducto = pnombreTipoProducto;
+      this.impuesto = pimpuesto;
+     
+  }
+}
+class courier{
+  constructor(pnombreCourier){
+      this.nombreCourier = pnombreCourier;
+     
+     
+  }
+}
+class provincia{
+  constructor(pnombreProvincia){
+      this.nombreProvincia = pnombreProvincia;
+     
+     
+  }
+}
+
+class canton{
+  constructor(pnombreCanton){
+    this.nombreCanton = pnombreCanton;
+  }
+}
+     
 class Sucursales{
   constructor(pProvincia, pCanton, pDistrito, pDireccion, pTelefono, pidSucursal, pEstado){
     this.provincia = pProvincia;
@@ -111,5 +139,50 @@ class Tarjeta{
     this.numeroTarjeta = pNumeroTarjeta;
     this.fechaVencimiento = pFechaVencimiento;
     this.ccv = pCcv;
+  }
+}
+
+// TODO Dentro de este archivo se crean los objetos con sus respectivos mÃƒÂ©todos
+class Direccion{
+  constructor(pProvincia,pCanton,pDistrito){
+    this.provincia = pProvincia;
+    this.canton = pCanton;
+    this.distrito = pDistrito;
+  }
+}
+
+class Licencia{
+    constructor(pTipo,pCategoria,pDescripcion){
+      this.tipo = pTipo;
+      this.categoria = pCategoria;
+      this.descripcion = pDescripcion;
+  }
+}
+class Convenios{
+  constructor(pNombreInstitucion, pTipo, pTiempo, pCosto, pidConvenios){
+    this.nombreInstitucion = pNombreInstitucion;
+    this.tipo = pTipo;
+    this.tiempo = pTiempo;
+    this.costo = pCosto;
+    this.idConvenios = pidConvenios;
+  }
+}
+
+class Paquetes{
+  constructor(pTracking, pNombre, pPeso, pValor, pEstado, pidPaquetes){
+    this.tracking = pTracking;
+    this.nombre = pNombre;
+    this.peso = pPeso;
+    this.valor = pValor;
+    this.estado = pEstado;
+    this.idPaquetes = pidPaquetes;
+    this.repartidor = [];
+  }
+}
+
+class Casillero{
+  constructor(pidRandom){
+    this.idRandom = pidRandom;
+    
   }
 }

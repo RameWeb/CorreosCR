@@ -1,0 +1,43 @@
+<main id="registrarPaquetes">
+    <div class="container">
+      <div class="row">
+    
+            <div class="col-md-4 py-5 px-5 panelIzquierdo">
+                    <h2>Correos de Costa Rica</h2>
+                 </div>
+          <div class="col-md-8 py-5 px-5 contenido">
+            <h2>Hola!</h2>
+         <p>Le informamos que hay un cambio de estado en un paquete a su nombre.</p>
+         <p>Información del paquete:</p>
+
+         <table class="table">
+            <thead>
+                    <tr>
+                        <th>N. Tracking</th>
+                        
+                        <th>Estado de paquete</th>
+                        
+                    </tr>
+                    
+                </thead>
+                
+                <tbody>
+                  <tr ng-repeat="paquetes in vm.listaPaquetes | filter:searchText">
+                    <td>{{paquetes.tracking}}</td>
+                    <td>{{paquetes.estado}}</td>
+                    
+                  
+            
+                    
+                  </tr>
+                </tbody>
+                 </table>
+    
+          <div class="col-md-6">
+              
+              <a href="/#!/listarPaquetes" class="btn btnAccion">Ver más</a>
+          </div>
+      </div>
+    </div>
+    </div>
+    </main>
