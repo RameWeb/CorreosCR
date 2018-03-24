@@ -4,7 +4,7 @@
   .module('correos-cr')
   .service('servicioTipoProductos', servicioTipoProductos);
 
-  servicioTipoProductos.$inject = ['$log','$http'];
+  servicioTipoProductos.$inject =  ['$log', '$http'];
 
   function servicioTipoProductos($log, $http){
     const publicAPI = {
@@ -38,17 +38,18 @@
       }
       return listaTipoProductos;
     }
+
     function _obtenertipoProductoSeleccionado(nombreTipoProducto){
       let  listaTipoProductos = _getTipoProductos();
       let tipoProductoSeleccionado;
 
-      for(let i = 0; i <listaTipoProducto.length; i++){
+      for(let i = 0; i < listaTipoProductos.length; i++){
         if (nombreTipoProducto == listaTipoProductos[i].nombreTipoProducto){
           tipoProductoSeleccionado = listaTipoProductos[i];
           // console.log(sucursalSeleccionada);
-          return tipoProductoSeleccionado;
         }
       }
+      return tipoProductoSeleccionado;
     }
 
     function _actualizarTipoProducto(ptipoProductoModificado){

@@ -4,7 +4,7 @@
   .module('correos-cr')
   .controller('controladorModProducto', controladorModProducto);
 
-  controladorModProducto.$inject = ['$http','$stateParams', '$state','servicioTipoProductos'];
+  controladorModProducto.$inject = ['$http', '$stateParams', '$state', 'servicioTipoProductos'];
 
   function controladorModProducto($http, $stateParams, $state, servicioTipoProductos){
     let vm = this;
@@ -13,21 +13,15 @@
 
     if($stateParams.nombreTipoProducto == ''){
       $state.go('ListaTipoProducto');
-    }else{
-      tipoProductoSeleccionado = servicioTipoProductos.getTipoProductos($stateParams.nombreTipoProducto);
     }
-    console.log(tipoProductoSeleccionado);
 
-    vm.nuevoTipoProducto = {
-      nombreTipoProducto: tipoProductoSeleccionado.nombreTipoProducto,
-      impuesto: tipoProductoSeleccionado.impuesto,
-      
-    };
+    tipoProductoSeleccionado = servicioTipoProductos.obtenertipoProductoSeleccionado(JSON.parse($stateParams.nombreTipoProducto));
+
+    vm.nuevoTipoProducto = tipoProductoSeleccionado;
 
     vm.modificarTipoProducto = (pNuevoTipoProducto) =>{
-      let nombreTipoProducto = tipoProductoSeleccionado.nombreTipoProducto;
 
-      let tipoProductoModificado = new tipoProducto(vm.nuevoTipoProducto.nombreTipoProducto,vm.nuevoTipoProducto.impuesto);
+      let tipoProductoModificado = new tipoProducto(pNuevoTipoProducto.nombreTipoProducto, pNuevoTipoProducto.impuesto);
 
     console.log(tipoProductoModificado);
 
