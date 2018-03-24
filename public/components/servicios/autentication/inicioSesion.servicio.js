@@ -28,12 +28,10 @@
         if (listaUsuarios[i].getEmail() == pCredenctiales.email && listaUsuarios[i].getPassword() == pCredenctiales.contrasenna) {
           credencialesCorrectas.correo = listaUsuarios[i].getEmail();
           credencialesCorrectas.rol = listaUsuarios[i].getRol();
+          inicioSesionExitoso = localStorageFactories.setSession(credencialesCorrectas);
+          return inicioSesionExitoso;
         };
       };
-
-      inicioSesionExitoso = localStorageFactories.setSession(credencialesCorrectas);
-      
-      return inicioSesionExitoso;
     };
 
     /**

@@ -4,9 +4,9 @@
   .module('correos-cr')
   .controller('inicioSesionController', inicioSesionController);
 
-  inicioSesionController.$inject = ['inicioSesionService'];
+  inicioSesionController.$inject = ['$stateParams','$state','inicioSesionService'];
 
-  function inicioSesionController(inicioSesionService){
+  function inicioSesionController($stateParams,$state,inicioSesionService){
     const vm = this;
 
     vm.nuevaSesion = {};
