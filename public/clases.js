@@ -94,6 +94,10 @@ class Usuario{
   getRol(){
     return this.tipoUsuario;
   }
+
+  getNombreCompleto(){
+    return `${this.nombre} ${this.apellido1}`;
+  }
 }
 
 class EmpleadoSucursal extends Usuario{
