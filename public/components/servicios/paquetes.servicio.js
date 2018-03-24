@@ -33,7 +33,7 @@
       }else{
         listaPaquetesLocal.forEach(obj => {
           
-          let objPaquetes = new Paquetes(obj.tracking, obj.nombre, obj.peso, obj.valor, obj.estado, obj.idPaquetes);
+          let objPaquetes = new Paquetes(obj.tracking, obj.nombre, obj.peso, obj.valor, obj.repartidor, obj.estado, obj.idPaquetes);
 
           listaPaquetes.push(objPaquetes);
         })

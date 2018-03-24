@@ -26,6 +26,7 @@
       tipo: conveniosSeleccionada.tipo,
       tiempo: conveniosSeleccionada.tiempo,
       costo: conveniosSeleccionada.costo,
+      
     };
 
     // listarSucursales();

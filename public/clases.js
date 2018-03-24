@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class tipoProducto{
   constructor(pnombreTipoProducto, pimpuesto){
       this.nombreTipoProducto = pnombreTipoProducto;
@@ -156,7 +155,6 @@ class Licencia{
       this.descripcion = pDescripcion;
   }
 }
-=======
 class Convenios{
   constructor(pNombreInstitucion, pTipo, pTiempo, pCosto, pidConvenios){
     this.nombreInstitucion = pNombreInstitucion;
@@ -168,14 +166,15 @@ class Convenios{
 }
 
 class Paquetes{
-  constructor(pTracking, pNombre, pPeso, pValor, pEstado, pidPaquetes){
+  constructor(pTracking, pNombre, pPeso, pValor, pRepartidor, pEstado, pidPaquetes){
     this.tracking = pTracking;
     this.nombre = pNombre;
     this.peso = pPeso;
     this.valor = pValor;
+    this.repartidor = pRepartidor;
     this.estado = pEstado;
     this.idPaquetes = pidPaquetes;
-    this.repartidor = [];
+    
   }
 }
 
@@ -185,4 +184,3 @@ class Casillero{
     
   }
 }
->>>>>>> Judith
