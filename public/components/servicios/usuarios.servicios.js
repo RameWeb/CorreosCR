@@ -13,6 +13,7 @@
     let publicAPI = {
       agregarUsuario : _agregarUsuario,
       obtenerUsuario : _obtenerUsuario,
+      obtenerUsuarioEspecifico : _obtenerUsuarioEspecifico,
       actualizarUsuario : _actualizarUsuario,
       obtenerUsuarioPorRol : _obtenerUsuarioPorRol,
       obtenerEmpleados : _obtenerEmpleados
@@ -87,6 +88,21 @@
 
       return listaUsuarios;
     };
+
+    function _obtenerUsuarioEspecifico(pidUsuario){
+      let listaUsuarios = _obtenerUsuario(),
+          usuario;
+
+      for (let i = 0; i < listaUsuarios.length; i++) {
+        if (listaUsuarios[i].identificacion == pidUsuario) {
+          usuario = listaUsuarios[i];
+        }
+      }
+
+      console.log(usuario);
+
+      return usuario;
+    }
 
     function _actualizarUsuario(pUsuarioActualizado){
       let listaUsuarios = _obtenerUsuario(),

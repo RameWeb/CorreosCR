@@ -47,6 +47,7 @@
     }
 
     vm.modificar = (pCliente) =>{
+      console.log(pCliente.identificacion);
       $state.go('modClientes', {identificacion: JSON.stringify(pCliente.identificacion)})
     }
   }

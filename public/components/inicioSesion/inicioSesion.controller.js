@@ -24,7 +24,7 @@
           icon: "success",
           button: "Aceptar",
         });
-        // $state.go('main');
+        $state.go('cliente');
       }else{
         swal({
           title: "Inicio de sesión fallido",
