@@ -126,10 +126,14 @@ class Repartidor extends Usuario{
 }
 
 class Cliente extends Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono, pObjTarjeta){
+  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono){
     super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
     this.telefono = pTelefono;
-    this.tarjeta = pObjTarjeta;
+    this.tarjeta = [];
+  }
+
+  agregarTarjeta(pObjTarjeta){
+    this.tarjeta.push(pObjTarjeta);
   }
 
   getTarjeta(){
