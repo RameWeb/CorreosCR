@@ -50,5 +50,27 @@
       console.log(pCliente.identificacion);
       $state.go('modClientes', {identificacion: JSON.stringify(pCliente.identificacion)})
     }
+
+    vm.desactivar = (pCliente) => {
+      swal({
+        title: "Desea desactivar el cliente?",
+        text: "Desea desactivar el cliente",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          pCliente.estado = false;
+          console.log(pCliente.estado);
+          servicioUsuarios.actualizarUsuario(pCliente);
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
+    }
   }
 })();
