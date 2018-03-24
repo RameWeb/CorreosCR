@@ -1,4 +1,4 @@
-<navegacion-Principal></navegacion-Principal>
+<!-- <navegacion-Principal></navegacion-Principal> -->
 
 <main id="registroSucursales">
   <div class="container-fluid">
@@ -40,12 +40,12 @@
 
             <div class="form-group">
               <label for=formGroupExampleInput"">Dirección exacta:</label>
-              <textarea type="text" name="direccion" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.direccion" required rows="3"></textarea>
+              <textarea type="text" name="direccion" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.direccion" required rows="3"></textarea>
             </div>
 
             <div class="form-group">
               <label for=formGroupExampleInput"">Teléfono</label>
-              <input type="tel" name="telefono" class="form-control myInput" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono" pattern="^[2|8]\d{7}$"  title="Número de teléfono inválido" maxlength="8" minlength="8" required>
+              <input type="tel" name="telefono" class="form-control" id="formGroupExampleInput" ng-model="vm.nuevaSucursal.telefono" pattern="^[2|8]\d{7}$" maxlength="8" minlength="8" required>
             </div>
 
             <button type="submit" class="btn btn-info">Registrar</button>
