@@ -37,7 +37,7 @@
     function _setSession(value){
       let response = true;
 
-      sessionStorage.getItem('session', JSON.stringify(value));
+      sessionStorage.setItem('session', JSON.stringify(value));
 
       return response;
     };
@@ -46,6 +46,8 @@
       let response = true;
 
       sessionStorage.removeItem('session');
+
+      return response;
     };
 
     function _getSession(){

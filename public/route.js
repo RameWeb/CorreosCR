@@ -17,6 +17,21 @@
       }
     })
 
+    .state('iniciarSesion', {
+      url: '/iniciarSesion',
+      templateUrl: './components/inicioSesion/inicioSesion.view.html',
+      data:{
+        pageTitle: 'Inicio de Sesión'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/inicioSesion/inicioSesion.controller.js')
+        }]
+      },
+      controller: 'inicioSesionController',
+      controllerAs: 'vm'
+    })
+
     .state('registroSucursal',{
       url: '/registroSucursal',
       templateUrl: './components/sucursales/registrar/sucursales.vista.html',
@@ -323,7 +338,7 @@
       },
       controller: 'controladorModEmpleados',
       controllerAs: 'vm'
-    }),
+    });
 
     $urlRouterProvider.otherwise('/');
   }

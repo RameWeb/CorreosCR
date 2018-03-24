@@ -4,15 +4,15 @@
   .module('correos-cr')
   .controller('controladorModClientes', controladorModClientes);
 
-  controladorModClientes.$inject = ['$http','$stateParams', '$state','servicioUsuarios'];
+  controladorModClientes.$inject = ['$http','$stateParams', '$state','servicioClientes'];
 
-  function controladorModClientes($http, $stateParams, $state, servicioUsuarios){
+  function controladorModClientes($http, $stateParams, $state, servicioClientes){
     let clienteSeleccionado;
 
     if($stateParams.identificacion == ''){
       $state.go('mantClientes');
     }else{
-      clienteSeleccionado = servicioUsuarios.obtenerUsuarioPorRol($stateParams.identificacion);
+      clienteSeleccionado = servicioClientes.obtenerUsuarioPorRol($stateParams.identificacion);
     }
     console.log(clienteSeleccionado);
 

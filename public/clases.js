@@ -62,6 +62,10 @@ class Usuario{
   getPassword(){
     return this.contrasenna;
   }
+
+  getRol(){
+    return this.tipoUsuario;
+  }
 }
 
 class EmpleadoSucursal extends Usuario{
