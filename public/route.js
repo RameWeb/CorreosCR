@@ -400,7 +400,7 @@
     },
     controller:'controladorCourier',
     controllerAs:'vm'
-  });
+  })
 
     .state('contrasenna', {
       url: '/contrasenna',
