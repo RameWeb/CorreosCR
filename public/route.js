@@ -52,7 +52,7 @@
       url: '/licencias',
       templateUrl: './components/licencias/licencias.view.html',
       data:{
-        pageTitle: 'Registro Licencias | Ejemplo Arquitectura'
+        pageTitle: 'Registro Licencias'
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
@@ -60,6 +60,21 @@
         }]
       },
       controller: 'controladorLicencias',
+      controllerAs: 'vm'
+    })
+
+    .state('estados', {
+      url: '/estados',
+      templateUrl: './components/licencias/estadoPaquete.view.html',
+      data:{
+        pageTitle: 'Registro Estados | Estados Paquete'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/estadoPaquete/estadoPaquete.controller.js')
+        }]
+      },
+      controller: 'controladorEstadoPaquete',
       controllerAs: 'vm'
     })
 
