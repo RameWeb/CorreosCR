@@ -208,6 +208,22 @@
       controller: 'controladorPaquetes',
       controllerAs: 'vm'
     })
+
+    .state('listarPaquetesCliente', {
+      url: '/listarPaquetesCliente',
+      templateUrl: './components/paquetes/listarPaquetes/listarPaquetesCliente.vista.html',
+      data:{
+        pageTitle: 'Lista de Paquetes | Correos CR'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/paquetes/registrarPaquetes/paquetes.controlador.js')
+        }]
+      },
+      controller: 'controladorPaquetes',
+      controllerAs: 'vm'
+    })
+
     .state('modificarPaquetes', {
       url: '/modificarPaquetes',
       templateUrl: './components/paquetes//modificarPaquetes/modificarPaquetes.vista.html',
