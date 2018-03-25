@@ -7,7 +7,7 @@
   controladorModificarSucursal.$inject = ['$http', '$stateParams', '$state', 'servicioSucursales'];
 
   function controladorModificarSucursal($http, $stateParams, $state, servicioSucursales){
-    let vm = this;
+    let vm = this;    
     let sucursalSeleccionada;
 
     if($stateParams.idSucursal == ''){

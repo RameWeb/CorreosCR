@@ -10,6 +10,8 @@
 
     let vm = this;
 
+    vm.servicio = ["Pasaporte", "Visa Americana", "Visa Canadiense", "Licencia de conducir", "Cédula de identidad"];
+
     let convenioSeleccionado;
 
     if($stateParams.idConvenio == ''){

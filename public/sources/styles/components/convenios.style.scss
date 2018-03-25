@@ -1,6 +1,6 @@
 @import "../setting";
 
-#registroConvenios{
+#registroConveniosClientes{
   .contenido{
     background-color: $white;
     max-height: 100vh;
@@ -9,8 +9,13 @@
   
   .panelIzquierdo{
     background-image: $background;
+    background-size: cover;
     color: $white;
     min-height: 100vh;
+    a{
+      color: $white;
+      text-decoration: none;
+    }
   }
 
   .btnAccion{

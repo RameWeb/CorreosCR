@@ -1,18 +1,18 @@
 <!-- <navegacion-Principal></navegacion-Principal> -->
 
-<main id="registroSucursales">
+<main id="registroPrealertas">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 py-5 px-5 panelIzquierdo">
-        <a href="/#!/cliente" class="btn btnAccion">Regresar al dashboard</a>
-        <img src="../../../sources/img/logo_slateblue.svg" class="" alt="">
+        <a href="#!/cliente"><img src="../../../sources/img/chevron-left.svg" height="30px" width="30px" alt="">Regresar al dashboard</a>
+        <img src="../../../sources/img/logo_slateblue.svg" class="my-5" alt="">
 
       </div>
 
       <div class="col-md-9 py-4 px-4 contenido">
-        <h2>Lista Prealertas activas</h2>
+        <h2>Lista Prealertas</h2>
 
-        <div class="form-group col-6">
+        <div class="form-group col-md-8">
           <label for="txtBuscar">Buscar</label>
           <input type="text" id="txtBuscar" class="form-control" ng-model="buscarPrealerta.tracking">
         </div>
@@ -91,3 +91,7 @@
     </div>
   </div>
 </main>
+
+<script>
+  feather.replace()
+</script>

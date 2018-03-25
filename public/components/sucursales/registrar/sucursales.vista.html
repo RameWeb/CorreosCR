@@ -8,11 +8,10 @@
         <a href="/#!/listarSucursal" class="btn btnAccion mt-4">Lista de sucursales</a>
       </div>
 
-      <div class="col-md-9 py-5 px-5 contenido">
-        <div class="col-8">
+      <div class="col-md-9 py-5 px-5 conte  nido">
+        <div>
           <h2> Sucursales</h2>
-
-          <form ng-submit="vm.registrarSucursal(vm.nuevaSucursal)" name="formRegistrarSucursales" autocomplete="off" novalidate>
+          <form ng-submit="vm.registrarSucursal(vm.nuevaSucursal)" name="formRegistrarSucursales" autocomplete="off" class="col-md-8" novalidate>
             
             <div class="form-group">
               <label for="txtProvincia">Provincia:</label>
@@ -53,7 +52,7 @@
               </select> -->
 
               <input type="text" name="distrito" class="form-control" id="txtDistrito" ng-model="vm.nuevaSucursal.distrito" pattern="[ñáéíóúA-Za-z ]+" required>
-              <div ng-messages="formRegistrarSucursales.canton.$error" role="alert">
+              <div ng-messages="formRegistrarSucursales.distrito.$error" role="alert">
                 <div ng-message="required">
                   <small class="form-text text-muted">Este campo es requerido</small>
                 </div>
@@ -99,8 +98,6 @@
 
           </form>
         </div>
-
-        <div class="col-6"></div>
       </div>
     </div>
   </div>
