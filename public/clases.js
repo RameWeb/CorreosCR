@@ -163,6 +163,13 @@ class Licencia{
       this.descripcion = pDescripcion;
   }
 }
+
+class EstadoPaquete{
+  constructor(pEstadoPaquete){
+    this.estadoPaquete = pEstadoPaquete;
+}
+}
+
 class Convenios{
   constructor(pNombreInstitucion, pTipo, pTiempo, pCosto, pidConvenios){
     this.nombreInstitucion = pNombreInstitucion;
