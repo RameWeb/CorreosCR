@@ -11,12 +11,17 @@
 
     vm.sucursales = ["San Jose", "Alajuela", "Heredia", "Cartago", "Guanacaste","Puntarenas", "Limon"];
 
+    
+
     // Objeto sin formato
     vm.nuevoCliente = {};
 
     vm.listaClientes = listarClientes();
 
     listarClientes();
+
+    let administrador = ["jason@jason.com", 123];
+    servicioUsuarios.agregarUsuario()
 
     // Guardar un nuevo repartidor
     vm.registrarCliente = (pNuevoCliente) => {
@@ -67,11 +72,11 @@
           pCliente.estado = false;
           console.log(pCliente.estado);
           servicioUsuarios.actualizarUsuario(pCliente);
-          swal("Poof! Your imaginary file has been deleted!", {
+          swal("El usuario ha sido desactivado", {
             icon: "success",
           });
         } else {
-          swal("Your imaginary file is safe!");
+          swal("Cancelando acción");
         }
       });
     }
