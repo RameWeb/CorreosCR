@@ -29,9 +29,9 @@
         let session = JSON.parse(sessionStorage.session),
             sessionRol = session.rol;
         if(sessionRol === "Cliente"){
-          $state.go('cliente');
+          $state.go('dashboardCliente');
         }else{
-          $state.go('admin');
+          $state.go('dashboardAdmin');
         }
         // *****************
       }else{
