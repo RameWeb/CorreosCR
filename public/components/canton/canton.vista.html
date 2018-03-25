@@ -1,19 +1,20 @@
 <main id="registroSucursales">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4 py-5 px-5 panelIzquierdo">
+        <div class="col-md-3 py-5 px-5 panelIzquierdo">
+            <a href="#!/"><img src="../../../sources/img/chevron-left.svg" height="35px" width="35px" alt="">Regresar a la pagina principal</a>
           <a href="#!/listaCantones" class="btn btn-light">Lista de Cantones</a>
           <img src="./../../../sources/img/Group 97.svg" class="mt-5" alt="">
         </div>
   
-        <div class="col-md-8 py-5 px-5 contenido">
+        <div class="col-md-9 py-4 px-4 contenido">
           <div class="col-6">
             <h2>Registrar un nuevo canton</h2>
             <form ng-submit="vm.registrarCanton(vm.nuevoCanton)" > 
               
               <div class="form-group">
                   <label for="">Nombre del canton</label>
-                  <input type="text"id="txtCantonNombre"class="form-control"  ng-model="vm.nuevoCanton.nombreCanton"  required>
+                  <input type="text"id="txtCantonNombre"class="form-control col-md-9 py-4 px-4 contenido"  ng-model="vm.nuevoCanton.nombreCanton"  required>
               </div>
               
               <button type="submit" class="btn btnAccion" id="btnGuardar">Registrar</button>

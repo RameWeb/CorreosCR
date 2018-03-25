@@ -2,19 +2,20 @@
 <main id="registroSucursales">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4 py-5 px-5 panelIzquierdo">
+        <div class="col-md-3 py-5 px-5 panelIzquierdo">
+            <a href="#!/"><img src="../../../sources/img/chevron-left.svg" height="35px" width="35px" alt="">Regresar a la pagina principal</a>
           <a href="/#!/listaProvincia" class="btn btn-light">Lista de Provincias</a>
           <img src="./../../../sources/img/Group 97.svg" class="mt-5" alt="">
         </div>
   
-        <div class="col-md-8 py-5 px-5 contenido">
+        <div class="col-md-9 py-4 px-4 contenido">
           <div class="col-6">
             <h2>Registrar una nueva provincia</h2>
             <form ng-submit="vm.registrarProvincia(vm.nuevaProvincia)" > 
               
               <div class="form-group">
                   <label for="">Nombre de la provincia</label>
-                  <input type="text"id="txtProvinciaNombre"class="form-control "  ng-model="vm.nuevaProvincia.nombreProvincia"  required>
+                  <input type="text"id="txtProvinciaNombre"class="form-control col-md-8"  ng-model="vm.nuevaProvincia.nombreProvincia"  required>
               </div>
               
               <button type="submit" class="btn btnAccion" id="btnGuardar">Registrar</button>
