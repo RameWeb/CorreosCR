@@ -26,7 +26,7 @@
       console.log(nuevoRepartidor);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      servicioUsuarios.agregarRepartidores(nuevoRepartidor);
+      servicioUsuarios.agregarUsuario(nuevoRepartidor);
 
       //   // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El entierro se ha sido registrado correctamente", "success", {
@@ -41,7 +41,8 @@
 
     // Imprimir lista de repartidores en el sistema
     function listarRepartidores(){
-      vm.listaRepartidores = servicioUsuarios.obtenerRepartidores();
+      vm.listaRepartidores = servicioUsuarios.obtenerUsuario();
+      console.log(vm.listaRepartidores);
     }
 
     vm.modificar = (prepartidor) =>{

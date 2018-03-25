@@ -13,36 +13,36 @@
           <h3>Información Personal</h3>
           <div class="form-group">
             <label for="inputIdentificacion">Nº de Identificación:</label>
-            <input type="number" class="form-control" id="inputIdentificacion" ng-model="vm.nuevoCliente.identificacion">
+            <input type="number" class="form-control" id="inputIdentificacion" ng-model="vm.nuevoCliente.identificacion" required>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputNombre">Nombre</label>
-              <input type="text" class="form-control" id="inputNombre" ng-model="vm.nuevoCliente.nombre">
+              <input type="text" class="form-control" id="inputNombre" ng-model="vm.nuevoCliente.nombre" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputApellido1">Primer Apellido</label>
-              <input type="text" class="form-control" id="inputApellido1" ng-model="vm.nuevoCliente.apellido1">
+              <input type="text" class="form-control" id="inputApellido1" ng-model="vm.nuevoCliente.apellido1" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail">Correo Electrónico:</label>
-              <input type="email" class="form-control" id="inputEmail" ng-model="vm.nuevoCliente.email">
+              <input type="email" class="form-control" id="inputEmail" ng-model="vm.nuevoCliente.email" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputContrasenna">Contraseña:</label>
-              <input type="password" class="form-control" id="inputContrasenna" ng-model="vm.nuevoCliente.contrasenna">
+              <input type="password" class="form-control" id="inputContrasenna" ng-model="vm.nuevoCliente.contrasenna" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputFechaNacimiento">Fecha de Nacimiento</label>
-              <input type="date" class="form-control" id="inputFechaNacimiento" ng-model="vm.nuevoCliente.fechaNacimiento">
+              <input type="date" class="form-control" id="inputFechaNacimiento" ng-model="vm.nuevoCliente.fechaNacimiento" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputTelefono">Teléfono</label>
-              <input type="number" class="form-control" id="inputTelefono" ng-model="vm.nuevoCliente.telefono">
+              <input type="number" class="form-control" id="inputTelefono" ng-model="vm.nuevoCliente.telefono" required>
             </div> 
           </div>
         </div>
@@ -52,20 +52,20 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="inputProvincia">Provincia</label>
-              <input type="text" class="form-control" id="inputProvincia" ng-model="vm.nuevoCliente.provincia">
+              <input type="text" class="form-control" id="inputProvincia" ng-model="vm.nuevoCliente.provincia" required>
             </div>
             <div class="form-group col-md-4">
               <label for="inputCanton">Cantón</label>
-              <input type="text" class="form-control" id="inputCanton" ng-model="vm.nuevoCliente.canton">
+              <input type="text" class="form-control" id="inputCanton" ng-model="vm.nuevoCliente.canton" required>
             </div>
             <div class="form-group col-md-4">
               <label for="inputDistrito">Distrito</label>
-              <input type="text" class="form-control" id="inputDistrito" ng-model="vm.nuevoCliente.distrito">
+              <input type="text" class="form-control" id="inputDistrito" ng-model="vm.nuevoCliente.distrito" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputDireccion">Dirección exacta:</label>
-            <textarea class="form-control" id="inputDireccion" rows="3" ng-model="vm.nuevoCliente.direccion"></textarea>
+            <textarea class="form-control" id="inputDireccion" rows="3" ng-model="vm.nuevoCliente.direccion" required></textarea>
           </div>
         </div>
 
@@ -74,24 +74,24 @@
           <!-- Otros datos -->
           <div class="form-group">
             <label for="inputTitularTarjeta">Titular de la tarjeta</label>
-            <input type="text" class="form-control" id="inputTitularTarjeta" ng-model="vm.nuevoCliente.titularTarjeta">
+            <input type="text" class="form-control" id="inputTitularTarjeta" ng-model="vm.nuevoCliente.titularTarjeta" required>
           </div>
           <div class="form-group">
             <label for="inputNumeroTarjeta">Numero de tarjeta:</label>
-            <input type="number" class="form-control" id="inputNumeroTarjeta" ng-model="vm.nuevoCliente.numeroTarjeta">
+            <input type="number" class="form-control" id="inputNumeroTarjeta" ng-model="vm.nuevoCliente.numeroTarjeta" required>
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="inputMesVencimiento">Mes</label>
-              <input type="text" class="form-control" id="inputMesVencimiento" ng-model="vm.nuevoCliente.mesVencimiento">
+              <input type="text" class="form-control" id="inputMesVencimiento" ng-model="vm.nuevoCliente.mesVencimiento" required>
             </div>
             <div class="form-group col-md-4">
               <label for="inputAnnoVencimiento">Año</label>
-              <input type="number" class="form-control" id="inputAnnoVencimiento" ng-model="vm.nuevoCliente.annoVencimiento">
+              <input type="number" class="form-control" id="inputAnnoVencimiento" ng-model="vm.nuevoCliente.annoVencimiento" required>
             </div>
             <div class="form-group col-md-4">
               <label for="inputCcv">Codigo de Seguridad (CCV)</label>
-              <input type="number" class="form-control" id="inputCcv" ng-model="vm.nuevoCliente.ccv">
+              <input type="number" class="form-control" id="inputCcv" ng-model="vm.nuevoCliente.ccv" required>
             </div>
           </div>
         </div>

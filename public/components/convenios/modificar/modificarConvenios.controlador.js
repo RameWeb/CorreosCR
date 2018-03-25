@@ -4,9 +4,9 @@
   .module('correos-cr')
   .controller('controladorModConveniosCliente', controladorModConveniosCliente);
 
-  controladorModConveniosCliente.$inject = ['$http','$stateParams', '$state', 'servicioConveniosCliente'];
+  controladorModConveniosCliente.$inject = ['$http','$stateParams', '$state', 'servicioConvenioClientes'];
 
-  function controladorModConveniosCliente($http, $stateParams, $state, servicioConveniosCliente){
+  function controladorModConveniosCliente($http, $stateParams, $state, servicioConvenioClientes){
 
     let vm = this;
 
@@ -15,7 +15,7 @@
     if($stateParams.idConvenio == ''){
       $state.go('listaConvenios');
     }else{
-      convenioSeleccionado = servicioConveniosCliente.obtenerConveniosSeleccionados($stateParams.idConvenio);
+      convenioSeleccionado = servicioConvenioClientes.obtenerConvenioSeleccionado($stateParams.idConvenio);
     }
 
     vm.nuevoConvenio = {
@@ -36,7 +36,7 @@
       console.log(objConvenioSeleccionado);
 
 
-      vm.convenioSeleccionado = servicioConveniosCliente.actualizarConvenio(objConvenioSeleccionado);
+      vm.convenioSeleccionado = servicioConvenioClientes.actualizarConvenioCliente(objConvenioSeleccionado);
       
       // Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El convenio se ha sido modificado correctamente", "success", {
@@ -52,7 +52,7 @@
     }
 
     function listarConvenios(){
-      vm.listaConvenios = servicioConveniosCliente.obtenerConveniosClientes();
+      vm.listaConvClientes = servicioConvenioClientes.obtenerConvenioCliente();
     }
   }
 })();

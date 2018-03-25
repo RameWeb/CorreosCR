@@ -1,22 +1,19 @@
 class tipoProducto{
   constructor(pnombreTipoProducto, pimpuesto){
       this.nombreTipoProducto = pnombreTipoProducto;
-      this.impuesto = pimpuesto;
-     
+      this.impuesto = pimpuesto;  
   }
 }
+
 class courier{
   constructor(pnombreCourier){
       this.nombreCourier = pnombreCourier;
-     
-     
   }
 }
+
 class provincia{
   constructor(pnombreProvincia){
-      this.nombreProvincia = pnombreProvincia;
-     
-     
+      this.nombreProvincia = pnombreProvincia; 
   }
 }
 
@@ -90,6 +87,14 @@ class Usuario{
   getPassword(){
     return this.contrasenna;
   }
+
+  getRol(){
+    return this.tipoUsuario;
+  }
+
+  getNombreCompleto(){
+    return `${this.nombre} ${this.apellido1}`;
+  }
 }
 
 class EmpleadoSucursal extends Usuario{
@@ -107,10 +112,9 @@ class EmpleadoAduana extends Usuario{
 }
 
 class Repartidor extends Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono, pPuesto, pSucursal, pLicencia, pFotoLicencia,pLicenciaVencimiento){
+  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono,pSucursal,pLicencia,pFotoLicencia,pLicenciaVencimiento){
     super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
     this.telefono = pTelefono;
-    this.puesto = pPuesto;
     this.sucursal = pSucursal;
     this.licencia = pLicencia;
     this.fotoLicencia = pFotoLicencia;
@@ -119,10 +123,14 @@ class Repartidor extends Usuario{
 }
 
 class Cliente extends Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono, pObjTarjeta){
+  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono){
     super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
     this.telefono = pTelefono;
-    this.tarjeta = pObjTarjeta;
+    this.tarjeta = [];
+  }
+
+  agregarTarjeta(pObjTarjeta){
+    this.tarjeta.push(pObjTarjeta);
   }
 
   getTarjeta(){
@@ -155,6 +163,7 @@ class Licencia{
       this.descripcion = pDescripcion;
   }
 }
+<<<<<<< HEAD
 
 class EstadoPaquete{
   constructor(pEstadoPaquete){
@@ -162,6 +171,8 @@ class EstadoPaquete{
 }
 }
 
+=======
+>>>>>>> Dev
 class Convenios{
   constructor(pNombreInstitucion, pTipo, pTiempo, pCosto, pidConvenios){
     this.nombreInstitucion = pNombreInstitucion;
@@ -173,14 +184,15 @@ class Convenios{
 }
 
 class Paquetes{
-  constructor(pTracking, pNombre, pPeso, pValor, pEstado, pidPaquetes){
+  constructor(pTracking, pNombre, pPeso, pValor, pRepartidor, pEstado, pidPaquetes){
     this.tracking = pTracking;
     this.nombre = pNombre;
     this.peso = pPeso;
     this.valor = pValor;
+    this.repartidor = pRepartidor;
     this.estado = pEstado;
     this.idPaquetes = pidPaquetes;
-    this.repartidor = [];
+    
   }
 }
 

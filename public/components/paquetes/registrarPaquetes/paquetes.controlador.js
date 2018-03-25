@@ -20,7 +20,7 @@
 
       console.log(pnuevoPaquetes);
 
-      let objNuevoPaquetes = new Paquetes(pnuevoPaquetes.tracking, pnuevoPaquetes.nombre, pnuevoPaquetes.peso, pnuevoPaquetes.valor, pnuevoPaquetes.estado, idRandom);
+      let objNuevoPaquetes = new Paquetes(pnuevoPaquetes.tracking, pnuevoPaquetes.nombre, pnuevoPaquetes.peso, pnuevoPaquetes.valor, pnuevoPaquetes.repartidor, pnuevoPaquetes.estado, idRandom);
      
       console.log('objeto con paquete');
       console.log(objNuevoPaquetes);

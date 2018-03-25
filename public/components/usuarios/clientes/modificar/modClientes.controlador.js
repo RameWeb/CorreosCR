@@ -4,16 +4,18 @@
   .module('correos-cr')
   .controller('controladorModClientes', controladorModClientes);
 
-  controladorModClientes.$inject = ['$http','$stateParams', '$state','servicioClientes'];
+  controladorModClientes.$inject = ['$http','$stateParams', '$state','servicioUsuarios'];
 
-  function controladorModClientes($http, $stateParams, $state, servicioClientes){
+  function controladorModClientes($http, $stateParams, $state, servicioUsuarios){
+
     let clienteSeleccionado;
 
-    if($stateParams.identificacion == ''){
+    if(!$stateParams.identificacion){
       $state.go('mantClientes');
-    }else{
-      clienteSeleccionado = servicioUsuarios.obtenerUsuarioPorRol($stateParams.identificacion);
     }
+
+    clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico(JSON.parse($stateParams.identificacion));
+
     console.log(clienteSeleccionado);
 
     let vm = this;
@@ -30,21 +32,26 @@
       canton: clienteSeleccionado.canton,
       distrito: clienteSeleccionado.distrito,
       direccion: clienteSeleccionado.direccion,
-      titularTarjeta: clienteSeleccionado.titularTarjeta,
-      numeroTarjeta: clienteSeleccionado.numeroTarjeta,
-      mesVencimiento: clienteSeleccionado.mesVencimiento,
-      annoVencimiento: clienteSeleccionado.annoVencimiento,
-      ccv: clienteSeleccionado.ccv
+      titularTarjeta: clienteSeleccionado.tarjeta.titularTarjeta,
+      numeroTarjeta: clienteSeleccionado.tarjeta.numeroTarjeta,
+      mesVencimiento: clienteSeleccionado.tarjeta.fechaVencimiento,
+      annoVencimiento: clienteSeleccionado.tarjeta.annoVencimiento,
+      ccv: clienteSeleccionado.tarjeta.ccv
     };
 
     vm.modificarCliente = (pNuevoCliente) =>{
       let identificacion = clienteSeleccionado.identificacion;
-      let clienteModificado = new Cliente(vm.nuevoClienteModificado.identificacion,vm.nuevoClienteModificado.nombre,vm.nuevoClienteModificado.apellido1,vm.nuevoClienteModificado.email,vm.nuevoClienteModificado.contrasenna,vm.nuevoClienteModificado.fechaNacimiento,vm.nuevoClienteModificado.telefono,vm.nuevoClienteModificado.provincia,vm.nuevoClienteModificado.canton,vm.nuevoClienteModificado.distrito,vm.nuevoClienteModificado.direccion,vm.nuevoClienteModificado.titularTarjeta,vm.nuevoClienteModificado.numeroTarjeta,vm.nuevoClienteModificado.mesVencimiento,vm.nuevoClienteModificado.annoVencimiento,vm.nuevoClienteModificado.ccv);
+
+      let tarjetaModificada = new Tarjeta(pNuevoCliente.titularTarjeta, pNuevoCliente.mesVencimiento, pNuevoCliente.annoVencimiento, pNuevoCliente.ccv);
+
+      let estado = true;
+
+      let clienteModificado = new Cliente(pNuevoCliente.identificacion, pNuevoCliente.nombre ,pNuevoCliente.apellido1, pNuevoCliente.fechaNacimiento,pNuevoCliente.email, pNuevoCliente.contrasenna, pNuevoCliente.provincia, pNuevoCliente.canton, pNuevoCliente.distrito, pNuevoCliente.direccion, estado, "Cliente", pNuevoCliente.telefono, tarjetaModificada);
 
       console.log(clienteModificado);
 
       // Pasamos al servicio el nuevo obj de tipo cliente para ser almacenado en el localStorage
-      vm.clienteSeleccionado = servicioClientes.actualizarCliente(clienteModificado);
+      vm.clienteSeleccionado = servicioUsuarios.actualizarUsuario(clienteModificado);
 
       //Retroalimentacion Visual para los usuarios: SweetAlert
       swal("Registro exitoso", "El cliente se ha sido modificado correctamente", "success", {
