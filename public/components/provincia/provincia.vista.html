@@ -1,30 +1,36 @@
-<section class="container-fluid my-5">
-    <div class="row">
-        <div class="col-md-4">
-          <h1>Correos de Costa Rica</h1>
-          <a href="#!/listaProvincia" class="btn btn-primary">Lista de Provincias</a>
-        </div>
-        <div class="col-md-8">
-            <h2>Registrar una nueva provincia</h2>
-            <div>
-              <form ng-submit="vm.registrarProvincia(vm.nuevaProvincia)" > 
-                <!-- Información de la nueva Provincia  -->
-                <div class="my-3">
-                    <div class="form-group">
-        <div class="">
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                    <label for="">Nombre de la provincia</label>
-                  <input type="text"id="txtProvinciaNombre"class="form-control myInput"  ng-model="vm.nuevaProvincia.nombreProvincia"  required>
-                </div>
-               </div>
-          </div>
-         <button type="submit" class="btnGuardar" id="btnGuardar">Guardar</button>
+
+<main id="registroSucursales">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 py-5 px-5 panelIzquierdo">
+            <a href="#!/"><img src="../../../sources/img/chevron-left.svg" height="35px" width="35px" alt="">Regresar a la pagina principal</a>
+            <img src="../../../sources/img/logo_slateblue.svg" class="my-5" alt="">
+          <a href="/#!/listaProvincia" class="btn btnAccion">Lista de Provincias</a>
          
         </div>
-     </form>      
-     </div>
+  
+        <div class="col-md-9 py-4 px-4 contenido">
+          <div class="col-6">
+            <h2>Registrar una nueva provincia</h2>
+            <form ng-submit="vm.registrarProvincia(vm.nuevaProvincia)" > 
+              
+              <div class="form-group">
+                  <label for="">Nombre de la provincia</label>
+                  <input type="text"id="txtProvinciaNombre"class="form-control col-md-8"  ng-model="vm.nuevaProvincia.nombreProvincia"  required>
+              </div>
+              
+              <button type="submit" class="btn btnAccion" id="btnGuardar">Registrar</button>
+ 
+            </form>
+          </div>
+  
+          <div class="col-6">
+
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </main>
+
+
+ 
