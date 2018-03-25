@@ -12,14 +12,15 @@
 
     vm.nuevoEstadoPaquete = {};
 
-    vm.estados = $http({
+    vm.estadoPaquete = $http({
       method: 'GET',
-      url: './sources/data/estados.json'
+      url: './sources/data/estadoPaquete.json'
     }).then( (success) => {
-      vm.estados = success.data;
+      vm.estadoPaquete = success.data;
     }, (error) => {
-      console.log("Ocurrió un error " + error.data);
+      console.log("OcurriÃ³ un error " + error.data);
     });
+
 
     vm.listaEstadoPaquete = listarEstadoPaquete();
 
@@ -28,7 +29,7 @@
     vm.registrarEstadoPaquete = (pnuevoEstadoPaquete) => {
 
       // Tomamos el objeto sin formato y lo convertimos en una instancia de la clase Estado Paquete
-      let objNuevoEstadoPaquete = new EstadoPaquete(pnuevoEstadoPaquete.estados);
+      let objNuevoEstadoPaquete = new EstadoPaquete(pnuevoEstadoPaquete.estadoPaquete);
      
       console.log('Estado Registrado');
       console.log(objNuevoEstadoPaquete);

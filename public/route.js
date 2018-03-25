@@ -65,7 +65,7 @@
 
     .state('estados', {
       url: '/estados',
-      templateUrl: './components/licencias/estadoPaquete.view.html',
+      templateUrl: './components/estadoPaquete/estadoPaquete.view.html',
       data:{
         pageTitle: 'Registro Estados | Estados Paquete'
       },

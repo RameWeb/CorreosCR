@@ -157,8 +157,8 @@ class Licencia{
 }
 
 class EstadoPaquete{
-  constructor(pEstado){
-    this.estado = pEstado;
+  constructor(pEstadoPaquete){
+    this.estadoPaquete = pEstadoPaquete;
 }
 }
 

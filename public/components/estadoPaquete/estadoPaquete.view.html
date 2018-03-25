@@ -1,15 +1,15 @@
-<h1>Registro de Licencias</h1>
+<h1>Registro de Estado de Paquetes</h1>
 
 <div>
 
   <div class="col-6 my-4">
   <form ng-submit="vm.registrarEstadoPaquete(vm.nuevoEstadoPaquete)">
       <div class="form-group">
-          <label for="sltEstado">Estado</label>
-          <select id="sltEstado" class="form-control" name="sltEstado" ng-change="vm.rellenarCategorias(vm.nuevoEstadoPaquete.estado._id)" ng-options="estado as estado.name for estado in vm.estado track by estado._id" ng-model="vm.nuevoEstadoPaquete.estado" required>
+          <label for="sltEstadoPaquete">Estado</label>
+          <select id="sltEstadoPaquete" class="form-control" name="sltEstadoPaquete" ng-options="estadoPaquete as estadoPaquete.name for estadoPaquete in vm.estadoPaquete track by estadoPaquete._id" ng-model="vm.nuevoEstadoPaquete.estadoPaquete" required>
             <option value="">-- Seleccione un Estado --</option>
           </select>
-          <div ng-messages="formRegistroUsuarios.sltEstado.$error" role="alert">
+          <div ng-messages="formRegistroUsuarios.sltEstadoPaquete.$error" role="alert">
             <div ng-message="required">
               <small class="form-text text-muted">Este campo es requerido</small>
             </div>
@@ -21,19 +21,4 @@
     </form>
   </div>
 
-</div>
-
-<div class="col-12">
-  <table class="table">
-    <thead>
-        <tr>
-          <th>Estado</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="estadoPaquete in vm.listaEstadoPaquete">
-        <td>{{estadoPaquete.estado.name}}</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
