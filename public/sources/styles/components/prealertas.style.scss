@@ -9,28 +9,24 @@
   
   .panelIzquierdo{
     background-image: $background;
-<<<<<<< HEAD
-=======
     background-size: cover;
->>>>>>> origin/Christine
     color: $white;
     min-height: 100vh;
+    a{
+      color: $white;
+      text-decoration: none;
+    }
   }
-  
-  .btnAccion{
-    background-color: $slateblue;
-    color: $white;
-  }
-<<<<<<< HEAD
 
   .btnAccion{
     background-color: $slateblue;
     color: $white;
   }
 
-=======
-  
->>>>>>> origin/Christine
+  a.linkRegresar{
+    color: $white;
+  }
+
   h1,h2{
     font-family: $fuenteTitulos;
     }
@@ -38,11 +34,8 @@
   h3,p,label{
     font-family: $fuenteContenido;
   }
-<<<<<<< HEAD
 
   textarea{
     resize: none;
   }
-=======
->>>>>>> origin/Christine
 }

@@ -4,12 +4,17 @@
   .module('correos-cr')
   .controller('controladorConveniosCliente', controladorConveniosCliente);
 
-  controladorConveniosCliente.$inject = ['$stateParams', '$state', 'servicioConvenioClientes'];
+  controladorConveniosCliente.$inject = ['$stateParams', '$state', 'servicioConvenioClientes', 'servicioUsuarios'];
 
-  function controladorConveniosCliente($stateParams, $state, servicioConvenioClientes){
+  function controladorConveniosCliente($stateParams, $state, servicioConvenioClientes, servicioUsuarios){
     let vm = this;
 
+    vm.servicio = ["Pasaporte", "Visa Americana", "Visa Canadiense", "Licencia de conducir", "Cédula de identidad"]; 
+
     vm.nuevoConvenio = {};
+
+    vm.listaClientes = servicioUsuarios.obtenerUsuarioPorRol("Cliente");
+
     listarConvenios();
 
     // Funcion que es llamada desde el html para regustra un nuevo usuario
