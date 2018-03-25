@@ -25,6 +25,7 @@
           button: "Aceptar",
         });
 
+        // ******** validacion por tipo de usuario para la carga del dashboard
         let session = JSON.parse(sessionStorage.session),
             sessionRol = session.rol;
         if(sessionRol === "Cliente"){
@@ -32,7 +33,7 @@
         }else{
           $state.go('admin');
         }
-        
+        // *****************
       }else{
         swal({
           title: "Inicio de sesión fallido",
