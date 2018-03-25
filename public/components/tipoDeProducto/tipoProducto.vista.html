@@ -16,14 +16,14 @@
               
               <div class="form-group">
                   <label for="">Nombre del tipo de producto</label>
-                  <input type="text"id="txtTipoProductoNombre"class="form-control col-md-8"  ng-model="vm.nuevoTipoProducto.nombreTipoProducto" disabled>
+                  <input type="text"id="txtTipoProductoNombre"class="form-control col-md-8"  ng-model="vm.nuevoTipoProducto.nombreTipoProducto">
               </div> 
   
               <div class="form-group">
                   <label for="">Impuesto del tipo de producto</label>
                   <input type="number" min="0" id="txtImpuesto" class="form-control col-md-8" ng-model="vm.nuevoTipoProducto.impuesto" required>
               </div>
-              <button type="submit" ng-click="vm.modificarTipoProducto(vm.nuevoTipoProducto)" class=" btn btnAccion" id="btnGuardar">Guardar</button>
+              <button type="submit" ng-click=" vm.registrarTipoProducto(vm.nuevoTipoProducto)" class=" btn btnAccion" id="btnGuardar">Guardar</button>
  
             </form>
           </div>
