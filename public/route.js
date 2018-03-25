@@ -17,17 +17,17 @@
       }
     })
 
-    .state('admin', {
+    .state('dashboardadmin', {
       url: '/admin',
-      templateUrl: './components/admin/admin.vista.html',
+      templateUrl: './components/admin/dashboardadmin.vista.html',
       data:{
         pageTitle: 'Dashboard | Administrador'
       }
     })
 
-    .state('cliente', {
+    .state('dashboardcliente', {
       url: '/cliente',
-      templateUrl: './components/cliente/cliente.vista.html',
+      templateUrl: './components/cliente/dashboardcliente.vista.html',
       data:{
         pageTitle: 'Dashboard | Cliente'
       }
