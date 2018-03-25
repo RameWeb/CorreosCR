@@ -13,6 +13,10 @@
     color: $white;
     min-height: 100vh;
     overflow: scroll;
+    a{
+      color: $white;
+      text-decoration: none;
+    }
   }
   h1,h2{
     font-family: $fuenteTitulos;

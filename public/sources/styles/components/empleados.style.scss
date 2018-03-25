@@ -11,6 +11,10 @@
     color: $white;
     min-height: 100vh;
     overflow: scroll;
+    a{
+      color: $white;
+      text-decoration: none;
+    }
   }
   .btnAccion{
     background-color: $slateblue;

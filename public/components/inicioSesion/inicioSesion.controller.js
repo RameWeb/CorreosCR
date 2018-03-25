@@ -19,12 +19,21 @@
 
       if(inicioSesion == true){
         swal({
-          title: "Inicio de sesión exitoso",
-          text: "Bienvenido",
+          title: "Bienvenido",
+          text: "Inicio de sesión exitoso",
           icon: "success",
           button: "Aceptar",
         });
-        $state.go('cliente');
+
+        // ******** validacion por tipo de usuario para la carga del dashboard
+        let session = JSON.parse(sessionStorage.session),
+            sessionRol = session.rol;
+        if(sessionRol === "Cliente"){
+          $state.go('cliente');
+        }else{
+          $state.go('admin');
+        }
+        // *****************
       }else{
         swal({
           title: "Inicio de sesión fallido",

@@ -2,13 +2,14 @@
     <section class="container-fluid">
       <div class="row">
         <div class="col-md-3 py-5 px-5 panelIzquierdo">
-          <h1>Correos de Costa Rica</h1>
+          <a href="#!/admin"><img src="../../../sources/img/chevron-left.svg" height="30px" width="30px" alt="">Regresar al dashboard</a>
+          <img src="../../../sources/img/logo_slateblue.svg" class="my-5" alt="">
           <a href="#!/mantRepartidores" class="btn btnAccion">Lista de Repartidores</a>
         </div>
         <div class="col-md-9 py-5 px-5 contenido">
           <h2>Modificar Repartidores</h2>
           <div>
-            <form ng-submit="vm.modificarRepartidor(vm.nuevoRepartidor)">
+            <form ng-submit="vm.modificarRepartidor(vm.nuevoRepartidor)" class="col-md-8">
               <!-- Información Personal -->
               <div class="my-3">
                 <h3>Información Personal</h3>

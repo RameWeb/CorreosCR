@@ -1,15 +1,17 @@
 <main id="registrarEmpleados">
   <section class="container-fluid">
     <div class="row">
-      <div class="col-md-3 py-5 px-5 panelIzquierdo">
-        <h1>Correos de Costa Rica</h1>
-        <a href="#!/regClientes" class="btn btnAccion">Registrarse</a>
+      <div class="col-md-4 py-5 px-5 panelIzquierdo">
+       <a href="#!/"><img src="../../../sources/img/chevron-left.svg" height="30px" width="30px" alt="">Regresar a la pagina principal</a>
+
+        <img src="../../../sources/img/logo_slateblue.svg" class="my-5" alt="">
+        <!-- <button class="link"> Regresar a la página principal</button> -->
       </div>
-      <div class="col-md-9 py-5 px-5 contenido">
+      <div class="col-md-8 py-5 px-5 contenido">
         <h2>Iniciar Sesión</h2>
-        <form ng-submit="vm.iniciarSesion(vm.nuevaSesion)">
+        <form ng-submit="vm.iniciarSesion(vm.nuevaSesion)" class="col-md-8">
           <div class="form-group">
-            <label for="inputEmail">Cuenta de Usuario</label>
+            <label for="inputEmail">Cuenta de Correo</label>
             <input type="text" class="form-control" id="inputEmail" ng-model="vm.nuevaSesion.email" required>
           </div>
           <div class="form-group">
