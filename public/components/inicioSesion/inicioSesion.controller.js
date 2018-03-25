@@ -30,8 +30,10 @@
             sessionRol = session.rol;
         if(sessionRol === "Cliente"){
           $state.go('dashboardCliente');
-        }else{
+        }else if(sessionRol === "Administrador"){
           $state.go('dashboardAdmin');
+        }else{
+          $state.go('dashboardEmpleado');
         }
         // *****************
       }else{

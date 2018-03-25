@@ -36,7 +36,7 @@
       swal("Registro exitoso", "El cliente se ha sido registrado correctamente", "success", {
         button: "Aceptar",
       });
-      $state.go('mantClientes');
+      // $state.go('mantClientes');
 
       // Se limpia el formulario
       vm.nuevoCliente = null;
