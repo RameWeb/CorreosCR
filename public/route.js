@@ -661,6 +661,14 @@
       }
     })
 
+    .state('dashboardEmpleado', {
+      url: '/empleado',
+      templateUrl: './components/empleado/dashboardEmpleado.vista.html',
+      data:{
+        pageTitle: 'Dashboard | Empleado'
+      }
+    })
+
     .state('direcciones', {
       url: '/direcciones',
       templateUrl: './components/direcciones/direcciones.view.html',

@@ -4,14 +4,15 @@
   .module('correos-cr')
   .controller('controladorPaquetes', controladorPaquetes);
 
-  controladorPaquetes.$inject = ['$stateParams', '$state', 'servicioPaquetes'];
+  controladorPaquetes.$inject = ['$stateParams', '$state', 'servicioPaquetes', 'servicioUsuarios'];
 
-  function controladorPaquetes($stateParams, $state, servicioPaquetes){
+  function controladorPaquetes($stateParams, $state, servicioPaquetes, servicioUsuarios){
 
     let vm = this;
 
     vm.nuevoPaquetes = {};
     vm.listaPaquetes = listarPaquetes();
+    vm.listaClientes = servicioUsuarios.obtenerUsuarioPorRol("Cliente");
 
     listarPaquetes();
     vm.registrarPaquetes = (pnuevoPaquetes) => {

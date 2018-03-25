@@ -18,8 +18,10 @@
             </div>
             
             <div class="form-group">
-                <label for="">Dueno de paquete</label>
-                <input type="text" class="form-control myInput" ng-model="vm.nuevoPaquetes.nombre" required>
+              <label for="sltCliente">Dueño del paquete:</label>
+              <select id="sltCliente" class="form-control" ng-options="cliente as cliente.getNombreCompleto() for cliente in vm.listaClientes track by cliente.nombre" ng-model="vm.nuevoConvenio.cliente" required>
+                <option></option>
+              </select>
             </div>
 
             <div class="form-group">
