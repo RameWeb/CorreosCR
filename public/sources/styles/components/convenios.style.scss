@@ -1,37 +1,37 @@
 @import "../setting";
 
-#registroConveniosClientes{
-  .contenido{
-    background-color: $white;
-    max-height: 100vh;
-    overflow: scroll;
-  }
-  
-  .panelIzquierdo{
-    background-image: $background;
-    background-size: cover;
-    color: $white;
-    min-height: 100vh;
-    a{
+#registroConvenioClientes{
+    .contenido{
+      background-color: $white;
+      max-height: 100vh;
+      overflow: scroll;
+    }
+    .panelIzquierdo{
+      background-image: $background;
+      background-size: cover;
       color: $white;
-      text-decoration: none;
+      min-height: 100vh;
+      a{
+        color: $white;
+        text-decoration: none;
+      }
+    }
+    
+    
+    .btnAccion{
+      background-color: $slateblue;
+      color: $white;
+    }
+  
+    h1,h2{
+      font-family: $fuenteTitulos;
+      }
+  
+    h3,p,label{
+      font-family: $fuenteContenido;
+    }
+  
+    textarea{
+      resize: none;
     }
   }
-
-  .btnAccion{
-    background-color: $slateblue;
-    color: $white;
-  }
-
-  h1,h2{
-    font-family: $fuenteTitulos;
-    }
-
-  h3,p, label {
-    font-family: $fuenteContenido;
-  }
-
-  textarea{
-    resize: none;
-  }
-}
