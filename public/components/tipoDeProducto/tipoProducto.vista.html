@@ -3,13 +3,13 @@
 <main id="registroSucursales">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4 py-5 px-5 panelIzquierdo">
+        <div class="col-md-3 py-5 px-5 panelIzquierdo">
             <a href="#!/"><img src="../../../sources/img/chevron-left.svg" height="35px" width="35px" alt="">Regresar a la pagina principal</a>
-          <a href="/#!/ListaTipoProducto" class="btn btn-light">Lista de tipos de productos</a>
-          <img src="./../../../sources/img/Group 97.svg" class="mt-5" alt="">
+          <a href="/#!/ListaTipoProducto" class=" btn btnAccion">Lista de tipos de productos</a>
+          <img src="../../../sources/img/logo_slateblue.svg" class="my-5" alt="">
         </div>
   
-        <div class="col-md-8 py-5 px-5 contenido">
+        <div class="col-md-9 py-4 px-4 contenido">
           <div class="col-6">
             <h2> Registrar un nuevo tipo de producto</h2>
             <form ng-submit=" vm.registrarTipoProducto(vm.nuevoTipoProducto)"></form>
@@ -23,7 +23,7 @@
                   <label for="">Impuesto del tipo de producto</label>
                   <input type="number" min="0" id="txtImpuesto" class="form-control col-md-8" ng-model="vm.nuevoTipoProducto.impuesto" required>
               </div>
-              <button type="submit" ng-click="vm.modificarTipoProducto(vm.nuevoTipoProducto)" class="btnGuardar" id="btnGuardar">Guardar</button>
+              <button type="submit" ng-click="vm.modificarTipoProducto(vm.nuevoTipoProducto)" class=" btn btnAccion" id="btnGuardar">Guardar</button>
  
             </form>
           </div>
