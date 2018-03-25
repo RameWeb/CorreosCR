@@ -3,13 +3,9 @@
 .bg-black{
   background: #000;
 }
-// *{
-//   font-family: 'Montserrat', sans-serif;
-//   font-weight: 400;
-// }
 
 .headlines{
-  font-family: 'Montserrat', sans-serif;
+  font-family: $fuenteTitulos;
   font-weight: 700;
 }
 
@@ -41,12 +37,14 @@ hr{
 .btnAction{
   background-color: #8979e4;
   color: #fff;
+  font-family: $fuenteContenido;
 }
 .blueNav{
   background-color: #333945;
   /* height: 65px; */
 }
 a.myNavLinks{
+  font-family: $fuenteContenido;
   font-weight: 700;
   font-size: 1em;
 }
@@ -94,6 +92,7 @@ a.myNavLinks{
 
 footer{
   background-color: #333945;
+  font-family: $fuenteContenido;
   height: 200px;
 }
 

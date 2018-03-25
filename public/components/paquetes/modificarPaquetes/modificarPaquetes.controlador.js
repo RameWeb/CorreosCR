@@ -7,7 +7,7 @@
   controladorModificarPaquetes.$inject = ['$http','$stateParams', '$state', 'servicioPaquetes'];
 
   function controladorModificarPaquetes($http, $stateParams, $state, servicioPaquetes){
-
+    let vm = this;
     let paquetesSeleccionado;
 
     if($stateParams.idPaquetes == ''){
@@ -18,13 +18,14 @@
 
     //console.log(PaquetesSeleccionado);
 
-    let vm = this;
+    
 
     vm.nuevoPaquetes = {
       tracking: paquetesSeleccionado.tracking,
       nombre: paquetesSeleccionado.nombre,
       peso: paquetesSeleccionado.peso,
       valor: paquetesSeleccionado.valor,
+      repartidor: paquetesSeleccionado.repartidor,
       estado: paquetesSeleccionado.estado,
      
     };
@@ -39,7 +40,7 @@
       // console.log(pnuevaPrealerta);
 
       // Tomamos el objeto sin formato y lo comvertimos en un objeto de tipo cliente
-      let objPaquetesModificado = new Paquetes(vm.nuevoPaquetes.tracking, vm.nuevoPaquetes.nombre, vm.nuevoPaquetes.peso,  vm.nuevoPaquetes.valor, vm.nuevoPaquetes.estado, idPaquetes);
+      let objPaquetesModificado = new Paquetes(vm.nuevoPaquetes.tracking, vm.nuevoPaquetes.nombre, vm.nuevoPaquetes.peso,  vm.nuevoPaquetes.valor, vm.nuevoPaquetes.repartidor, vm.nuevoPaquetes.estado, idPaquetes);
         
       console.log(objPaquetesModificado);
 
@@ -56,7 +57,7 @@
       listarPaquetes();
 
       // Se limpia el formulario
-      vm.nuevaPaquetes = null;
+      vm.nuevoPaquetes = null;
     }
 
     function listarPaquetes(){

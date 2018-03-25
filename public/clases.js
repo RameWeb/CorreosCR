@@ -1,22 +1,19 @@
 class tipoProducto{
   constructor(pnombreTipoProducto, pimpuesto){
       this.nombreTipoProducto = pnombreTipoProducto;
-      this.impuesto = pimpuesto;
-     
+      this.impuesto = pimpuesto;  
   }
 }
+
 class courier{
   constructor(pnombreCourier){
       this.nombreCourier = pnombreCourier;
-     
-     
   }
 }
+
 class provincia{
   constructor(pnombreProvincia){
-      this.nombreProvincia = pnombreProvincia;
-     
-     
+      this.nombreProvincia = pnombreProvincia; 
   }
 }
 
@@ -166,6 +163,13 @@ class Licencia{
       this.descripcion = pDescripcion;
   }
 }
+
+class EstadoPaquete{
+  constructor(pEstadoPaquete){
+    this.estadoPaquete = pEstadoPaquete;
+}
+}
+
 class Convenios{
   constructor(pNombreInstitucion, pTipo, pTiempo, pCosto, pidConvenios){
     this.nombreInstitucion = pNombreInstitucion;
@@ -177,14 +181,15 @@ class Convenios{
 }
 
 class Paquetes{
-  constructor(pTracking, pNombre, pPeso, pValor, pEstado, pidPaquetes){
+  constructor(pTracking, pNombre, pPeso, pValor, pRepartidor, pEstado, pidPaquetes){
     this.tracking = pTracking;
     this.nombre = pNombre;
     this.peso = pPeso;
     this.valor = pValor;
+    this.repartidor = pRepartidor;
     this.estado = pEstado;
     this.idPaquetes = pidPaquetes;
-    this.repartidor = [];
+    
   }
 }
 

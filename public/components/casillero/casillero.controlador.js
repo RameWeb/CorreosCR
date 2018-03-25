@@ -15,7 +15,7 @@
     vm.registrarCasillero = (pnuevoCasillero) => {
 
 
-      let numeroCasillero = (Math.floor(Math.random()*999999999999999)+999999999999999);
+      let numeroCasillero = (Math.floor(Math.random()*99999999999)+99999999999);
                       
 
       console.log(numeroCasillero);
@@ -24,7 +24,7 @@
       swal("Registro exitoso", "Se te ha asignado un casillero", "success", {
         button: "Aceptar",
       });
-        
+       alert("El casillero asignado es " + numeroCasillero); 
 
      // console.log(pnuevoCasillero);
 

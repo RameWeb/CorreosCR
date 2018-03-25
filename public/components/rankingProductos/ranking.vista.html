@@ -2,17 +2,18 @@
 	<main id="courier">
 		<div class="container-fluid">
 		  <div class="row">
-			<div class="col-md-4 py-5 px-5 panelIzquierdo">
+			<div class="col-md-3 py-5 px-5 panelIzquierdo">
+					<a href="#!/"><img src="../../../sources/img/chevron-left.svg" height="35px" width="35px" alt="">Regresar a la pagina principal</a>
 			  <h2>Correos de Costa Rica</h2>
-			  <a href="/#!/registrarTipoProducto" class="btn btn-light">Regresar</a>
+			  <a href="/#!/registrarTipoProducto" class="btn btnAccion">Regresar</a>
 	  
 			</div>
-			<div class="col-md-8 py-5 px-5 contenido">
+			<div class="col-md-9 py-4 px-4 contenido">
 			  <h2>Ranking tipos de productos</h2>
 	  
-			  <div class="form-group col-6">
+			  <div class="form-group col-md-8">
 				<label for="txtBuscar">Filtrar ranking por fecha</label>
-				<input type="text" id="txtBuscar" class="form-control" ng-model="buscartipoProducto.fecha">
+				<input type="text" id="txtBuscar" class="form-control col-md-8" ng-model="buscartipoProducto.fecha">
 			  </div><div class="col-12">
 	  <table class="table">
 	  <thead>

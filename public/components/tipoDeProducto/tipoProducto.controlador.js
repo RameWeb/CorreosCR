@@ -4,17 +4,21 @@
   .module('correos-cr')
   .controller('controladorProductos', controladorProductos);
 
-  controladorProductos.$inject = ['$stateParams', '$state', 'servicioTipoProductos'];
+  controladorProductos.$inject = ['$http', '$stateParams', '$state', 'servicioTipoProductos'];
 
-  function controladorProductos($stateParams, $state, servicioTipoProductos){
+  function controladorProductos($http, $stateParams, $state, servicioTipoProductos){
     let vm = this;
+
     vm.nuevoTipoProducto = {};
+
     vm.listaTipoProductos = listarTiposProductos();
+
     listarTiposProductos();
 
     //  registrar un nuevo tipo de producto desde el html
     vm.registrarTipoProducto = (pnuevoTipoProducto) => {
       console.log(pnuevoTipoProducto);
+
       let objNuevoTipoProducto = new tipoProducto(pnuevoTipoProducto.nombreTipoProducto, pnuevoTipoProducto.impuesto );
 
       console.log('Objeto con el tipo de producto');
@@ -35,7 +39,8 @@
       vm.listaTipoProductos= servicioTipoProductos.getTipoProductos();
     }
     vm.modificar = (ptipoProducto) =>{
-      $state.go('modificarTipoProducto', {nombreTipoProducto: JSON.stringify(tipoProducto.nombreTipoProducto)})
+      console.log(ptipoProducto);
+      $state.go('modificarTipoProducto', {nombreTipoProducto: JSON.stringify(ptipoProducto.nombreTipoProducto)})
     }
 
   }
