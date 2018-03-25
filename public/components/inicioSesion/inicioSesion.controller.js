@@ -24,7 +24,15 @@
           icon: "success",
           button: "Aceptar",
         });
-        $state.go('cliente');
+
+        let session = JSON.parse(sessionStorage.session),
+            sessionRol = session.rol;
+        if(sessionRol === "Cliente"){
+          $state.go('cliente');
+        }else{
+          $state.go('admin');
+        }
+        
       }else{
         swal({
           title: "Inicio de sesión fallido",
