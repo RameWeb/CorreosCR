@@ -1,14 +1,14 @@
 <!-- <navegacion-Principal></navegacion-Principal> -->
 
-<main id="registroConveniosClientes">
+<main id="registroSucursales">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4 py-5 px-5 panelIzquierdo">
         <a href="#!/cliente"><img src="../../../sources/img/chevron-left.svg" height="30px" width="30px" alt="">Regresar al dashboard</a>
-        <img src="./../../../sources/img/Group 97.svg" class="mt-5" alt="">
+        <img src="../../../sources/img/logo_slateblue.svg" class="mt-5" alt="">
       </div>
       <div class="col-md-8 py-5 px-5 contenido">
-        <h2>Lista convenios</h2>
+        <h2>Convenios Cliente</h2>
 
         <div class="form-group">
           <label for="txtBuscar">Buscar</label>
@@ -27,7 +27,7 @@
           <tbody>
             <tr ng-repeat="convenio in vm.listaConvClientes | filter:buscarConvenio">
               <td>{{convenio.servicio}}</td>
-              <td>{{convenio.cliente}}</td>
+              <td>{{convenio.cliente.nombre}}</td>
               <td>{{convenio.direccion}}</td>
               <td>
                 <li class="nav-item dropdown btnAccion" style="list-style:none">
