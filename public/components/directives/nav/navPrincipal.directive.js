@@ -6,7 +6,7 @@
   
   function navegacionPrincipal(){
     let navegacion = {
-      templateUrl: '../../../components/directives/nav/navPrinicipal.vista.html',
+      templateUrl: './navPrinicipal.vista.html',
       restrict: 'EA' //E = Etiqueta, A = Atributo, C = Comentario, M.
     };
 
