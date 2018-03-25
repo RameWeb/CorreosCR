@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class tipoProducto{
   constructor(pnombreTipoProducto, pimpuesto){
       this.nombreTipoProducto = pnombreTipoProducto;
@@ -156,7 +155,6 @@ class Licencia{
       this.descripcion = pDescripcion;
   }
 }
-=======
 class Convenios{
   constructor(pNombreInstitucion, pTipo, pTiempo, pCosto, pidConvenios){
     this.nombreInstitucion = pNombreInstitucion;
@@ -185,4 +183,3 @@ class Casillero{
     
   }
 }
->>>>>>> Judith
