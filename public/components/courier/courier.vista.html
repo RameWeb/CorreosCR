@@ -1,38 +1,37 @@
-<section class="container-fluid my-5">
-    <div class="row">
-        <div class="col-md-4">
-          <h1>Correos de Costa Rica</h1>
-          <a href="#!/listaCourier" class="btn btn-primary">Lista de Couriers</a>
+<!-- <navegacion-Principal></navegacion-Principal> -->
+
+
+<main id="registroSucursales">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 py-5 px-5 panelIzquierdo">
+          <a href="/#!/listaCourier" class="btn btn-light">Lista de Couriers</a>
+          <img src="./../../../sources/img/Group 97.svg" class="mt-5" alt="">
         </div>
-        <div class="col-md-8">
-            <h2>Registrar un nuevo courier</h2>
-            <div>
-              <form ng-submit="vm.registrarCourier(vm.nuevoCourier)" > 
-                <!-- Información del nuevo courier  -->
-                <div class="my-3">
-                    <div class="form-group">
-        <div class="">
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                    <label for="">Nombre del courier</label>
-                  <input type="text"id="txtCourierNombre"class="form-control myInput"  ng-model="vm.nuevoCourier.nombreCourier"  required>
-                </div>
-               </div>
+  
+        <div class="col-md-8 py-5 px-5 contenido">
+          <div class="col-6">
+            <h2> Registrar un nuevo courier</h2>
+            <form ng-submit="vm.registrarCourier(vm.nuevoCourier)" name="registroCourier" autocomplete="off" novalidate>
+              
+              <div class="form-group">
+                  <label for="txtCourier">Nombre del courier</label>
+                <input type="text" id="txtCourierNombre"class="form-control "  ng-model="vm.nuevoCourier.nombreCourier"  required>
+              </div>
+              <button type="submit" class="btn btnAccion" id="btnGuardar">Registrar</button>
+ 
+            </form>
           </div>
-         <button type="submit" class="btnGuardar" id="btnGuardar">Guardar</button>
-         
+  
+          <div class="col-6">
+
+          </div>
         </div>
-     </form>      
-     </div>
+      </div>
     </div>
-  </div>
-</section>
+  </main>
 
 
-
-  
-  
   
   
   
