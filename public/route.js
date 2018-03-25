@@ -645,7 +645,7 @@
     // Fin Jason
 
     //Christine
-    .state('dashboardadmin', {
+    .state('dashboardAdmin', {
       url: '/admin',
       templateUrl: './components/admin/dashboardadmin.vista.html',
       data:{
@@ -653,7 +653,7 @@
       }
     })
 
-    .state('dashboardcliente', {
+    .state('dashboardCliente', {
       url: '/cliente',
       templateUrl: './components/cliente/dashboardcliente.vista.html',
       data:{
