@@ -163,7 +163,6 @@ class Licencia{
       this.descripcion = pDescripcion;
   }
 }
-<<<<<<< HEAD
 
 class EstadoPaquete{
   constructor(pEstadoPaquete){
@@ -171,8 +170,6 @@ class EstadoPaquete{
 }
 }
 
-=======
->>>>>>> Dev
 class Convenios{
   constructor(pNombreInstitucion, pTipo, pTiempo, pCosto, pidConvenios){
     this.nombreInstitucion = pNombreInstitucion;

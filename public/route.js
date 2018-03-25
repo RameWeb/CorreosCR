@@ -17,71 +17,7 @@
       }
     })
 
-<<<<<<< HEAD
-    .state('dashboardadmin', {
-      url: '/admin',
-      templateUrl: './components/admin/dashboardadmin.vista.html',
-      data:{
-        pageTitle: 'Dashboard | Administrador'
-      }
-    })
-
-    .state('dashboardcliente', {
-      url: '/cliente',
-      templateUrl: './components/cliente/dashboardcliente.vista.html',
-      data:{
-        pageTitle: 'Dashboard | Cliente'
-      }
-    })
-
-    .state('direcciones', {
-      url: '/direcciones',
-      templateUrl: './components/direcciones/direcciones.view.html',
-      data:{
-        pageTitle: 'Registro Direcciones | Ejemplo Arquitectura'
-      },
-      resolve: {
-        load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/direcciones/direcciones.controller.js')
-        }]
-      },
-      controller: 'controladorDirecciones',
-      controllerAs: 'vm'
-    })
-
-    .state('licencias', {
-      url: '/licencias',
-      templateUrl: './components/licencias/licencias.view.html',
-      data:{
-        pageTitle: 'Registro Licencias'
-      },
-      resolve: {
-        load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/licencias/licencias.controller.js')
-        }]
-      },
-      controller: 'controladorLicencias',
-      controllerAs: 'vm'
-    })
-
-    .state('estados', {
-      url: '/estados',
-      templateUrl: './components/estadoPaquete/estadoPaquete.view.html',
-      data:{
-        pageTitle: 'Registro Estados | Estados Paquete'
-      },
-      resolve: {
-        load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/estadoPaquete/estadoPaquete.controller.js')
-        }]
-      },
-      controller: 'controladorEstadoPaquete',
-      controllerAs: 'vm'
-    })
-
-=======
    
->>>>>>> Dev
     .state('registroSucursal',{
       url: '/registroSucursal',
       templateUrl: './components/sucursales/registrar/sucursales.vista.html',
@@ -658,8 +594,71 @@
       },
       controller: 'controladorModEmpleados',
       controllerAs: 'vm'
-    });
+    })
     // Fin Jason
+
+    //Christine
+    .state('dashboardadmin', {
+      url: '/admin',
+      templateUrl: './components/admin/dashboardadmin.vista.html',
+      data:{
+        pageTitle: 'Dashboard | Administrador'
+      }
+    })
+
+    .state('dashboardcliente', {
+      url: '/cliente',
+      templateUrl: './components/cliente/dashboardcliente.vista.html',
+      data:{
+        pageTitle: 'Dashboard | Cliente'
+      }
+    })
+
+    .state('direcciones', {
+      url: '/direcciones',
+      templateUrl: './components/direcciones/direcciones.view.html',
+      data:{
+        pageTitle: 'Registro Direcciones | Ejemplo Arquitectura'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/direcciones/direcciones.controller.js')
+        }]
+      },
+      controller: 'controladorDirecciones',
+      controllerAs: 'vm'
+    })
+
+    .state('licencias', {
+      url: '/licencias',
+      templateUrl: './components/licencias/licencias.view.html',
+      data:{
+        pageTitle: 'Registro Licencias'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/licencias/licencias.controller.js')
+        }]
+      },
+      controller: 'controladorLicencias',
+      controllerAs: 'vm'
+    })
+
+    .state('estados', {
+      url: '/estados',
+      templateUrl: './components/estadoPaquete/estadoPaquete.view.html',
+      data:{
+        pageTitle: 'Registro Estados | Estados Paquete'
+      },
+      resolve: {
+        load: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return $ocLazyLoad.load('./components/estadoPaquete/estadoPaquete.controller.js')
+        }]
+      },
+      controller: 'controladorEstadoPaquete',
+      controllerAs: 'vm'
+    });
+    //fin Christine
 
 
     $urlRouterProvider.otherwise('/');
