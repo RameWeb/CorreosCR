@@ -19,8 +19,8 @@
 
       if(inicioSesion == true){
         swal({
-          title: "Inicio de sesión exitoso",
-          text: "Bienvenido",
+          title: "Bienvenido",
+          text: "Inicio de sesión exitoso",
           icon: "success",
           button: "Aceptar",
         });
