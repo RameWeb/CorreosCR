@@ -19,10 +19,7 @@
     vm.listaClientes = listarClientes();
 
     listarClientes();
-
-    let administrador = ["jason@jason.com", 123];
-    servicioUsuarios.agregarUsuario()
-
+    
     // Guardar un nuevo repartidor
     vm.registrarCliente = (pNuevoCliente) => {
       console.log(pNuevoCliente);
