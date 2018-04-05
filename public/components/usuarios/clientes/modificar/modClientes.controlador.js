@@ -12,13 +12,18 @@
 
     if(!$stateParams.identificacion){
       $state.go('mantClientes');
+    }else{
+      clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico($stateParams.identificacion);
     }
 
-    clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico(JSON.parse($stateParams.identificacion));
+    // clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico(JSON.parse($stateParams.identificacion));
+
+    
 
     console.log(clienteSeleccionado);
 
     let vm = this;
+
 
     vm.nuevoClienteModificado = {
       identificacion: clienteSeleccionado.identificacion,

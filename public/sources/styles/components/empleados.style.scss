@@ -1,6 +1,9 @@
 @import "../setting";
 
 #registrarEmpleados{
+  textarea{
+    resize: none;
+  }
   .contenido{
     background-color: $white;
     max-height: 100vh;
