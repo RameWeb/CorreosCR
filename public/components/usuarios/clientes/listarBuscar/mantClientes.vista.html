@@ -10,8 +10,8 @@
         <h2>Lista de Clientes</h2>
         <div class="form-group">
           <label for="inputBuscar">Buscar cliente</label>
-          <input type="text" class="form-control" id="inputBuscar" ng-model="buscarCliente.nombre">
-          </div>
+          <input type="text" class="form-control" id="inputBuscar" ng-model="buscarTarjeta">
+        </div>
         <table class="table">
           <thead>
             <tr>
@@ -23,7 +23,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="cliente in vm.listaClientes | filter:buscarCliente">
+            <tr ng-repeat="cliente in vm.listaClientes | filter:buscarTarjeta">
               <td>{{cliente.identificacion}}</td>
               <td>{{cliente.nombre}}</td>
               <td>{{cliente.apellido1}}</td>

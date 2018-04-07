@@ -126,15 +126,15 @@ class Cliente extends Usuario{
   constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono){
     super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
     this.telefono = pTelefono;
-    this.tarjeta = [];
+    this.tarjetas = [];
   }
 
   agregarTarjeta(pObjTarjeta){
-    this.tarjeta.push(pObjTarjeta);
+    this.tarjetas.push(pObjTarjeta);
   }
 
   getTarjeta(){
-    return this.tarjeta;
+    return this.tarjetas;
   }
 }
 

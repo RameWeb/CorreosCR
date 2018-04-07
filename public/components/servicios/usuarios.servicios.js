@@ -71,8 +71,15 @@
             break;
 
             case "Cliente":
-              let objTempCliente = new Cliente(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono, obj.tarjeta);
+              let objTempCliente = new Cliente(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono);
 
+              console.log(obj.tarjetas)
+
+              obj.tarjetas.forEach(objTarj => {
+                let objTempTarjeta = new Tarjeta(objTarj.titularTarjeta, objTarj.numeroTarjeta, objTarj.fechaVencimiento, objTarj.ccv);
+                console.log(objTempTarjeta);
+                objTempCliente.agregarTarjeta(objTempTarjeta);
+              })
               listaUsuarios.push(objTempCliente);
             break;
 

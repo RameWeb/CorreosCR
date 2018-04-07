@@ -12,18 +12,15 @@
 
     if(!$stateParams.identificacion){
       $state.go('mantClientes');
-    }else{
-      clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico($stateParams.identificacion);
     }
 
-    // clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico(JSON.parse($stateParams.identificacion));
-
-    
+    clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico(JSON.parse($stateParams.identificacion));
 
     console.log(clienteSeleccionado);
 
     let vm = this;
 
+    vm.tarjetas = clienteSeleccionado.tarjetas;
 
     vm.nuevoClienteModificado = {
       identificacion: clienteSeleccionado.identificacion,
@@ -37,11 +34,6 @@
       canton: clienteSeleccionado.canton,
       distrito: clienteSeleccionado.distrito,
       direccion: clienteSeleccionado.direccion,
-      titularTarjeta: clienteSeleccionado.tarjeta.titularTarjeta,
-      numeroTarjeta: clienteSeleccionado.tarjeta.numeroTarjeta,
-      mesVencimiento: clienteSeleccionado.tarjeta.fechaVencimiento,
-      annoVencimiento: clienteSeleccionado.tarjeta.annoVencimiento,
-      ccv: clienteSeleccionado.tarjeta.ccv
     };
 
     vm.modificarCliente = (pNuevoCliente) =>{
