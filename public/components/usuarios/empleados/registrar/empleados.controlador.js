@@ -80,7 +80,7 @@
 
         $state.go('mantEmpleados');
       }else{
-        swal("Ha ocurrido un error", "El empleado se ha sido registrado correctamente", "error", {
+        swal("Ha ocurrido un error", "El empleado no se ha sido registrado correctamente", "error", {
           button: "Aceptar",
         });
       }

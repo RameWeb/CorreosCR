@@ -8,7 +8,7 @@
       </div>
       <div class="col-md-9 py-5 px-5 contenido">
         <h2>Registrar Empleados</h2>
-        <form ng-submit="vm.registrarEmpleados(vm.nuevoEmpleado)" class="col-md-8">
+        <form ng-submit="vm.registrarEmpleados(vm.nuevoEmpleado)" class="col-md-8" name="formRegistroEmpleados" novalidate autocomplete="off">
           <div class="form-group">
             <label for="inputRoles">Seleccione el rol del empleado:</label>
             <input type="text" class="form-control" id="inputRoles" ng-model="vm.nuevoEmpleado.rol" list="listaRoles">
@@ -19,30 +19,75 @@
           <!-- Información Personal -->
           <div class="my-3">
             <h3>Información Personal</h3>
+
             <div class="form-group">
               <label for="inputIdentificacion">Nº de Identificación:</label>
-              <input type="text" class="form-control" id="inputIdentificacion" ng-model="vm.nuevoEmpleado.identificacion" required>
+              <input type="text" id="inputIdentificacion" class="form-control" name="campoCedula" ng-model="vm.nuevoEmpleado.identificacion" pattern="[0-9]+" maxlength="9" minlength="9" required>
+              <div ng-messages="formRegistroEmpleados.campoCedula.$error" role="alert">
+                <div ng-message="required">
+                  <small class="form-text text-muted">Este campo es requerido</small>
+                </div>
+                <div ng-message="maxlength">
+                  <small class="form-text text-muted">Formato incorrecto</small>
+                </div>
+                <div ng-message="minlength">
+                  <small class="form-text text-muted">Formato incorrecto</small>
+                </div>
+                <div ng-message="pattern">
+                  <small class="form-text text-muted">Formato incorrecto, ingrese únicamente números</small>
+                </div>
+              </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputNombre">Nombre</label>
-                <input type="text" class="form-control" id="inputNombre" ng-model="vm.nuevoEmpleado.nombre" required>
+                <label for="inputNombre">Primer Nombre</label>
+                <input type="text" id="inputNombre" class="form-control" name="campoNombre" ng-model="vm.nuevoEmpleado.nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ]+" required>
+                <div ng-messages="formRegistroEmpleados.campoNombre.$error" role="alert">
+                  <div ng-message="required">
+                    <small class="form-text text-muted">Este campo es requerido</small>
+                  </div>
+                  <div ng-message="pattern">
+                    <small class="form-text text-muted">Formato incorrecto</small>
+                  </div>
+                </div>
               </div>
+
               <div class="form-group col-md-6">
-                <label for="inputApellido1">Primer Apellido</label>
-                <input type="text" class="form-control" id="inputApellido1" ng-model="vm.nuevoEmpleado.apellido1" required>
+                  <label for="inputApellido1">Primer Apellido</label>
+                  <input type="text" id="inputApellido1" class="form-control" name="campoApellido" ng-model="vm.nuevoEmpleado.apellido1" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ]+" required>
+                  <div ng-messages="formRegistroEmpleados.campoApellido.$error" role="alert">
+                    <div ng-message="required">
+                      <small class="form-text text-muted">Este campo es requerido</small>
+                    </div>
+                    <div ng-message="pattern">
+                      <small class="form-text text-muted">Formato incorrecto</small>
+                    </div>
+                  </div>
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="inputEmail" ng-model="vm.nuevoEmpleado.email" required>
+                <input type="email" id="inputEmail" class="form-control" name="campoEmail" ng-model="vm.nuevoEmpleado.email" pattern="/^[A-Za-z0-9._%+-]+@domain.com$/" required>
+                <div ng-messages="formRegistroEmpleados.campoEmail.$error" role="alert">
+                  <div ng-message="required">
+                    <small class="form-text text-muted">Este campo es requerido</small>
+                  </div>
+                <div ng-message="email">
+                  <small class="form-text text-muted">El formato del correo electrónico es incorrecto</small>
+                </div>
+                <div ng-message="maxlength">This field can be at most 15 characters long.</div>
+                </div>
               </div>
+
               <div class="form-group col-md-6">
                 <label for="inputContrasenna">Contraseña:</label>
                 <input type="password" class="form-control" id="inputContrasenna" ng-model="vm.nuevoEmpleado.contrasenna" required>
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputFechaNacimiento">Fecha de Nacimiento</label>
