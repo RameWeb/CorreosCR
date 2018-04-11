@@ -1,5 +1,6 @@
 const UserModel = require('./usuarios.model'),
       bcrypt = require('bcryptjs');
+      
 
 module.exports.registrar = (req, res) => {
   let newUser = new UserModel({

@@ -10,7 +10,7 @@
     overflow: scroll;
   }
   .panelIzquierdo{
-    background-image: $deepPurple;
+    background-image: url(img/herobackground.jpg);
     color: $white;
     min-height: 100vh;
     overflow: scroll;
@@ -21,6 +21,11 @@
   }
   .btnAccion{
     background-color: $slateblue;
+    color: $white;
+    font-family: $fuenteContenido;
+  }
+  .btnSecundario{
+    background-color: $midnight;
     color: $white;
     font-family: $fuenteContenido;
   }

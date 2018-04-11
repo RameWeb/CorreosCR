@@ -1,12 +1,12 @@
 <main id="registrarClientes">
   <section class="container-fluid">
     <div class="row">
-      <div class="col-md-4 py-5 px-5 panelIzquierdo">
+      <div class="col-md-3 py-5 px-5 panelIzquierdo">
         <a href="#!/admin"><img src="../../../sources/img/chevron-left.svg" height="30px" width="30px" alt="">Regresar al dashboard</a>
         <img src="../../../sources/img/logo_slateblue.svg" class="my-5" alt="">
         <a href="#!/mantClientes" class="btn btnAccion">Lista de Clientes</a>
       </div>
-      <div class="col-md-8 py-5 px-5 contenido">
+      <div class="col-md-9 py-5 px-5 contenido">
         <h2>Modificar Cliente</h2>
         <form ng-submit="vm.modificarCliente(vm.nuevoClienteModificado)" class="col-md-8">
           <!-- Información Personal -->
@@ -72,6 +72,7 @@
   
           <div class="my-3">
             <h3>Información de Tarjetas</h3>
+            <a class="btn btnSecundario" ng-click="vm.agregarTarjeta()">Agregar Nueva Tarjeta</a>
             <div class="form-group">
               <label for="inputBuscar">Buscar Tarjeta</label>
               <input type="text" class="form-control" id="inputBuscar" ng-model="buscarCliente.nombre">

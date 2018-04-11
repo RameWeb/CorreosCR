@@ -11,6 +11,10 @@
 
     vm.sucursales = ["San Jose", "Alajuela", "Heredia", "Cartago", "Guanacaste","Puntarenas", "Limon"];
 
+    vm.sexo = ["Femenino", "Masculino", "Sin especificar"];
+
+    vm.tipoIdentificacion = ["Nacional", "Residente", "Pasaporte"];
+
     
 
     // Objeto sin formato
@@ -26,7 +30,7 @@
 
       let nuevaTarjeta = new Tarjeta(vm.nuevoCliente.titularTarjeta,vm.nuevoCliente.numeroTarjeta,vm.nuevoCliente.mesVencimiento,vm.nuevoCliente.annoVencimiento,vm.nuevoCliente.ccv);
 
-      let nuevoCliente= new Cliente(vm.nuevoCliente.identificacion, vm.nuevoCliente.nombre,vm.nuevoCliente.apellido1,vm.nuevoCliente.fechaNacimiento,vm.nuevoCliente.email,vm.nuevoCliente.contrasenna,vm.nuevoCliente.provincia,vm.nuevoCliente.canton,vm.nuevoCliente.distrito,vm.nuevoCliente.direccion,1,'Cliente',vm.nuevoCliente.telefono);
+      let nuevoCliente= new Cliente(vm.nuevoCliente.tipoIdentificacion, vm.nuevoCliente.identificacion, vm.nuevoCliente.primerNombre, vm.nuevoCliente.segundoNombre, vm.nuevoCliente.primerApellido, vm.nuevoCliente.segundoApellido, vm.nuevoCliente.sexo, vm.nuevoCliente.fechaNacimiento,vm.nuevoCliente.email, vm.nuevoCliente.contrasenna, vm.nuevoCliente.provincia,vm.nuevoCliente.canton, vm.nuevoCliente.distrito, vm.nuevoCliente.direccion, 1,'Cliente',vm.nuevoCliente.telefono, vm.nuevoCliente.sucursalPreferencia);
       console.log(nuevoCliente);
 
       nuevoCliente.agregarTarjeta(nuevaTarjeta);
@@ -38,7 +42,7 @@
       swal("Registro exitoso", "El cliente se ha sido registrado correctamente", "success", {
         button: "Aceptar",
       });
-      // $state.go('mantClientes');
+      $state.go('mantClientes');
 
       // Se limpia el formulario
       vm.nuevoCliente = null;

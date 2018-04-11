@@ -57,10 +57,14 @@ class ConveniosClientes{
 }
 
 class Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario){
+  constructor(pTipoIdentificacion, pIdentificacion, pNombre1, pNombre2, pApellido1, pApellido2, pSexo, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario){
+    this.tipoIdentificacion = pTipoIdentificacion;
     this.identificacion = pIdentificacion;
-    this.nombre = pNombre;
+    this.nombre1 = pNombre1;
+    this.nombre2 = pNombre2;
     this.apellido1 = pApellido1;
+    this.apellido2 = pApellido2;
+    this.sexo = pSexo;
     this.fechaNacimiento = pFechaNacimiento;
     this.email = pEmail;
     this.contrasenna = pContrasenna;
@@ -98,22 +102,22 @@ class Usuario{
 }
 
 class EmpleadoSucursal extends Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pObjSucursal, pLicencia, pFotoLicencia, pVencimientoLicencia){
-    super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
+  constructor(pTipoIdentificacion, pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pObjSucursal, pLicencia, pFotoLicencia, pVencimientoLicencia){
+    super(pTipoIdentificacion, pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
     this.sucursal = pObjSucursal;
   }
 }
 
 class EmpleadoAduana extends Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pRolAduana){
-    super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
+  constructor(pTipoIdentificacion, pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pRolAduana){
+    super(pTipoIdentificacion, pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
     this.rolAduana = pRolAduana;
   }
 }
 
 class Repartidor extends Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono,pSucursal,pLicencia,pFotoLicencia,pLicenciaVencimiento){
-    super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
+  constructor(pTipoIdentificacion, pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono,pSucursal,pLicencia,pFotoLicencia,pLicenciaVencimiento){
+    super(pTipoIdentificacion, pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
     this.telefono = pTelefono;
     this.sucursal = pSucursal;
     this.licencia = pLicencia;
@@ -123,9 +127,10 @@ class Repartidor extends Usuario{
 }
 
 class Cliente extends Usuario{
-  constructor(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono){
-    super(pIdentificacion, pNombre, pApellido1, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario);
+  constructor(pTipoIdentificacion, pIdentificacion, pNombre1, pNombre2, pApellido1, pApellido2, pSexo, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion, pestado, pTipoUsuario, pTelefono, pSucursalPreferencia){
+    super(pTipoIdentificacion, pIdentificacion, pNombre1, pNombre2, pApellido1, pApellido2, pSexo, pFechaNacimiento, pEmail, pContrasenna, pProvincia, pCanton, pDistrito, pDireccion,pestado, pTipoUsuario);
     this.telefono = pTelefono;
+    this.sucursalPreferencia = pSucursalPreferencia;
     this.tarjetas = [];
   }
 

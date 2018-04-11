@@ -14,7 +14,7 @@
       $state.go('mantClientes');
     }
 
-    clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico(JSON.parse($stateParams.identificacion));
+    clienteSeleccionado = servicioUsuarios.obtenerUsuarioEspecifico($stateParams.identificacion);
 
     console.log(clienteSeleccionado);
 
@@ -24,7 +24,7 @@
 
     vm.nuevoClienteModificado = {
       identificacion: clienteSeleccionado.identificacion,
-      nombre: clienteSeleccionado.nombre,
+      nombre: clienteSeleccionado.nombre1,
       apellido1: clienteSeleccionado.apellido1,
       email: clienteSeleccionado.email,
       contrasenna: clienteSeleccionado.contrasenna,

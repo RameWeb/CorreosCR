@@ -53,38 +53,35 @@
 
           switch (obj.tipoUsuario) {
             case "Encargado de Sucursal":
-              let objTempEncargadoSucursal = new EmpleadoSucursal(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.sucursal, obj.licencia, obj.fotoLicencia, obj.vencimientoLicencia);
+              let objTempEncargadoSucursal = new EmpleadoSucursal(obj.tipoIdentificacion,obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.sucursal, obj.licencia, obj.fotoLicencia, obj.vencimientoLicencia);
 
               listaUsuarios.push(objTempEncargadoSucursal);
             break;
           
             case "Encargado de Aduana":
-              let objTempEncargadoAduana = new EmpleadoAduana(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.rolAduana);
+              let objTempEncargadoAduana = new EmpleadoAduana(obj.tipoIdentificacion,obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.rolAduana);
 
               listaUsuarios.push(objTempEncargadoAduana);
             break;
 
             case "Repartidor":
-              let objTempRepartidor = new Repartidor(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono, obj.sucursal, obj.licencia,obj.fotoLicencia, obj.licenciaVencimiento);
+              let objTempRepartidor = new Repartidor(obj.tipoIdentificacion, obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono, obj.sucursal, obj.licencia,obj.fotoLicencia, obj.licenciaVencimiento);
 
               listaUsuarios.push(objTempRepartidor);
             break;
 
             case "Cliente":
-              let objTempCliente = new Cliente(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono);
-
-              console.log(obj.tarjetas)
+              let objTempCliente = new Cliente(obj.tipoIdentificacion, obj.identificacion, obj.nombre1, obj.nombre2, obj.apellido1, obj.apellido2, obj.sexo, obj.fechaNacimiento,obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono, obj.sucursalPreferencia);
 
               obj.tarjetas.forEach(objTarj => {
                 let objTempTarjeta = new Tarjeta(objTarj.titularTarjeta, objTarj.numeroTarjeta, objTarj.fechaVencimiento, objTarj.ccv);
-                console.log(objTempTarjeta);
                 objTempCliente.agregarTarjeta(objTempTarjeta);
               })
               listaUsuarios.push(objTempCliente);
             break;
 
             default:
-              let objTempUsuario = new Usuario(obj.identificacion, obj.nombre, obj.apellido1, obj.fechaNacimiento, obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario);
+              let objTempUsuario = new Usuario(obj.tipoIdentificacion, obj.identificacion, obj.nombre1, obj.nombre2, obj.apellido1, obj.apellido2, obj.sexo, obj.fechaNacimiento,obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario);
 
               listaUsuarios.push(objTempUsuario);
             break;
