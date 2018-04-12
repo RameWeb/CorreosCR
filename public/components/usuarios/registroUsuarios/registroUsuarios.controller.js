@@ -4,9 +4,9 @@
   .module('correos-cr')
   .controller('registerUserController', registerUserController);
 
-  registerUserController.$inject = ['$http','imageUploadService', 'servicioUsuarios', 'Upload'];
+  registerUserController.$inject = ['$http','imageUploadService', 'serviceUsuarios', 'Upload'];
 
-  function registerUserController($http, imageUploadService, servicioUsuarios, Upload){
+  function registerUserController($http, imageUploadService, serviceUsuarios, Upload){
     const vm = this;
 
     vm.nuevoUsuario = {};
