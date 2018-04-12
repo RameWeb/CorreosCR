@@ -22,17 +22,27 @@
     <!-- Script de Angular -->
     <script src="./lib/angular/angular.min.js"></script>
     <script src="./lib/bootstrap/checklist-model.js"></script>
-    <script src="./lib/angular/angular-messages.min.js"></script>
 
     <!-- Dependencias de Angular -->
     <script src="./lib/angular/routing/angular-ui-router.min.js"></script>
     <script src="./lib/angular/routing/ocLazyLoad.min.js"></script>
     <script src="./lib/angular/routing/page-title.min.js"></script>
+    <script src="./lib/angular/dependencies/angular-messages.min.js"></script>
+    <script src="./lib/angular/dependencies/angular-scroll.min.js"></script>
+    <script src="./lib/angular/dependencies/ng-file-upload.min.js"></script>
+    <script src="./lib/angular/dependencies/ng-file-upload-shim.min.js"></script>
 
     <!-- Script de la aplicación -->
     <script src="./clases.js"></script>
     <script src="./app.js"></script>
     <script src="./route.js"></script>
+
+    <!-- Factorias -->
+    <script src="./components/factories/dataStorage.factory.js"></script>
+    <script src="./components/factories/localStorage.factory.js"></script>
+
+    <!--Directivas-->
+    <script src="./components/directives/nav/navPrincipal.directive.js"></script>
 
     <!-- Servicios -->
     <script src="./components/servicios/autentication/inicioSesion.servicio.js"></script>
@@ -41,7 +51,6 @@
     <script src="./components/servicios/convenioCliente.servicio.js"></script>
     <script src="./components/servicios/convenios.servicio.js"></script>
     <script src="./components/servicios/courier.servicio.js"></script>
-    <script src="./components/servicios/direcciones.servicio.js"></script>
     <script src="./components/servicios/estadoPaquete.servicio.js"></script>
     <script src="./components/servicios/licencias.servicio.js"></script>
     <script src="./components/servicios/paquetes.servicio.js"></script>
@@ -51,12 +60,8 @@
     <script src="./components/servicios/sucursales.servicio.js"></script>
     <script src="./components/servicios/tipoProducto.servicio.js"></script>
     <script src="./components/servicios/usuarios.servicios.js"></script>
-
-    <!-- Factories -->
-    <script src="./components/factories/localStorage.factorie.js"></script>
-
-    <!--Directivas-->
-    <script src="./components/directives/nav/navPrincipal.directive.js"></script>
+    <script src="./components/servicios/usuarios.service.js"></script>
+    <script src="./components/servicios/imageUpload.service.js"></script>
 
 </body>
 </html>

@@ -199,3 +199,22 @@ class Casillero{
     
   }
 }
+
+
+class Empleado{
+  constructor(pcedula, pnombre1, pnombre2, papellido1, papellido2, pfechanacimiento, pemail, pcontrasenna, pprovincia, pcanton, pdistrito, pphoto){
+    this.cedula = pcedula;
+    this.primerNombre = pnombre1;
+    this.segundoNombre = pnombre2
+    this.primerApellido = papellido1;
+    this.segundoApellido = papellido2;
+    this.fechaNacimiento = pfechanacimiento;
+    this.correoElectronico = pemail;
+    this.contrasenna = pcontrasenna;
+    this.provincia = pprovincia;
+    this.canton = pcanton;
+    this.distrito = pdistrito;
+    this.photo = pphoto;
+    this.vehiculos = [];
+  }
+}
