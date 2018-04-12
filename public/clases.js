@@ -215,6 +215,5 @@ class Empleado{
     this.canton = pcanton;
     this.distrito = pdistrito;
     this.photo = pphoto;
-    this.vehiculos = [];
   }
 }

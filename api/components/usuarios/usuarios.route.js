@@ -1,6 +1,6 @@
 const express = require('express'),
       router = express.Router(),
-      users = require('./empleados.api');
+      users = require('./usuarios.api');
 
 /**
  * 
@@ -11,7 +11,7 @@ router.param('id', (req, res, next, id) => {
 });
 
 /**
- * Función que se encarga de registrar los empleados dentro del local storage
+ * Función que se encarga de registrar los usuarios dentro del local storage
  */
 router.route('/save_user')
   .post((req, res) => {
@@ -19,7 +19,7 @@ router.route('/save_user')
 });
 
 /**
- * Función que obtiene todos los empleados
+ * Función que obtiene todos los usuarios
  */
 router.route('/get_all_users')
   .get((req, res) => {
@@ -27,7 +27,7 @@ router.route('/get_all_users')
 });
 
 /**
- * Función que actualiza los empleados
+ * Función que actualiza los usuarios
  */
 router.route('/update_users')
   .put((req, res) => {

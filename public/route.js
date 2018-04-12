@@ -802,7 +802,7 @@
     
     .state('registroEmpleados', {
       url: '/registerUser',
-      templateUrl: './components/empleados/registroEmpleados/registroUsuarios.view.html',
+      templateUrl: './components/usuarios/registroUsuarios/registroUsuarios.view.html',
       data:{
         pageTitle: 'Registro de Empleados'
       },
@@ -811,7 +811,7 @@
       },
       resolve: {
         load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/empleados/registroEmpleados/registroUsuarios.controller.js')
+          return $ocLazyLoad.load('./components/usuarios/registroUsuarios/registroUsuarios.controller.js')
         }]
       },
       controller: 'registerUserController',

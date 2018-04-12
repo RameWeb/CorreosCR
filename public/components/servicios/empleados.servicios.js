@@ -2,9 +2,9 @@
   'use strict';
   angular
     .module('correos-cr')
-    .service('servicioEmpleados', servicioEmpleados);
+    .service('servicioUsuarios', servicioUsuarios);
 
-    servicioEmpleados.$inject = ['$q', '$http', 'dataStorageFactory'];
+  servicioUsuarios.$inject = ['$q', '$http', 'dataStorageFactory'];
 
   /**
    * Función que posee todos los métodos del servicio
@@ -12,7 +12,7 @@
    * @param {Peticiones asincrónicas} $http
    * @param {Factorias que se encarga de ir al local Storage} dataStorageFactory 
    */
-  function servicioEmpleados($q, $http, dataStorageFactory) {
+  function servicioUsuarios($q, $http, dataStorageFactory) {
 
     const usuariosLocal = 'usuariosLS';
 

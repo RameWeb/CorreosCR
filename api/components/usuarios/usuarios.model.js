@@ -1,7 +1,7 @@
 //Requerimos mongoose
 const mongoose = require('mongoose');
 
-//Esquema de empleados
+//Esquema de usuarios
 var UserSchema = new mongoose.Schema({
   cedula : {type : String, required : true},
   primerNombre : {type : String, required : true},
