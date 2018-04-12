@@ -3,21 +3,48 @@ const UserModel = require('./usuarios.model'),
       
 
 module.exports.registrar = (req, res) => {
-  let newUser = new UserModel({
-    cedula              :  req.body.cedula,
-    primerNombre        :  req.body.primerNombre,
-    segundoNombre       :  req.body.segundoNombre,
-    primerApellido      :  req.body.primerApellido,
-    segundoApellido     :  req.body.segundoApellido,
-    fechaNacimiento     :  req.body.fechaNacimiento,
-    correoElectronico   :  req.body.correoElectronico,
-    contrasenna         :  req.body.contrasenna,
-    provincia           :  req.body.provincia,
-    canton              :  req.body.canton,
-    distrito            :  req.body.distrito,
-    photo               :  req.body.photo,
-    vehiculos           :  req.body.vehiculos,
-  });
+
+  let newUser = Object.assign(new UserModel(), req.body);
+
+  switch(newUser.tipoUsuario) {
+    case "Encargado de Sucursal":
+      newUser.sucursal = req.body.sucursal;
+    break;
+    case "Encargado de Aduana":
+      newUser.rolAduana = req.body.rolAduana;
+    break;
+    case "Repartidor":
+      newUser.telefono = req.body.telefono;
+      newUser.sucursal = req.body.sucursal;
+      newUser.licencia = req.body.licencia;
+      newUser.fotoLicencia = req.body.fotoLicencia;
+      newUser.licenciaVencimiento = req.body.licenciaVencimiento;
+    break;
+    case "Cliente":
+      newUser.telefono = req.body.telefono;
+      newUser.sucursalPreferencia = req.body.sucursalPreferencia;
+      newUser.tarjetas.insert(req.body.tarjetas[0]);
+    break;
+    default:
+    break;
+  }
+  console.log('Objeto que viene del front-end');
+  console.log(newUser);
+
+  // newUser.pre('save', (next) => {
+  //   var user = this;
+  
+  //   if (!user.isModified('password')) return next();  
+  
+  //   bcrypt.genSalt(10, (err, salt) => {
+  //     if (err) return next(err);
+  //     bcrypt.hash(user.password, salt, (err, hash) => {
+  //         if (err) return next(err);
+  //         user.password = hash;
+  //         next();
+  //     });
+  //   });
+  // });
 
   newUser.save((err) => {
     if(err){
@@ -26,22 +53,6 @@ module.exports.registrar = (req, res) => {
       res.json({success:true, msg:'Se registró el usuario correctamente'});
     }
   });
-
-  newUser.pre('save', (next) => {  
-    var user = this;
-  
-    if (!user.isModified('password')) return next();  
-  
-    bcrypt.genSalt(10, (err, salt) => {
-      if (err) return next(err);
-      bcrypt.hash(user.password, salt, (err, hash) => {
-          if (err) return next(err);
-          user.password = hash;
-          next();
-      });
-    });
-  });
-  
 };
 
 module.exports.listarTodos = (req,res) => {

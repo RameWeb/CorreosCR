@@ -34,16 +34,14 @@
       if(usuarioRepetido == true){
         registroExitoso = false;
       }else{
-        listaUsuarios.push(pNuevoUsuario);
-        console.log(listaUsuarios);
-        registroExitoso = localStorageFactories.setItem(coleccionUsuarios, listaUsuarios);
+        registroExitoso = localStorageFactories.setUsuario(pNuevoUsuario);
       };
 
       return registroExitoso;
     };
 
     function _obtenerUsuario(){
-      let listaUsuariosLocal = localStorageFactories.getItem(coleccionUsuarios),
+      let listaUsuariosLocal = localStorageFactories.getDatosUsuarios(),
           listaUsuarios = [];
 
       if(listaUsuariosLocal == []){
@@ -71,7 +69,7 @@
             break;
 
             case "Cliente":
-              let objTempCliente = new Cliente(obj.tipoIdentificacion, obj.identificacion, obj.nombre1, obj.nombre2, obj.apellido1, obj.apellido2, obj.sexo, obj.fechaNacimiento,obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono, obj.sucursalPreferencia);
+              let objTempCliente = new Cliente(obj.tipoIdentificacion, obj.identificacion, obj.nombre1, obj.nombre2, obj.apellido1, obj.apellido2, obj.fotoPerfil, obj.sexo, obj.fechaNacimiento,obj.email, obj.contrasenna, obj.provincia, obj.canton, obj.distrito, obj.direccion, obj.estado, obj.tipoUsuario, obj.telefono, obj.sucursalPreferencia);
 
               obj.tarjetas.forEach(objTarj => {
                 let objTempTarjeta = new Tarjeta(objTarj.titularTarjeta, objTarj.numeroTarjeta, objTarj.fechaVencimiento, objTarj.ccv);

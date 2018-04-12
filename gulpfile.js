@@ -39,7 +39,9 @@ gulp.task('dependencies', () => {
     './node_modules/angular/angular.min.js',
     './node_modules/angular-messages/angular-messages.min.js',
     './node_modules/angular-password/angular-password.min.js',
-    './node_modules/angular-scroll/angular-scroll.min.js'
+    './node_modules/angular-scroll/angular-scroll.min.js',
+    './node_modules/ng-file-upload/dist/ng-file-upload-all.min.js',
+    './node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js'
   ])
     .pipe(gulp.dest('./public/lib/angular'));
 
