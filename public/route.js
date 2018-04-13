@@ -800,23 +800,6 @@
       controllerAs: 'vm'
     })
     
-    .state('registroEmpleados', {
-      url: '/registerUser',
-      templateUrl: './components/usuarios/registroUsuarios/registroUsuarios.view.html',
-      data:{
-        pageTitle: 'Registro de Empleados'
-      },
-      params: {
-        objUsuarioTemp: ''
-      },
-      resolve: {
-        load: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return $ocLazyLoad.load('./components/usuarios/registroUsuarios/registroUsuarios.controller.js')
-        }]
-      },
-      controller: 'registerUserController',
-      controllerAs: 'vm'
-    })
     ;
     //fin Christine
 
