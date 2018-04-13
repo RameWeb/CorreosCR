@@ -6,6 +6,10 @@ module.exports.registrar = (req, res) => {
 
   let newUser = Object.assign(new UserModel(), req.body);
 
+  let objD = req.body;
+
+  console.log(objD);
+
   switch(newUser.tipoUsuario) {
     case "Encargado de Sucursal":
       newUser.sucursal = req.body.sucursal;
@@ -23,7 +27,16 @@ module.exports.registrar = (req, res) => {
     case "Cliente":
       newUser.telefono = req.body.telefono;
       newUser.sucursalPreferencia = req.body.sucursalPreferencia;
-      newUser.tarjetas.insert(req.body.tarjetas[0]);
+
+      let objTarj = {
+        titularTarjeta : req.body.titularTarjeta, 
+        numeroTarjeta: req.body.numeroTarjeta,
+        mesVencimiento: req.body.mesVencimiento,
+        annoVencimiento: req.body.annoVencimiento,
+        ccv: req.body.ccv
+      }
+
+      newUser.tarjetas.push(objTarj);
     break;
     default:
     break;

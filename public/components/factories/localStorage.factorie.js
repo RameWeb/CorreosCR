@@ -53,7 +53,11 @@
           'fotoLicencia' : data.fotoLicencia,
           'licenciaVencimiento' : data.licenciaVencimiento,
           'sucursalPreferencia' : data.sucursalPreferencia,
-          'tarjetas' : data.tarjetas
+          'titularTarjeta' : data.tarjetas[0].titularTarjeta,
+          'numeroTarjeta' : data.tarjetas[0].numeroTarjeta,
+          'mesVencimiento' : data.tarjetas[0].mesVencimiento,
+          'annoVencimiento': data.tarjetas[0].annoVencimiento,
+          'ccv': data.tarjetas[0]
         }
       });
 

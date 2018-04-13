@@ -21,7 +21,8 @@ let UserSchema = new mongoose.Schema({
   distrito : {type: String, required: true},
   direccion : {type: String, required: true},
   estado : {type: String, required: true},
-  tipoUsuario : {type: String, required: true}
+  tipoUsuario : {type: String, required: true},
+  tarjetas : {type: Array}
 });
 
 
